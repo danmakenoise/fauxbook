@@ -3,6 +3,8 @@
 * `App`
   * `Navigation`
     * `Search`
+      * `SearchedUserIndex`
+        * `SearchedUserItem`
     * `FriendRequestNotificationButton`
       * `FriendRequestIndex`
         * `FriendRequestItem`
@@ -44,8 +46,8 @@
         * `AboutProfileDisplay`
           * `FriendIndex`
             * `FriendItem`
-  * `PostActionIndex`
-    * `PostActionItem`
+  * `ActionIndex`
+    * `ActionItem`
   * `Chat`
     * `ChatFriendIndex`
     * `Conversation`

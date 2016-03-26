@@ -59,3 +59,11 @@ id              | integer   | not null, primary key
 email           | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+## notifications
+column name     | data type | details
+----------------|-----------|-----------------------
+id           | integer   | not null, primary key
+user_id      | integer   | not null, foreign key (references users), indexed
+target_id    | integer   | not null, foreign key (references comments, posts, likes, friendships), indexed
+seen         | boolean   | not null, default: false

@@ -1,66 +1,117 @@
 # Flux Stores
 
-### NoteStore
+### PostStore
 
-Holds all persisted note data.
-
-##### Actions:
-- `receiveAllNotes`
-- `receiveSingleNote`
-- `removeNote`
-
-##### Listeners:
-- `NotesIndex` (passes to `NoteIndexItem` via props)
-- `NoteDetail`
-
-### NoteFormStore
-
-Holds un-persisted note data to send to the API.
+Holds all data about posts, likes, comments, and sub-comments.
 
 ##### Actions:
-- `receiveNoteFormParams`
+- `receiveAllPosts`
+- `receiveSinglePost`
+- `receiveAllComments`
+- `receiveSingleComment`
+- `receiveAllLikes`
+- `receiveSingleLike`
+- `removePost`
+- `removeComment`
+- `removeLike`
 
 ##### Listeners:
-- `NoteForm`
+- `PostIndex`
 
-### NotebookStore
+### ActionStore
 
-Holds all persisted notebook data.
+Holds data on recent actions by user's friends.
 
 ##### Actions:
-- `receiveAllNotebooks`
-- `receiveSingleNotebook`
-- `removeNotebook`
+- `receiveAllActions`
 
 ##### Listeners:
-- `NotebookIndex`
+- `ActionIndex`
 
-### NotebookFormStore
+### SearchedUserStore
 
-Holds un-persisted notebook data to send to the API.
+Holds information about users who match the inputted search.
 
 ##### Actions:
-- `receiveNotebookFormParams`
+- `receivedSearchedUsers`
+- `resetSearchedUsers`
 
 ##### Listeners:
-- `NotebookForm`
+- `Search`
 
-### SearchStore
+### FriendRequestStore
 
-Holds search parameters to send to the API.
+Holds information about pending requests and recent requests.
 
 ##### Actions:
-- `receiveSearchParams`
+- `receiveAllFriendRequests`
+- `receiveSingleFriendRequest`
+- `acceptFriendRequest`
+- `ignoreFriendRequest`
 
 ##### Listeners:
-- `SearchIndex`
+- `FriendRequestNotificationButton`
+- `FriendRequestIndex`
 
-### SearchSuggestionStore
+### ChatFriendStore
 
-Holds typeahead suggestions for search.
+Holds information on all of the user's friends for the chat component.
 
 ##### Actions:
-- `receiveSearchSuggestions`
+- `receiveAllFriends'
+- `receiveSingleFriend`
+- `removeFriend`
 
 ##### Listeners:
-- `SearchSuggestions`
+- `ChatFriendIndex`
+
+### ConversationStore
+
+Holds information on the user's conversations.
+
+##### Actions:
+- `receiveAllConversations`
+- `receiveSingleConversation`
+- `markConversationAsSeen`
+
+##### Listeners:
+- `ConversationNotificationButton`
+- `ConversationIndex`
+- `Conversation`
+
+### NotificationStore
+
+Holds information on all the user's NotificationStore
+
+##### Actions:
+- `receiveAllNotifications`
+- `markAllNotificationsAsSeen`
+- `markNotificationAsSeen`
+
+##### Listeners:
+- `NotificationButton`
+- `NotificationIndex`
+
+### FriendStore
+
+Holds information on friends when viewing profiles.
+
+##### Actions:
+- `receiveAllFriends`
+- `receiveSingleFriend`
+- `removeFriend`
+
+##### Listeners:
+- `FriendSummary`
+- `FriendIndex`
+
+### ProfileStore
+
+Holds information on a specific user.
+
+##### Actions:
+- `receiveProfile`
+- `receiveNewAttributes`
+
+##### Listeners:
+- `Profile`
