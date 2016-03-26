@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bundle
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+  font: sans-serif;
+}
