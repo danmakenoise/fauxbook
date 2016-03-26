@@ -1,22 +1,13 @@
 # View Wireframes
 
-## New User
-![new-user]
+![page-one]
+![page-two]
+![page-three]
+![page-four]
+![page-five]
 
-## New Session
-![new-session]
-
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
-
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
-
-## NotebookForm
-![notebook-form]
-
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[page-one]: ./wireframes/page_one.jpg
+[page-two]: ./wireframes/page_two.jpg
+[page-three]: ./wireframes/page_three.jpg
+[page-four]: ./wireframes/page_four.jpg
+[page-five]: ./wireframes/page_five.jpg

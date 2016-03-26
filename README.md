@@ -1,23 +1,27 @@
-# FresherNote
+# fauxbook
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Click here for live website.][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://fauxbook.danphillips.io
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+**fauxbook** is a facebook clone built using **Ruby on Rails** and **React.js**. Users of the site can:
 
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
-
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags
-- [ ] Apply complex styling to notes while editing
+- [ ] Create an account.
+- [ ] Log in and out.
+- [ ] Create a personal profile.
+- [ ] Upload a profile picture.
+- [ ] Create text posts.
+- [ ] Create photo posts.
+- [ ] Search for other users.
+- [ ] Add other users as friends.
+- [ ] See friend's personal profiles.
+- [ ] Post on friend's personal profiles.
+- [ ] See a real-time feed of friend's posts.
+- [ ] Comment on friend's posts.
+- [ ] Like friend's posts.
+- [ ] Message other users in real time.
 
 ## Design Docs
 * [View Wireframes][views]
