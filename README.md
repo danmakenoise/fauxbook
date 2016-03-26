@@ -1,8 +1,8 @@
 # fauxbook
 
-[Click here for live website.][heroku]
+[Click here for live website.][live-link]
 
-[heroku]: http://fauxbook.danphillips.io
+[live-link]: http://fauxbook.danphillips.io
 
 ## Minimum Viable Product
 
