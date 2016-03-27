@@ -19,7 +19,7 @@
 
 ### Profiles
 - `GET /api/profiles/:id`
-- `POST /api/profiles/
+- `POST /api/profiles/`
 - `PATCH /api/profiles/:id`
 
 ### Friendships
