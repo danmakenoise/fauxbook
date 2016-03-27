@@ -1,40 +1,28 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 10: Notifications
 
 ## Rails
 ### Models
-* Reminder
+Notification
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+NotificationsController (create, update)
 
 ### Views
-* reminders/index.json.jbuilder
+JSON: Notifications: Index
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* NotificationButton, NotificationIndex, NotificationItem
 
 ### Stores
-* Reminder
+* NotificationStore
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* NotificationActions.receiveNotifications
+* NotificationActions.viewNotification
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* markNotificationAsSeen
+* generateNotification
 
 ## Gems/Libraries

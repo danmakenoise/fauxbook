@@ -1,40 +1,25 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 9: Liking
 
 ## Rails
 ### Models
-* Reminder
+Like
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+LikesController (create, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* LikeButton
 
 ### Stores
-* Reminder
+* PostStore - Modify to work with likes.
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* LikeActions.addLike
+* LikeActions.unLike
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
 
 ## Gems/Libraries

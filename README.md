@@ -42,7 +42,7 @@ Bonus:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 Days) (0.5 Days Total)
+### [Phase 1][phase-one]: Backend setup and User Authentication (0.5 Days) (0.5 Days Total)
 
 **Objective:** Functioning Rails project with Authentication.
 
@@ -53,7 +53,7 @@ Bonus:
 - [ ] Create temporary landing page for a logged-in `User`.
 - [ ] Users can Sign Up, Log In, and Log Out.
 
-### Phase 2: Basic Profile Creation (0.5 Days) (1 Day Total)
+### [Phase 2][phase-two]: Basic Profile Creation (0.5 Days) (1 Day Total)
 
 **Objective:** Ability to create a profile.
 
@@ -63,14 +63,14 @@ Bonus:
 - [ ] Create React `App`, `Display`, `Profile`, `ProfileDisplay`, `AboutProfileDisplay` components.
 - [ ] Users can Log In and see their own `Profile`.
 
-### Phase 3: Basic Profile Editing (0.25 Days) (1.25 Days Total)
+### [Phase 3][phase-three]: Basic Profile Editing (0.25 Days) (1.25 Days Total)
 
 **Objective:** Ability to edit profile.
 
 - [ ] Create React `EditProfileDisplay`, `EditProfileAttribute`, and `EditProfileAttributeForm`.
 - [ ] Users can Edit their own `Profile`.
 
-### Phase 4: Profile and Cover Photo Upload (0.5 Days) (1.75 Days Total)
+### [Phase 4][phase-four]: Profile and Cover Photo Upload (0.5 Days) (1.75 Days Total)
 
 **Objective:** Users can upload a Profile Picture and Cover Photo for their Profile.
 
@@ -79,7 +79,7 @@ Bonus:
 - [ ] Users now land on their Main Profile View, instead of About View.
 - [ ] Users can upload a profile picture, a cover photo, and change it.
 
-### Phase 5: Users Text and Photo Posts (1 Day) (2.75 Days Total)
+### [Phase 5][phase-five]: Users Text and Photo Posts (1 Day) (2.75 Days Total)
 
 **Objective:** Users can create Text and Photo posts on their own profiles.
 
@@ -90,7 +90,7 @@ Bonus:
 - [ ] Users now land on their Feed view.
 - [ ] Users can make and delete text/photo posts and see a feed of posts.
 
-### Phase 6: Friendship and Profile Posting (1 Day) (3.75 Days Total)
+### [Phase 6][phase-six Friendship and Profile Posting (1 Day) (3.75 Days Total)
 
 **Objective:** Users can add other users and friends and post on their profiles.
 
@@ -100,7 +100,7 @@ Bonus:
 - [ ] Create React `Navigation`, `FriendRequestNotificationButton`, `FriendRequestIndex`, `FriendRequestItem`, `FriendIndex`, `FriendItem`, `FriendRequestButton`, and `FriendSummary`.
 - [ ] Users can now add friends, accept and reject friend requests, and see information about their friends, and their friend's friends on their profiles.
 
-### Phase 7: Navigation and User Search (0.5 Days) (4.25 Days Total)
+### [Phase 7][phase-seven]: Navigation and User Search (0.5 Days) (4.25 Days Total)
 
 **Objective:** Users can search for other users to add.
 
@@ -108,7 +108,7 @@ Bonus:
 - [ ] Create React `Search`, `SearchedUserIndex`, and `SearchedUserItem`.
 - [ ] Users can use the search bar to find other users of the site, visit their profiles, and add them as a friend.
 
-### Phase 8: Commenting (1 Day) (5.25 Days Total)
+### [Phase 8][phase-eight]: Commenting (1 Day) (5.25 Days Total)
 
 **Objective:** Users can comment on posts, and other comments, one-level deep.
 
@@ -118,7 +118,7 @@ Bonus:
 - [ ] Create React `CommentButton`, `CommentForm`, `CommentIndex`, and `CommentItem`.
 - [ ] Users can now comment on posts and other comments, up to one-level deep.
 
-### Phase 9: Liking (0.75 Days) (6 Days Total)
+### [Phase 9][phase-nine]: Liking (0.75 Days) (6 Days Total)
 
 **Objective:** Users can like posts and comments.
 
@@ -128,7 +128,7 @@ Bonus:
 - [ ] Create React `LikeButton`.
 - [ ] Users can Like and unLike posts/comments and see Like counts.
 
-### Phase 10: Notifications (0.5 Days) (6.5 Days Total)
+### [Phase 10][phase-ten]: Notifications (0.5 Days) (6.5 Days Total)
 
 **Objective:** Users get notifications for all relevant events.
 
@@ -138,7 +138,7 @@ Bonus:
 - [ ] Create React `NotificationButton`, `NotificationIndex`, `NotificationItem`
 - [ ] Users receive notifications whenever a post or comment of their's is liked or commented upon.
 
-### Phase 11: Polish (1.5 Days) (8 Days Total)
+### [Phase 11][phase-eleven]: Polish (1.5 Days) (8 Days Total)
 
 **Objective::** Final styling and UI improvements.
 
@@ -156,3 +156,9 @@ Bonus:
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
+[phase-eight]: ./docs/phases/phase8.md
+[phase-nine]: ./docs/phases/phase9.md
+[phase-ten]: ./docs/phases/phase10.md
+[phase-eleven]: ./docs/phases/phase11.md

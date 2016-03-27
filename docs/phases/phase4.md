@@ -1,4 +1,4 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
+# Phase 4: Profile and Cover Photo Upload
 
 ## Rails
 ### Models
@@ -9,10 +9,14 @@
 
 ## Flux
 ### Views (React Components)
+* MainProfileDisplay
+* ProfileHeader
 
 ### Stores
 
 ### Actions
 
+### ApiUtil
+
 ## Gems/Libraries
-* react-quill (npm)
+* Paperclip

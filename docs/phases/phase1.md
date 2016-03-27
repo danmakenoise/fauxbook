@@ -1,20 +1,15 @@
-# Phase 1: User Authentication, Note Model and JSON API
+# Phase 1: Backend User Setup and Authentication
 
 ## Rails
 ### Models
 * User
-* Note
 
 ### Controllers
-* UsersController (create, new)
+* UsersController (create, new, destroy)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
 
 ### Views
-* users/new.html.erb
-* session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* static_pages/landing.html.erb
 
 ## Flux
 ### Views (React Components)

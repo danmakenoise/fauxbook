@@ -1,40 +1,33 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 5: Users Text and Photo Posts
 
 ## Rails
 ### Models
-* Reminder
+* Post
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+* PostsController (create, show, index, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
+* JSON: Posts: Index
+* JSON: Posts: Show
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* Feed, PostIndex, PostForm, PostItem
 
 ### Stores
-* Reminder
+* PostStore
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* PostActions.receiveAllPosts
+* PostActions.receiveSinglePost
+* PostActions.createPost
+* PostActions.removePost
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* fetchPosts
+* fetchPost
+* createPost
+* updatePost
 
 ## Gems/Libraries

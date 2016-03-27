@@ -1,40 +1,33 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 8: Commenting
 
 ## Rails
 ### Models
-* Reminder
+Comment
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
+CommentsController (create, destroy)
 
 ### Views
-* reminders/index.json.jbuilder
+* JSON: Comments: Index
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* CommentButton
+* CommentForm
+* CommentIndex
+* CommentItem
 
 ### Stores
-* Reminder
+* PostStore - Modify to use comments.
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* CommentActions.receiveComments
+* CommentActions.createComment
+* CommentActions.removeComment
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* fetchComments
+* createComment
+* removeComment
 
 ## Gems/Libraries

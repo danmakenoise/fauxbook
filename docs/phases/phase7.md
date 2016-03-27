@@ -1,40 +1,26 @@
-# Phase 5: Reminders and Garbage Collection
+# Phase 7: Navigation and User Search
 
 ## Rails
 ### Models
-* Reminder
 
 ### Controllers
-* Api::RemindersController (create, destroy, index, show, update)
 
 ### Views
-* reminders/index.json.jbuilder
+JSON: Users: Index
 
 ## Flux
 ### Views (React Components)
-* RemindersIndex
-  - ReminderIndexItem
-* ReminderShow
-* ReminderForm
+* Search
+* SearchedUserIndex
+* SearchedUserItem
 
 ### Stores
-* Reminder
+* SearchedUserStore
 
 ### Actions
-* ApiActions.receiveAllReminders -> triggered by ApiUtil
-* ApiActions.receiveSingleReminder
-* ApiActions.deleteReminder
-* ReminderActions.fetchAllReminders -> triggers ApiUtil
-* ReminderActions.fetchSingleReminder
-* ReminderActions.createReminder
-* ReminderActions.updateReminder
-* ReminderActions.destroyReminder
+* UserActions.receiveUsers
 
 ### ApiUtil
-* ApiUtil.fetchAllReminders
-* ApiUtil.fetchSingleReminder
-* ApiUtil.createReminder
-* ApiUtil.updateReminder
-* ApiUtil.destroyReminder
+* fetchUsers
 
 ## Gems/Libraries
