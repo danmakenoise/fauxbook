@@ -90,7 +90,7 @@ Bonus:
 - [ ] Users now land on their Feed view.
 - [ ] Users can make and delete text/photo posts and see a feed of posts.
 
-### [Phase 6][phase-six Friendship and Profile Posting (1 Day) (3.75 Days Total)
+### [Phase 6][phase-six]: Friendship and Profile Posting (1 Day) (3.75 Days Total)
 
 **Objective:** Users can add other users and friends and post on their profiles.
 
