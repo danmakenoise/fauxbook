@@ -14,14 +14,18 @@
 - [ ] Upload a profile picture.
 - [ ] Create text posts.
 - [ ] Create photo posts.
-- [ ] Search for other users.
 - [ ] Add other users as friends.
 - [ ] See friend's personal profiles.
 - [ ] Post on friend's personal profiles.
-- [ ] See a real-time feed of friend's posts.
+- [ ] See a feed of friend's posts.
+- [ ] Search for other users.
 - [ ] Comment on friend's posts.
 - [ ] Like friend's posts.
-- [ ] Message other users in real time.
+- [ ] Receive Notifications for relevant events.
+
+Bonus:
+- [ ] Summary of recent actions by friends.
+- [ ] Message other users!
 
 ## Design Docs
 * [View Wireframes][views]
@@ -38,100 +42,114 @@
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
+### Phase 1: Backend setup and User Authentication (0.5 Days) (0.5 Days Total)
 
-**Objective:** Functioning rails project with Authentication
+**Objective:** Functioning Rails project with Authentication.
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [ ] Create Rails' `User` backend, model and controller.
+- [ ] Create Rails' `Session` controller.
+- [ ] Implement authentication and session backend support.
+- [ ] Create landing page with sign in and sign up features.
+- [ ] Create temporary landing page for a logged-in `User`.
+- [ ] Users can Sign Up, Log In, and Log Out.
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Basic Profile Creation (0.5 Days) (1 Day Total)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Ability to create a profile.
 
-- [ ] create `Note` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [ ] Create Rails' `Profile` backend, model, and controller.
+- [ ] Create JSON-API for `Profile` Create, Show, Update. (Dependent Destroy of user).
+- [ ] Create Flux `ProfileStore`.
+- [ ] Create React `App`, `Display`, `Profile`, `ProfileDisplay`, `AboutProfileDisplay` components.
+- [ ] Users can Log In and see their own `Profile`.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Basic Profile Editing (0.25 Days) (1.25 Days Total)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
+**Objective:** Ability to edit profile.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- [ ] Create React `EditProfileDisplay`, `EditProfileAttribute`, and `EditProfileAttributeForm`.
+- [ ] Users can Edit their own `Profile`.
 
-### Phase 4: Start Styling (0.5 days)
+### Phase 4: Profile and Cover Photo Upload (0.5 Days) (1.75 Days Total)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+**Objective:** Users can upload a Profile Picture and Cover Photo for their Profile.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [ ] Implement backend support for image uploading.
+- [ ] Create React `ProfileHeader`, and `MainProfileDisplay`.
+- [ ] Users now land on their Main Profile View, instead of About View.
+- [ ] Users can upload a profile picture, a cover photo, and change it.
 
-### Phase 5: Notebooks (1 day)
+### Phase 5: Users Text and Photo Posts (1 Day) (2.75 Days Total)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Users can create Text and Photo posts on their own profiles.
 
-- [ ] create `Notebook` model
-- build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
+- [ ] Create Rails' `Post` backend, model, and controller.
+- [ ] Create JSON-API for Post Create, Show, Index, Destroy.
+- [ ] Create Flux `PostStore`.
+- [ ] Create React `Feed`, `PostIndex`, `PostForm`, and `PostItem`.
+- [ ] Users now land on their Feed view.
+- [ ] Users can make and delete text/photo posts and see a feed of posts.
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+### Phase 6: Friendship and Profile Posting (1 Day) (3.75 Days Total)
 
-### Phase 6: Tags (1.5 days)
+**Objective:** Users can add other users and friends and post on their profiles.
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+- [ ] Create Rails' `Friendship` backend, model, and controller.
+- [ ] Create JSON-API for Friendship Create, Index, Update, and Destroy.
+- [ ] Create Flux `FriendStore` and `FriendRequestStore`
+- [ ] Create React `Navigation`, `FriendRequestNotificationButton`, `FriendRequestIndex`, `FriendRequestItem`, `FriendIndex`, `FriendItem`, `FriendRequestButton`, and `FriendSummary`.
+- [ ] Users can now add friends, accept and reject friend requests, and see information about their friends, and their friend's friends on their profiles.
 
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
+### Phase 7: Navigation and User Search (0.5 Days) (4.25 Days Total)
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+**Objective:** Users can search for other users to add.
 
-**objective:** Enable complex styling of notes.
+- [ ] Create Flux `SearchedUserStore`.
+- [ ] Create React `Search`, `SearchedUserIndex`, and `SearchedUserItem`.
+- [ ] Users can use the search bar to find other users of the site, visit their profiles, and add them as a friend.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+### Phase 8: Commenting (1 Day) (5.25 Days Total)
 
-### Phase 8: Styling Cleanup and Seeding (1 day)
+**Objective:** Users can comment on posts, and other comments, one-level deep.
 
-**objective:** Make the site feel more cohesive and awesome.
+- [ ] Create Rails' `Comment` backend, model and controller.
+- [ ] Create JSON-API for Comment Create, Index, and Destroy.
+- [ ] Create support for Post Comments in Post Flux `PostStore`.
+- [ ] Create React `CommentButton`, `CommentForm`, `CommentIndex`, and `CommentItem`.
+- [ ] Users can now comment on posts and other comments, up to one-level deep.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+### Phase 9: Liking (0.75 Days) (6 Days Total)
 
-### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
+**Objective:** Users can like posts and comments.
+
+- [ ] Create Rails' `Like` backend, model, and controller.
+- [ ] Create JSON-API for Like Create, Index, and Destroy.
+- [ ] Create support for Likes in `PostStore`.
+- [ ] Create React `LikeButton`.
+- [ ] Users can Like and unLike posts/comments and see Like counts.
+
+### Phase 10: Notifications (0.5 Days) (6.5 Days Total)
+
+**Objective:** Users get notifications for all relevant events.
+
+- [ ] Create Rails' `Notification` backend, model, and controller.
+- [ ] Create JSON-API for Notification Create, Update
+- [ ] Create Flux `NotificationStore`.
+- [ ] Create React `NotificationButton`, `NotificationIndex`, `NotificationItem`
+- [ ] Users receive notifications whenever a post or comment of their's is liked or commented upon.
+
+### Phase 11: Polish (1.5 Days) (8 Days Total)
+
+**Objective::** Final styling and UI improvements.
+
+- [ ] Add React `LeftSideBarNavigation`, `ProfileSummary`
+- [ ] Finalize CSS for entire site.
+- [ ] Ensure clear and responsive usability of entire site with excellent feedback to the user.
+
+### Bonuses:
+
+- [ ] Implement an Action Summary.
+- [ ] Implement User to User Messaging.
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
