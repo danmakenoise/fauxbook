@@ -33,6 +33,8 @@ group :development do
   gem 'better_errors'
   # Use binding_of_caller for debugging in the browser.
   gem 'binding_of_caller'
+  # Use pry-rails for pry instead of irb in the console.
+  gem 'pry-rails'
 end
 
 group :production do
