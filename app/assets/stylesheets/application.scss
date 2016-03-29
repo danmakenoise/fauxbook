@@ -16,7 +16,7 @@
 
 // css reset--------------------------------------------------------------------
 
-body, div, h1, h2, input, p, ul, li, label {
+body, div, h1, h2, input, p, ul, li, label, table, td, tr {
   padding: 0;
   border: 0;
   margin: 0;
@@ -44,6 +44,7 @@ ul {
 
 body {
   background-color: rgb(237, 240, 245);
+  color: #444;
 }
 
 .bar {
@@ -216,4 +217,44 @@ body {
 
 .sign-up input[type='radio'] {
   display: inline;
+}
+
+// about-profile-display--------------------------------------------------------
+
+.about-profile-display {
+  background-color: #fff;
+  margin-top: 20px;
+  width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.about-profile-display header {
+  background-color: #efefef;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.about-profile-information {
+  padding: 20px;
+}
+
+.about-section-header {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.about-section-attribute {
+  border-top: 1px solid #ccc;
+  width: 300px;
+  padding: 10px 0;
+}
+
+.about-data {
+  float: right;
+  font-weight: bold;
 }
