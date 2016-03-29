@@ -8,8 +8,8 @@
 
 **fauxbook** is a facebook clone built using **Ruby on Rails** and **React.js**. Users of the site can:
 
-- [ ] Create an account.
-- [ ] Log in and out.
+- [x] Create an account.
+- [x] Log in and out.
 - [ ] Create a personal profile.
 - [ ] Upload a profile picture.
 - [ ] Create text posts.
@@ -46,12 +46,12 @@ Bonus:
 
 **Objective:** Functioning Rails project with Authentication.
 
-- [ ] Create Rails' `User` backend, model and controller.
-- [ ] Create Rails' `Session` controller.
-- [ ] Implement authentication and session backend support.
-- [ ] Create landing page with sign in and sign up features.
-- [ ] Create temporary landing page for a logged-in `User`.
-- [ ] Users can Sign Up, Log In, and Log Out.
+- [x] Create Rails' `User` backend, model and controller.
+- [x] Create Rails' `Session` controller.
+- [x] Implement authentication and session backend support.
+- [x] Create landing page with sign in and sign up features.
+- [x] Create temporary landing page for a logged-in `User`.
+- [x] Users can Sign Up, Log In, and Log Out.
 
 ### [Phase 2][phase-two]: Basic Profile Creation (0.5 Days) (1 Day Total)
 
