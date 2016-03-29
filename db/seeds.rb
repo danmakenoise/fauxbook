@@ -12,7 +12,8 @@ seed_users.each do |user|
     gender: ['M', 'F'].sample,
     birthday: (13..100).to_a.sample.years.ago,
     first_name: first_name,
-    last_name: last_name
+    last_name: last_name,
+    location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}"
   )
   user.save
   user.profile.user_id = user.id

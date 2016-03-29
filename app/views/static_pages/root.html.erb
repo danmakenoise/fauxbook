@@ -1,6 +1,6 @@
-<h1>fauxbook</h1>
-<p>Coming soon.</p>
+<div id='app'></div>
 <% if logged_in? %>
+  <hr>
   <p><em>logged in as: <%= current_user.email %></p>
   <form method="post" action="<%= logout_url %>">
     <input type="hidden"
