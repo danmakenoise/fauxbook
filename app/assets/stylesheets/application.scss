@@ -14,7 +14,9 @@
  *= require_self
  */
 
-body, div, h1, h2, p, input, label {
+// css reset--------------------------------------------------------------------
+
+body, div, h1, h2, input, p, ul, li, label {
   padding: 0;
   border: 0;
   margin: 0;
@@ -30,14 +32,18 @@ ul {
   list-style-type: none;
 }
 
-body {
-  background-color: rgb(237, 240, 245);
-}
+// clearfix---------------------------------------------------------------------
 
 .group:after {
   content: "";
   display: block;
   clear: both;
+}
+
+// fauxbook sitewide styles-----------------------------------------------------
+
+body {
+  background-color: rgb(237, 240, 245);
 }
 
 .bar {
@@ -48,9 +54,16 @@ body {
   width: 100%;
 }
 
-.sign-in {
+.container {
   width: 1000px;
   margin: auto;
+}
+
+// unauthenticated user landing page--------------------------------------------
+
+// -----sign-up bar-----
+
+.sign-in {
   color: white;
 }
 
@@ -70,25 +83,24 @@ body {
 .sign-in form label {
   font-size: 12px;
   float: left;
-  display: block;
   margin-right: 20px;
 }
 
 .sign-in input {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.sign-in input[type='text'], .sign-in input[type='password'] {
   margin-top: 5px;
   display: block;
   background-color: white;
-  padding: 5px;
   color: black;
-  border: 1px solid black;
   width: 150px;
 }
 
 .sign-in input[type='submit'] {
-  width: auto;
   background-color: rgb(91, 116, 168);
-  color: white;
-  padding: 5px 5px;
   margin-top: 19px;
   font-size: 12px;
   font-weight: bold;
@@ -96,24 +108,24 @@ body {
   border-color: #2f477a #29447e #1a356e;
 }
 
-.content {
-  width: 1000px;
-  margin: auto;
+// -----splash and signup shared-----
+
+.splash, .sign-up {
   padding-top: 30px;
+  color: #444;
 }
 
 .splash {
-  color: #444;
   float: left;
   width: 500px;
-  padding-top: 30px;
 }
 
 .sign-up {
   float: right;
   width: 430px;
-  color: #444;
 }
+
+// -----splash-----
 
 .splash h2 {
   font-size: 28px;
@@ -134,7 +146,7 @@ body {
 .splash ul li {
   list-style-image: url(image_path('feed.png'));
   position: relative;
-  left: 15px;
+  left: 55px;
 }
 
 .splash ul li:nth-child(2) {
@@ -151,6 +163,8 @@ body {
   left: 10px;
 }
 
+// -----sign-up-----
+
 .sign-up h1 {
   font-size: 36px;
   font-weight: bold;
@@ -163,24 +177,22 @@ body {
 
 .sign-up input {
   display: block;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .sign-up input[type='text'], .sign-up input[type='password'] {
-  margin-top: 20px;
   padding: 10px;
   width: 300px;
   background-color: white;
   border: 1px solid rgb(189, 199, 216);
-  border-radius: 5px;
   font-size: 24px;
 }
 
 .sign-up input[type='submit'] {
-  margin-top: 20px;
   color: white;
   background-image: linear-gradient(rgb(103, 174, 85), rgb(87, 136, 67));
   padding: 10px 50px;
-  border-radius: 5px;
   border: solid 1px #222;
   text-shadow: rgba(0, 0, 0, 0.498039) 0px 1px 2px;
   cursor: pointer;
