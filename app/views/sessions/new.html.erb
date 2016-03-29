@@ -45,9 +45,20 @@
         name='authenticity_token'
         value='<%= form_authenticity_token %>' />
 
-      <input type='text' name='user[email]' placeholder='Email' />
+      <input type='text' class='name-input' name='profile[first_name]' placeholder='First name' />
 
-      <input type='password' name='user[password]' placeholder='New Password' />
+      <input type='text' class='name-input' name='profile[last_name]' placeholder='Last name' />
+
+      <input type='text' class='sign-up-full-input' name='user[email]' placeholder='Email' />
+
+      <input type='password' class='sign-up-full-input' name='user[password]' placeholder='New Password' />
+
+      <label>Birthday
+        <input type='date' class='sign-up-full-input' name='profile[birthday]' />
+      </label>
+
+      <input type='radio' name='profile[gender]' value='F'> Female </input>
+      <input type='radio' name='profile[gender]' value='M'> Male </input>
 
       <input type='submit' value='Sign Up' />
 

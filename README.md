@@ -57,10 +57,10 @@ Bonus:
 
 **Objective:** Ability to create a profile.
 
-- [ ] Create Rails' `Profile` backend, model, and controller.
-- [ ] Create JSON-API for `Profile` Create, Show, Update. (Dependent Destroy of user).
-- [ ] Create Flux `ProfileStore`.
-- [ ] Create React `App`, `Display`, `Profile`, `ProfileDisplay`, `AboutProfileDisplay` components.
+- [x] Create Rails' `Profile` backend, model, and controller.
+- [x] Create JSON-API for `Profile` Create, Show, Update. (Dependent Destroy of user).
+- [x] Create Flux `ProfileStore`.
+- [x] Create React `App`, `Display`, `Profile`, `ProfileDisplay`, `AboutProfileDisplay` components.
 - [ ] Users can Log In and see their own `Profile`.
 
 ### [Phase 3][phase-three]: Basic Profile Editing (0.25 Days) (1.25 Days Total)

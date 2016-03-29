@@ -61,7 +61,7 @@ body {
 
 // unauthenticated user landing page--------------------------------------------
 
-// -----sign-up bar-----
+// -----sign-in bar-----
 
 .sign-in {
   color: white;
@@ -181,7 +181,7 @@ body {
   border-radius: 5px;
 }
 
-.sign-up input[type='text'], .sign-up input[type='password'] {
+.sign-up-full-input, .name-input {
   padding: 10px;
   width: 300px;
   background-color: white;
@@ -198,6 +198,22 @@ body {
   cursor: pointer;
 }
 
+.name-input {
+  width: 130px;
+  float: left;
+  margin-right: 18px;
+  margin-bottom: 20px;
+}
+
+.sign-up label {
+  margin-top: 20px;
+  display: block;
+}
+
 .sign-up input[type='submit']:hover {
   background-image: linear-gradient(rgb(121, 188, 100), rgb(87, 136, 67));
+}
+
+.sign-up input[type='radio'] {
+  display: inline;
 }
