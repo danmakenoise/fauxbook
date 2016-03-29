@@ -5,7 +5,7 @@ var App = React.createClass({
   render: function () {
     return (
       <div className='fauxbook'>
-        <h1>fauxbook</h1>
+        <h1 className='fauxbook-logo bar'>fauxbook</h1>
         <Display>
           { this.props.children }
         </Display>
