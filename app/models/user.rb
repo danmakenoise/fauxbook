@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  validate :email, :password, :password_digest, :session_token
+  validates :email, :password_digest, :session_token, presence: true
+  validates :password, length: { minimum: 8, allow_nil: true }
   validates_format_of :email, with: /.+@.+\.+/
   validates_uniqueness_of :email, :session_token
 
@@ -19,6 +20,11 @@ class User < ActiveRecord::Base
 
   def password= password
     self.password_digest = BCrypt::Password.create password
+  end
+
+  def reset_session_token!
+    self.session_token = generate_session_token
+    self.save
   end
 
   private
