@@ -1,5 +1,5 @@
 <div class='bar group'>
-  <div class='sign-up'>
+  <div class='sign-in'>
     <h1>fauxbook</h1>
     <form action='<%= login_url %>' method='post'>
       <input type='hidden'
@@ -15,16 +15,28 @@
     </form>
   </div>
 </div>
-<h1>Sign Up</h1>
-<form action='<%= signup_url %>' method='post'>
-  <input type='hidden'
-    name='authenticity_token'
-    value='<%= form_authenticity_token %>' />
-  <label>E-Mail:
-    <input type='text' name='user[email]' placeholder='me@example.com' />
-  </label>
-  <label>Password:
-    <input type='password' name='user[password]' placeholder='********' />
-  </label>
-  <input type='submit' value='Sign Up' />
-</form>
+<div class='content'>
+  <div class='splash'>
+    <h2>Connect with friends and the world around you on Facebook.</h1>
+    <ul>
+      <li><span><strong>See photos and updates</strong> from friends in News Feed.</span></li>
+      <li><span><strong>Share what's new</strong> in your life on your Timeline.</span></li>
+      <li><span><strong>Find more</strong> of what you're looking for with Facebook Search.</span></li>
+    </ul>
+  </div>
+  <div class='signup'>
+    <h1>Sign Up</h1>
+    <form action='<%= signup_url %>' method='post'>
+      <input type='hidden'
+        name='authenticity_token'
+        value='<%= form_authenticity_token %>' />
+      <label>E-Mail:
+        <input type='text' name='user[email]' placeholder='me@example.com' />
+      </label>
+      <label>Password:
+        <input type='password' name='user[password]' placeholder='********' />
+      </label>
+      <input type='submit' value='Sign Up' />
+    </form>
+  </div>
+</div>

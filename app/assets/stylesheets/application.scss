@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body, div, h1, p, input, label {
+body, div, h1, h2, p, input, label {
   padding: 0;
   border: 0;
   margin: 0;
@@ -24,6 +24,10 @@ body, div, h1, p, input, label {
   color: inherit;
   text-decoration: none;
   background: transparent;
+}
+
+ul {
+  list-style-type: none;
 }
 
 body {
@@ -44,13 +48,13 @@ body {
   width: 100%;
 }
 
-.sign-up {
+.sign-in {
   width: 1000px;
   margin: auto;
   color: white;
 }
 
-.sign-up h1 {
+.sign-in h1 {
   float: left;
   padding-top: 25px;
   padding-bottom: 10px;
@@ -58,19 +62,19 @@ body {
   font-weight: bold;
 }
 
-.sign-up form {
+.sign-in form {
   float: right;
   padding-top: 20px;
 }
 
-.sign-up form label {
+.sign-in form label {
   font-size: 12px;
   float: left;
   display: block;
   margin-right: 20px;
 }
 
-.sign-up input {
+.sign-in input {
   margin-top: 5px;
   display: block;
   background-color: white;
@@ -80,7 +84,7 @@ body {
   width: 150px;
 }
 
-.sign-up input[type='submit'] {
+.sign-in input[type='submit'] {
   width: auto;
   background-color: rgb(91, 116, 168);
   color: white;
@@ -90,4 +94,58 @@ body {
   font-weight: bold;
   cursor: pointer;
   border-color: #2f477a #29447e #1a356e;
+}
+
+.content {
+  width: 1000px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.splash {
+  color: #444;
+  float: left;
+  width: 500px;
+  padding-top: 30px;
+}
+
+.sign-up {
+  float: right;
+  width: 400px;
+}
+
+.splash h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.splash ul li {
+  margin-top: 40px;
+  color: #777;
+}
+
+.splash strong {
+  color: #444;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.splash ul li {
+  list-style-image: url(image_path('feed.png'));
+  position: relative;
+  left: 15px;
+}
+
+.splash ul li:nth-child(2) {
+  list-style-image: url(image_path('share.png'));
+}
+
+.splash ul li:nth-child(3) {
+  list-style-image: url(image_path('search.png'));
+}
+
+.splash span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
