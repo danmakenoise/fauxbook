@@ -10,7 +10,7 @@
 
 - [x] Create an account.
 - [x] Log in and out.
-- [ ] Create a personal profile.
+- [x] Create a personal profile.
 - [ ] Upload a profile picture.
 - [ ] Create text posts.
 - [ ] Create photo posts.
@@ -61,7 +61,7 @@ Bonus:
 - [x] Create JSON-API for `Profile` Create, Show, Update. (Dependent Destroy of user).
 - [x] Create Flux `ProfileStore`.
 - [x] Create React `App`, `Display`, `Profile`, `ProfileDisplay`, `AboutProfileDisplay` components.
-- [ ] Users can Log In and see their own `Profile`.
+- [x] Users can Log In and see their own `Profile`.
 
 ### [Phase 3][phase-three]: Basic Profile Editing (0.25 Days) (1.25 Days Total)
 
