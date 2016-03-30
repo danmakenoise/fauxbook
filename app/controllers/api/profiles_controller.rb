@@ -10,10 +10,18 @@ class Api::ProfilesController < ApplicationController
     render :show
   end
 
-  def photoupload
+  def photo_upload
     new_profile_picture = params['0']
     @profile = current_user.profile
     @profile.profile_picture = new_profile_picture
+    @profile.save
+    render :show
+  end
+
+  def cover_photo_upload
+    new_cover_photo = params['0']
+    @profile = current_user.profile
+    @profile.cover_photo = new_cover_photo
     @profile.save
     render :show
   end

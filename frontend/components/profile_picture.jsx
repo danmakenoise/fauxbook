@@ -7,7 +7,7 @@ var ProfilePicture = React.createClass({
     if ( this.props.profile ) {
       return (
         <div className='profile-picture'>
-          <ProfilePhotoUploadTool className='profile-picture-upload' promptMessage='Update Profile Picture' />
+          <ProfilePhotoUploadTool callback={ this._onDrop } className='profile-picture-upload' promptMessage='Update Profile Picture' />
           <img src={ this.props.profile.profile_picture } />
         </div>
       );
@@ -16,6 +16,9 @@ var ProfilePicture = React.createClass({
     }
   },
 
+  _onDrop: function ( files ) {
+    APIUtil.uploadProfilePicture( files );
+  }
 });
 
 module.exports = ProfilePicture;

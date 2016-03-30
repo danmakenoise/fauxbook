@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resource :profile, only: [:show, :update] do
-      patch '/photoupload', to: 'profiles#photoupload'
+      patch '/photoupload', to: 'profiles#photo_upload'
+      patch '/coverphotoupload', to: 'profiles#cover_photo_upload'
     end
   end
 
