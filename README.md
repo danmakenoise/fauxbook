@@ -75,7 +75,7 @@ Bonus:
 
 **Objective:** Users can upload a Profile Picture and Cover Photo for their Profile.
 
-- [ ] Implement backend support for image uploading.
+- [x] Implement backend support for image uploading.
 - [ ] Create React `ProfileHeader`, and `MainProfileDisplay`.
 - [ ] Users now land on their Main Profile View, instead of About View.
 - [ ] Users can upload a profile picture, a cover photo, and change it.
