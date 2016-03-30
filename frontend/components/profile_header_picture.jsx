@@ -6,9 +6,17 @@ var ProfileHeaderPicture = React.createClass({
     return (
       <div className='header-image-container'>
         <ProfilePhotoUploadTool className='header-picture-upload' promptMessage='Update Cover Photo' />
-        <img className='header-image' src='cover.jpg' />
+        { this._headerImage() }
       </div>
     );
+  },
+
+  _headerImage: function () {
+    if ( this.props.profile && this.props.profile.cover_picture ) {
+      return <img className='header-image' src={ this.props.profile.cover_picture } />;
+    } else {
+      return;
+    }
   }
 });
 
