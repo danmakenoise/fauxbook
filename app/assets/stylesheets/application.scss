@@ -252,6 +252,7 @@ body {
   width: 150px;
   padding: 10px;
   border: 1px solid #ccc;
+  z-index: 2;
 }
 
 .profile-picture img {
@@ -279,6 +280,28 @@ body {
   font-size: 12px;
   font-weight: bold;
   text-align: left;
+}
+
+.header-picture-upload {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: black;
+  opacity: 0;
+  padding: 20px;
+  z-index: 1;
+  text-align: right;
+}
+
+.header-picture-upload:hover, .header-image-container:hover .header-picture-upload {
+  cursor: pointer;
+  opacity: .6;
+  z-index: 1;
+}
+
+.profile-picture-upload:hover, .profile-picture:hover .profile-picture-upload {
+  cursor: pointer;
+  opacity: .6;
 }
 
 // about-profile-display--------------------------------------------------------

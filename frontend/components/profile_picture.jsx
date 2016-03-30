@@ -1,16 +1,14 @@
 var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
-var Dropzone = require( 'react-dropzone' );
+var ProfilePhotoUploadTool = require( './profile_photo_upload_tool' );
 
 var ProfilePicture = React.createClass({
   render: function () {
     if ( this.props.profile ) {
       return (
         <div className='profile-picture'>
+          <ProfilePhotoUploadTool className='profile-picture-upload' promptMessage='Update Profile Picture' />
           <img src={ this.props.profile.profile_picture } />
-          <Dropzone className='profile-picture-upload' multiple={ false } onDrop={ this._onDrop }>
-            <span className='upload-prompt'>Update Profile Picture</span>
-          </Dropzone>
         </div>
       );
     } else {
@@ -18,9 +16,6 @@ var ProfilePicture = React.createClass({
     }
   },
 
-  _onDrop: function ( files ) {
-    APIUtil.uploadProfilePicture( files );
-  }
 });
 
 module.exports = ProfilePicture;
