@@ -12,7 +12,8 @@
 - [x] Log in and out.
 - [x] Create a personal profile.
 - [x] Edit their own profile.
-- [ ] Upload a profile picture.
+- [x] Upload a profile picture.
+- [x] Upload a cover photo.
 - [ ] Create text posts.
 - [ ] Create photo posts.
 - [ ] Add other users as friends.
@@ -76,9 +77,8 @@ Bonus:
 **Objective:** Users can upload a Profile Picture and Cover Photo for their Profile.
 
 - [x] Implement backend support for image uploading.
-- [ ] Create React `ProfileHeader`, and `MainProfileDisplay`.
-- [ ] Users now land on their Main Profile View, instead of About View.
-- [ ] Users can upload a profile picture, a cover photo, and change it.
+- [x] Create React `ProfileHeader`, and `MainProfileDisplay`.
+- [x] Users can upload a profile picture, a cover photo, and change it.
 
 ### [Phase 5][phase-five]: Users Text and Photo Posts (1 Day) (2.75 Days Total)
 
