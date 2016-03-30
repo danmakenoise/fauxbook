@@ -11,6 +11,7 @@
 - [x] Create an account.
 - [x] Log in and out.
 - [x] Create a personal profile.
+- [x] Edit their own profile.
 - [ ] Upload a profile picture.
 - [ ] Create text posts.
 - [ ] Create photo posts.
@@ -67,8 +68,8 @@ Bonus:
 
 **Objective:** Ability to edit profile.
 
-- [ ] Create React `EditProfileDisplay`, `EditProfileAttribute`, and `EditProfileAttributeForm`.
-- [ ] Users can Edit their own `Profile`.
+- [x] Create React `EditProfileDisplay`, `EditProfileAttribute`, and `EditProfileAttributeForm`.
+- [x] Users can Edit their own `Profile`.
 
 ### [Phase 4][phase-four]: Profile and Cover Photo Upload (0.5 Days) (1.75 Days Total)
 
