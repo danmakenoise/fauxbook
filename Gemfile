@@ -21,7 +21,9 @@ gem 'bcrypt'
 # use faker for seeding the database
 gem 'faker'
 # use paperclip for image uploading
-gem 'paperclip'
+gem 'paperclip', '5.0.0.beta1'
+# use figaro for key management
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
