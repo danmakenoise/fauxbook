@@ -7,8 +7,9 @@ var ProfilePicture = React.createClass({
     if ( this.props.profile ) {
       return (
         <div className='profile-picture'>
-          <Dropzone multiple={ false } onDrop={ this._onDrop }>
-            <img src={ this.props.profile.profile_picture } />
+          <img src={ this.props.profile.profile_picture } />
+          <Dropzone className='profile-picture-upload' multiple={ false } onDrop={ this._onDrop }>
+            <span className='upload-prompt'>Update Profile Picture</span>
           </Dropzone>
         </div>
       );

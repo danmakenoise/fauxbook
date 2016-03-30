@@ -226,12 +226,34 @@ body {
   width: 150px;
   padding: 10px;
   border: 1px solid #ccc;
+  position: relative;
 }
 
 .profile-picture img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.profile-picture-upload {
+  position: absolute;
+  bottom: 10px;
+  width: 130px;
+  background-color: black;
+  opacity: 0;
+  padding: 10px;
+}
+
+.profile-picture-upload:hover, .profile-picture:hover .profile-picture-upload {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.upload-prompt {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
 }
 
 // about-profile-display--------------------------------------------------------
