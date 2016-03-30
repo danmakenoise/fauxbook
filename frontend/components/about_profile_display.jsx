@@ -1,6 +1,8 @@
 var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
 var ProfileStore = require( '../stores/profile_store' );
+var ProfileAttributeItem = require( './profile_attribute_item' );
+var EditProfileAttribute = require( './edit_profile_attribute' );
 
 var AboutProfileDisplay = React.createClass({
   getInitialState: function () {
@@ -34,18 +36,9 @@ var AboutProfileDisplay = React.createClass({
               <span>Basic Information</span>
             </div>
             <div className='about-section-contents'>
-              <div className='about-section-attribute'>
-                <span className='about-tag'>Gender</span>
-                <span className='about-data'>{ gender }</span>
-              </div>
-              <div className='about-section-attribute'>
-                <span className='about-tag'>Birthday</span>
-                <span className='about-data'>{ birthday }</span>
-              </div>
-              <div className='about-section-attribute'>
-                <span className='about-tag'>Location</span>
-                <span className='about-data'>{ location }</span>
-              </div>
+              <ProfileAttributeItem data={ gender } type="gender" />
+              <ProfileAttributeItem data={ birthday } type="birthday" />
+              <ProfileAttributeItem data={ location } type="location" />
             </div>
           </div>
         </div>

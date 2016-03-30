@@ -221,6 +221,8 @@ body {
 
 // about-profile-display--------------------------------------------------------
 
+// -----standard-display-----
+
 .about-profile-display {
   background-color: #fff;
   margin-top: 20px;
@@ -250,11 +252,65 @@ body {
 
 .about-section-attribute {
   border-top: 1px solid #ccc;
-  width: 300px;
+  width: 600px;
   padding: 10px 0;
 }
 
-.about-data {
+.about-section-attribute button {
+  display: none;
+}
+
+.about-section-attribute:hover button {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background-color: white;
+  color: rgb(58, 87, 149);
+  font-size: 14px;
   float: right;
+  margin-right: 20px;
+  cursor: pointer;
   font-weight: bold;
+}
+
+.table-cell {
+  display: inline-block;
+  width: 200px;
+}
+
+.about-data {
+  font-weight: bold;
+}
+
+.about-tag {
+  text-transform: capitalize;
+}
+
+// -----editing-form-----
+
+.edit-attr-form {
+  margin-top: 10px;
+  background-color: rgb(237, 240, 245);
+  padding: 20px;
+}
+
+.edit-attr-form input[type='submit'] {
+  display: inline-block;
+  float: right;
+  color: rgb(58, 87, 149);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.edit-attr-form input[type='text'] {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 200px;
+  padding: 5px;
+}
+
+.edit-date-input {
+  background-color: white;
+  border: solid 1px #ccc;
+  border-radius: 5px;
 }
