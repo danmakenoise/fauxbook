@@ -5,8 +5,17 @@ class Api::ProfilesController < ApplicationController
   end
 
   def update
-    current_user.profile.update!( profile_params );
-    render json: current_user.profile
+    @profile = current_user.profile
+    @profile.update!( profile_params );
+    render :show
+  end
+
+  def photoupload
+    new_profile_picture = params['0']
+    @profile = current_user.profile
+    @profile.profile_picture = new_profile_picture
+    @profile.save
+    render :show
   end
 
   private

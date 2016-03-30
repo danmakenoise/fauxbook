@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api do
-    resource :profile, only: [:show, :update]
+    resource :profile, only: [:show, :update] do
+      patch '/photoupload', to: 'profiles#photoupload'
+    end
   end
 
   get    '/login', to: 'sessions#new'

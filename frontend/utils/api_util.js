@@ -22,6 +22,26 @@ var APIUtil = {
         callback();
       }
     });
+  },
+
+  uploadProfilePicture: function ( files ) {
+    var data = new FormData();
+    $.each( files, function( key, value ) {
+      data.append( key, value );
+    });
+
+    $.ajax({
+      type: 'PATCH',
+      url: 'api/profile/photoupload',
+      dataType: 'json',
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function( profile ) {
+        APIActions.receiveProfile( profile );
+      }
+    });
   }
 };
 

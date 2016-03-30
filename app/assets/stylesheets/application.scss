@@ -219,6 +219,21 @@ body {
   display: inline;
 }
 
+// profile-display-header-------------------------------------------------------
+
+.profile-picture {
+  background-color: white;
+  width: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 // about-profile-display--------------------------------------------------------
 
 // -----standard-display-----
