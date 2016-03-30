@@ -1,6 +1,7 @@
 class Api::ProfilesController < ApplicationController
   def show
-    render json: current_user.profile
+    @profile = current_user.profile
+    render :show
   end
 
   def update
