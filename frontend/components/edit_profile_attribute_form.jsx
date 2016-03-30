@@ -45,7 +45,7 @@ var EditProfileAttributeForm = React.createClass({
   _generateTextForm: function () {
     return (
       <div>
-        <input type='text' name={ 'profile[' + this.props.type + ']' } placeholder={ this.props.type } />
+        <input type='text' name={ 'profile[' + this.props.type + ']' } defaultValue={ this.props.data } />
         <input type="submit" value="Save" />
       </div>
     );
