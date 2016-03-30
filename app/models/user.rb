@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   def User.find_by_credentials email, password
     user = User.find_by email: email
