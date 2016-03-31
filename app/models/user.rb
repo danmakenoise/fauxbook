@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
+  has_many :authored_posts,
+    class_name: 'Post',
+    primary_key: :id,
+    foreign_key: :author_id
+
   def User.find_by_credentials email, password
     user = User.find_by email: email
     return nil unless user
