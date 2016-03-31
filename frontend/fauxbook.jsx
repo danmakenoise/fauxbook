@@ -13,21 +13,20 @@ var LogIn = require( './components/login' );
 var SessionStore = require( './stores/session_store' );
 
 var _ensureLoggedIn = function ( nextState, replace, asyncCallback ) {
-  if ( SessionStore.currentUserFetched() ) {
+  var _redirectIfNotLoggedIn = function ( replace, callback ) {
     if ( SessionStore.isLoggedIn() ) {
-      asyncCallback();
+      callback();
     } else {
       replace('/login');
-      asyncCallback();
+      callback();
     }
+  };
+
+  if ( SessionStore.currentUserFetched() ) {
+    _redirectIfNotLoggedIn( replace, asyncCallback );
   } else {
     APIUtil.fetchCurrentUser( function() {
-      if ( SessionStore.isLoggedIn() ) {
-        asyncCallback();
-      } else {
-        replace('/login');
-        asyncCallback();
-      }
+      _redirectIfNotLoggedIn( replace, asyncCallback );
     });
   }
 };
