@@ -24,7 +24,7 @@ var EditProfileAttributeForm = React.createClass({
   _generateBirthdayForm: function () {
     return (
       <div>
-        <input type='date' className='edit-date-input' name='profile[birthday]' />
+        <input type='date' value={ this.props.data } className='edit-date-input' name='profile[birthday]' />
         <input type="submit" value="Save" />
       </div>
     );
