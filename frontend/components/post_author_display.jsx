@@ -6,7 +6,11 @@ var PostAuthorDisplay = React.createClass({
   render: function () {
     if ( this.props.profile ) {
       return (
-        <ProfilePicture image={ this.props.profile.profile_picture }/>
+        <div className='post-author-info group'>
+          <ProfilePicture image={ this.props.profile.profile_picture }/>
+          <span className='post-author'>{ this.props.profile.first_name + ' ' + this.props.profile.last_name }</span>
+          <span className='post-date'>March 31</span>
+        </div>
       );
     } else {
       return <div></div>;

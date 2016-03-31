@@ -339,7 +339,8 @@ body {
 
 .post-index {
   margin-top: 20px;
-  width: 100%;
+  width: 60%;
+  margin: 20px auto;
 }
 
 .post {
@@ -349,11 +350,31 @@ body {
   padding: 10px;
 }
 
-.profile-thumb-container {
+.post > p {
+  margin-top: 10px;
+}
+
+.post-author {
+  vertical-align: top;
+  color: rgb(58, 87, 149);
+  font-weight: bold;
+  margin-left: 10px;
   display: block;
+}
+
+.post-date {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.profile-thumb-container {
+  float: left;
+  display: inline-block;
   width: 50px;
   height: 50px;
   overflow: hidden;
+  margin-right: 10px;
 }
 
 .profile-thumb {
