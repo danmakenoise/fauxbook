@@ -44,11 +44,7 @@ var LogIn = React.createClass({
             <h1>Sign Up</h1>
             <h2>It's free because you are the product.</h2>
 
-            <form action='<%= signup_url %>' method='post'>
-              <input type='hidden'
-                name='authenticity_token'
-                value='<%= form_authenticity_token %>' />
-
+            <form ref="signUpForm" onSubmit={ this._createUser } >
               <input type='text' className='name-input' name='profile[first_name]' placeholder='First name' />
 
               <input type='text' className='name-input' name='profile[last_name]' placeholder='Last name' />
@@ -79,6 +75,12 @@ var LogIn = React.createClass({
     event.preventDefault();
     var formData = $( this.refs.logInForm ).serialize();
     APIUtil.logInUser( formData, this._redirectToApp );
+  },
+
+  _createUser: function ( event ) {
+    event.preventDefault();
+    var formData = $( this.refs.signUpForm ).serialize();
+    APIUtil.createUser( formData, this._redirectToApp );
   },
 
   _redirectToApp: function () {

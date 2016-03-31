@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
   def create
+    debugger
     user = User.new user_params
     user.profile = Profile.new profile_params
 
@@ -7,9 +8,9 @@ class UsersController < ApplicationController
       user.profile.user_id = user.id
       user.profile.save
       log_in! user
-      redirect_to :root
+      render json: current_user
     else
-      redirect_to login_url
+      render text: 'invalid information', status: 422
     end
   end
 

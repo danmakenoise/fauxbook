@@ -1,6 +1,19 @@
 var APIActions = require( '../actions/api_actions' );
 
 var APIUtil = {
+  createUser: function ( formData, callback ) {
+    $.ajax({
+      type: 'POST',
+      url: 'api/users',
+      dataType: 'json',
+      data: formData,
+      success: function ( currentUser ) {
+        APIActions.receiveCurrentUser( currentUser );
+        callback();
+      }
+    });
+  },
+
   fetchProfile: function () {
     $.get({
       url: 'api/profile',
