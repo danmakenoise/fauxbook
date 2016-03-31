@@ -14,7 +14,7 @@
 - [x] Edit their own profile.
 - [x] Upload a profile picture.
 - [x] Upload a cover photo.
-- [ ] Create text posts.
+- [x] Create text posts.
 - [ ] Create photo posts.
 - [ ] Add other users as friends.
 - [ ] See friend's personal profiles.
@@ -84,10 +84,10 @@ Bonus:
 
 **Objective:** Users can create Text and Photo posts on their own profiles.
 
-- [ ] Create Rails' `Post` backend, model, and controller.
-- [ ] Create JSON-API for Post Create, Show, Index, Destroy.
-- [ ] Create Flux `PostStore`.
-- [ ] Create React `Feed`, `PostIndex`, `PostForm`, and `PostItem`.
+- [x] Create Rails' `Post` backend, model, and controller.
+- [x] Create JSON-API for Post Create, Show, Index, Destroy.
+- [x] Create Flux `PostStore`.
+- [x] Create React `Feed`, `PostIndex`, `PostForm`, and `PostItem`.
 - [ ] Users now land on their Feed view.
 - [ ] Users can make and delete text/photo posts and see a feed of posts.
 

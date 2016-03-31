@@ -2,6 +2,7 @@ var APIActions = require( '../actions/api_actions' );
 
 var APIUtil = {
   createPost: function ( post, callback ) {
+    debugger;
     $.ajax({
       type: 'POST',
       url: 'api/posts',
@@ -13,6 +14,7 @@ var APIUtil = {
       },
     });
   },
+
   createUser: function ( formData, callback ) {
     $.ajax({
       type: 'POST',

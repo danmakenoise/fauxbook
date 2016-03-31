@@ -30,7 +30,7 @@ var PostForm = React.createClass({
 
   _handleKey: function ( e ) {
     var enterKey = 13;
-    if ( e.keyCode === enterKey ) {
+    if ( e.keyCode === enterKey &! e.shiftKey ) {
       APIUtil.createPost({
         post: {
           body: this.state.body,
