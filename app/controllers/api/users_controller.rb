@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
   def create
-    debugger
     user = User.new user_params
     user.profile = Profile.new profile_params
 
