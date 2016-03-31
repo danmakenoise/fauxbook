@@ -3,6 +3,13 @@ var ProfileConstants = require( '../constants/profile_constants' );
 var SessionConstants = require( '../constants/session_constants' );
 
 var APIActions = {
+  logOut: function ( callback ) {
+    AppDispatcher.dispatch({
+      actionType: SessionConstants.SESSION_DESTROYED,
+      callback: callback
+    });
+  },
+
   receiveCurrentUser: function ( currentUser ) {
     AppDispatcher.dispatch({
       actionType: SessionConstants.CURRENT_USER_RECEIVED,

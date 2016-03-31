@@ -1,4 +1,13 @@
 class Api::SessionsController < ApplicationController
+
+  def show
+    if current_user
+      render json: current_user
+    else
+      render text: 'not logged in', status: 401
+    end
+  end
+
   def create
     email = params[:user][:email]
     password = params[:user][:password]
@@ -15,6 +24,6 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     log_out!
-    redirect_to :root
+    render text: 'logged out', status: 200
   end
 end

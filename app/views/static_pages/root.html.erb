@@ -1,12 +1,1 @@
 <div id='app'></div>
-<% if logged_in? %>
-  <hr>
-  <p><em>logged in as: <%= current_user.email %></p>
-  <form method="post" action="<%= logout_url %>">
-    <input type="hidden"
-      name="authenticity_token"
-      value="<%= form_authenticity_token %>">
-    <input type="hidden" value="delete" name="_method">
-    <button>logout</button>
-  </form>
-<% end %>

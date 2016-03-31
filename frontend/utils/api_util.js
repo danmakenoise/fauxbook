@@ -11,6 +11,20 @@ var APIUtil = {
     });
   },
 
+  fetchCurrentUser: function ( completion ) {
+    $.ajax({
+      type: 'GET',
+      url: 'api/session',
+      dataType: 'json',
+      success: function ( currentUser ) {
+        APIActions.receiveCurrentUser( currentUser );
+      },
+      complete: function() {
+        completion && completion();
+      }
+    });
+  },
+
   logInUser: function ( formData, callback ) {
     $.ajax({
       type: 'POST',
@@ -20,6 +34,16 @@ var APIUtil = {
       success: function ( currentUser ) {
         APIActions.receiveCurrentUser( currentUser );
         callback();
+      }
+    });
+  },
+
+  logOut: function ( callback ) {
+    $.ajax({
+      type: 'DELETE',
+      url: 'api/session',
+      success: function () {
+        APIActions.logOut( callback );
       }
     });
   },

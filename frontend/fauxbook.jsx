@@ -12,9 +12,29 @@ var Profile = require( './components/profile' );
 var LogIn = require( './components/login' );
 var SessionStore = require( './stores/session_store' );
 
+var _ensureLoggedIn = function ( nextState, replace, asyncCallback ) {
+  if ( SessionStore.currentUserFetched() ) {
+    if ( SessionStore.isLoggedIn() ) {
+      asyncCallback();
+    } else {
+      replace('/login');
+      asyncCallback();
+    }
+  } else {
+    APIUtil.fetchCurrentUser( function() {
+      if ( SessionStore.isLoggedIn() ) {
+        asyncCallback();
+      } else {
+        replace('/login');
+        asyncCallback();
+      }
+    });
+  }
+};
+
 var routes = (
   <Route>
-    <Route path='/' component={ App }>
+    <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
       <IndexRoute components={ Profile } />
     </Route>
     <Route path='/login' component={ LogIn } />

@@ -82,7 +82,6 @@ var LogIn = React.createClass({
   },
 
   _redirectToApp: function () {
-    debugger;
     this.props.history.push('/');
   }
 });
