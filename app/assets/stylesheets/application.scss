@@ -273,12 +273,19 @@ body {
   position: absolute;
   background-color: white;
   width: 150px;
-  padding: 10px;
+  height: 150px;
   border: 1px solid #ccc;
   z-index: 2;
+  padding: 10px;
 }
 
-.profile-picture img {
+.profile-picture-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.profile-picture-container img {
   width: 100%;
   height: auto;
   display: block;
@@ -291,6 +298,7 @@ body {
   background-color: black;
   opacity: 0;
   padding: 10px;
+  z-index: 3;
 }
 
 .profile-picture-upload:hover, .profile-picture:hover .profile-picture-upload {
@@ -325,6 +333,32 @@ body {
 .profile-picture-upload:hover, .profile-picture:hover .profile-picture-upload {
   cursor: pointer;
   opacity: .6;
+}
+
+// post-index-------------------------------------------------------------------
+
+.post-index {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.post {
+  background-color: white;
+  border: solid 1px #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.profile-thumb-container {
+  display: block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.profile-thumb {
+  width: 100%;
+  height: auto;
 }
 
 // about-profile-display--------------------------------------------------------
