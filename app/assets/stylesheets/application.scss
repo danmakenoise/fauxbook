@@ -221,6 +221,26 @@ body {
 .sign-up #female {
   margin-left: 0px;
 }
+// main-app-styles--------------------------------------------------------------
+
+.log-out-button {
+  margin: 10px;
+  float: right;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.app-logo h1 {
+  cursor: default;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  float: left;
+  margin: 15px 10px;
+}
 
 // profile-display-header-------------------------------------------------------
 

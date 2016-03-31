@@ -6,9 +6,10 @@ var App = React.createClass({
   render: function () {
     return (
       <div className='app'>
-        <h1 className='app-logo bar'>fauxbook
-          <button onClick={ this._logOut } value='Log Out' />
-        </h1>
+        <div className='app-logo bar group'>
+          <h1>fauxbook</h1>
+          <button className='log-out-button' onClick={ this._logOut } >Log Out</button>
+        </div>
         <Display>
           { this.props.children }
         </Display>
