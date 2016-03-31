@@ -31,12 +31,19 @@ var _ensureLoggedIn = function ( nextState, replace, asyncCallback ) {
   }
 };
 
+var _ensureNotLoggedIn = function ( nextState, replace, asyncCallback ) {
+  if ( SessionStore.isLoggedIn() ) {
+    replace( '/' );
+  }
+  asyncCallback();
+};
+
 var routes = (
   <Route>
     <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
       <IndexRoute components={ Profile } />
     </Route>
-    <Route path='/login' component={ LogIn } />
+    <Route path='/login' onEnter={ _ensureNotLoggedIn } component={ LogIn } />
   </Route>
 );
 
