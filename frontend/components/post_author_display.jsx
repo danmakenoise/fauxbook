@@ -4,12 +4,12 @@ var SessionStore = require( '../stores/session_store' );
 
 var PostAuthorDisplay = React.createClass({
   render: function () {
-    if ( this.props.profile ) {
+    if ( this.props.post ) {
       return (
         <div className='post-author-info group'>
-          <ProfilePicture image={ this.props.profile.profile_picture }/>
-          <span className='post-author'>{ this.props.profile.first_name + ' ' + this.props.profile.last_name }</span>
-          <span className='post-date'>March 31</span>
+          <ProfilePicture image={ this.props.post.author_picture }/>
+          <span className='post-author'>{ this.props.post.author_name }</span>
+          <span className='post-date'>{ this.props.post.date }</span>
         </div>
       );
     } else {

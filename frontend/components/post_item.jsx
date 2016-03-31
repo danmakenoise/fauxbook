@@ -5,8 +5,8 @@ var PostItem = React.createClass({
   render: function () {
     return (
       <div className='post group'>
-        <PostAuthorDisplay profile={ this.props.profile }/>
-        <p>Test Post Body</p>
+        <PostAuthorDisplay post={ this.props.post }/>
+        <p>{ this.props.post.body }</p>
       </div>
     );
 

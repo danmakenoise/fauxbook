@@ -1,14 +1,38 @@
 var React = require( 'react' );
 var PostItem = require( './post_item' );
+var PostStore = require( '../stores/post_store' );
+var APIUtil = require( '../utils/api_util' );
 
 var PostIndex = React.createClass({
+  getInitialState: function () {
+    return { posts: null };
+  },
+
+  componentDidMount: function () {
+    APIUtil.fetchPosts( this.props.profile.id );
+    this.listener = PostStore.addListener( this._handleChange );
+  },
+
+  componentWillUnmount: function () {
+    this.listener.remove();
+  },
+
   render: function () {
-    return (
-      <div className='post-index'>
-        <PostItem profile={ this.props.profile }/>
-        <PostItem profile={ this.props.profile }/>
-      </div>
-    );
+    if ( this.state.posts ) {
+      return (
+        <div className='post-index'>
+          { this.state.posts.map( function ( post ) {
+            return <PostItem key={ post.id } post={ post } />;
+          })}
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
+  },
+
+  _handleChange: function () {
+    this.setState( { posts: PostStore.all() } );
   }
 });
 

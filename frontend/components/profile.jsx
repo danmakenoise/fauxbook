@@ -18,11 +18,15 @@ var Profile = React.createClass({
   },
 
   render: function () {
-    return (
-      <div className='profile'>
-        <ProfileDisplay profile={ this.state.profile }/>
-      </div>
-    );
+    if ( this.state.profile ) {
+      return (
+        <div className='profile'>
+          <ProfileDisplay profile={ this.state.profile }/>
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
   },
 
   _handleChange: function () {

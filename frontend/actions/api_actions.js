@@ -1,6 +1,7 @@
 var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var ProfileConstants = require( '../constants/profile_constants' );
 var SessionConstants = require( '../constants/session_constants' );
+var PostConstants = require( '../constants/post_constants' );
 
 var APIActions = {
   logOut: function ( callback ) {
@@ -14,6 +15,13 @@ var APIActions = {
     AppDispatcher.dispatch({
       actionType: SessionConstants.CURRENT_USER_RECEIVED,
       currentUser: currentUser
+    });
+  },
+
+  receivePosts: function ( posts ) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.POSTS_RECEIVED,
+      posts: posts
     });
   },
 

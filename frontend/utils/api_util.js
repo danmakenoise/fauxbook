@@ -14,6 +14,17 @@ var APIUtil = {
     });
   },
 
+  fetchPosts: function ( profileId ) {
+    $.get({
+      url: 'api/posts',
+      dataType: 'json',
+      data: { profileId: profileId },
+      success: function ( posts ) {
+        APIActions.receivePosts( posts );
+      }
+    });
+  },
+
   fetchProfile: function () {
     $.get({
       url: 'api/profile',
