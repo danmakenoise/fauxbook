@@ -2,7 +2,8 @@ class Api::SessionsController < ApplicationController
 
   def show
     if current_user
-      render json: current_user
+      @user = current_user
+      render :show
     else
       render text: 'not logged in', status: 401
     end
@@ -16,7 +17,8 @@ class Api::SessionsController < ApplicationController
 
     if user
       log_in! user
-      render json: current_user
+      @user = user
+      render :show
     else
       render text: 'bad credentials', status: 401
     end

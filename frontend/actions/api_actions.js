@@ -18,6 +18,13 @@ var APIActions = {
     });
   },
 
+  receivePost: function ( post ) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.POST_RECEIVED,
+      post: post
+    });
+  },
+
   receivePosts: function ( posts ) {
     AppDispatcher.dispatch({
       actionType: PostConstants.POSTS_RECEIVED,

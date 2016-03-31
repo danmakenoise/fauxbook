@@ -7,7 +7,8 @@ class Api::UsersController < ApplicationController
       user.profile.user_id = user.id
       user.profile.save
       log_in! user
-      render json: current_user
+      @user = user
+      render :show
     else
       render text: 'invalid information', status: 422
     end

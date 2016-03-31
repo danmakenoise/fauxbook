@@ -2,6 +2,7 @@ var React = require( 'react' );
 var PostItem = require( './post_item' );
 var PostStore = require( '../stores/post_store' );
 var APIUtil = require( '../utils/api_util' );
+var PostForm = require( './post_form' );
 
 var PostIndex = React.createClass({
   getInitialState: function () {
@@ -21,6 +22,7 @@ var PostIndex = React.createClass({
     if ( this.state.posts ) {
       return (
         <div className='post-index'>
+          <PostForm profile={ this.props.profile } />
           { this.state.posts.map( function ( post ) {
             return <PostItem key={ post.id } post={ post } />;
           })}

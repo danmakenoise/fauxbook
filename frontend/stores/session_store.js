@@ -15,6 +15,10 @@ SessionStore.isLoggedIn = function () {
   return !!_currentUser;
 };
 
+SessionStore.userPicture = function () {
+  return _currentUser.picture;
+};
+
 SessionStore.__onDispatch = function ( payload ) {
   switch ( payload.actionType ) {
   case SessionConstants.CURRENT_USER_RECEIVED:

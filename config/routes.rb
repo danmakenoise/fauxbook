@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api do
-    resources :posts, only: :index
+    resources :posts, only: [:create, :index]
     resources :users, only: :create
     resource :session, only: [:create, :show, :destroy]
     resource :profile, only: [:show, :update] do
