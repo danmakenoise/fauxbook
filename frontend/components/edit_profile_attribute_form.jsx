@@ -53,7 +53,6 @@ var EditProfileAttributeForm = React.createClass({
 
   _handleSubmit: function ( event ) {
     event.preventDefault();
-    debugger;
     var formData = $( this.refs.form ).serialize();
     APIUtil.updateProfile( formData, this.props.onSave );
   }

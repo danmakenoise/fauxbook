@@ -10,6 +10,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var App = require( './components/app' );
 var Profile = require( './components/profile' );
 var LogIn = require( './components/login' );
+var SessionStore = require( './stores/session_store' );
 
 var routes = (
   <Route>

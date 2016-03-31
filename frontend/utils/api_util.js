@@ -11,6 +11,19 @@ var APIUtil = {
     });
   },
 
+  logInUser: function ( formData, callback ) {
+    $.ajax({
+      type: 'POST',
+      url: 'api/session',
+      dataType: 'json',
+      data: formData,
+      success: function ( currentUser ) {
+        APIActions.receiveCurrentUser( currentUser );
+        callback();
+      }
+    });
+  },
+
   updateProfile: function ( formData, callback ) {
     $.ajax({
       type: 'PATCH',

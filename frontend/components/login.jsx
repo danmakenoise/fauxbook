@@ -1,4 +1,5 @@
 var React = require( 'react' );
+var APIUtil = require( '../utils/api_util' );
 
 var LogIn = React.createClass({
   render: function () {
@@ -10,10 +11,7 @@ var LogIn = React.createClass({
 
             <h1>fauxbook</h1>
 
-            <form action='<%= login_url %>' method='post'>
-              <input type='hidden'
-                name='authenticity_token'
-                value='<%= form_authenticity_token %>'/>
+            <form ref='logInForm' onSubmit={ this._logIn }>
 
               <label>Email
                 <input type='text' name='user[email]' placeholder='me@example.com' />
@@ -75,6 +73,17 @@ var LogIn = React.createClass({
         </div>
       </div>
     );
+  },
+
+  _logIn: function ( event ) {
+    event.preventDefault();
+    var formData = $( this.refs.logInForm ).serialize();
+    APIUtil.logInUser( formData, this._redirectToApp );
+  },
+
+  _redirectToApp: function () {
+    debugger;
+    this.props.history.push('/');
   }
 });
 
