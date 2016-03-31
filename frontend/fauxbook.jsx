@@ -9,10 +9,14 @@ var IndexRoute = ReactRouter.IndexRoute;
 
 var App = require( './components/app' );
 var Profile = require( './components/profile' );
+var LogIn = require( './components/login' );
 
 var routes = (
-  <Route path='/' component={ App }>
-    <IndexRoute components={ Profile } />
+  <Route>
+    <Route path='/' component={ App }>
+      <IndexRoute components={ Profile } />
+    </Route>
+    <Route path='/login' component={ LogIn } />
   </Route>
 );
 

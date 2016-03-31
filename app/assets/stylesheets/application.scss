@@ -158,7 +158,7 @@ body {
   list-style-image: url(image_path('search.png'));
 }
 
-.splash span {
+.splash span:first-child {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -188,6 +188,7 @@ body {
   background-color: white;
   border: 1px solid rgb(189, 199, 216);
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .sign-up input[type='submit'] {
@@ -206,10 +207,6 @@ body {
   margin-bottom: 20px;
 }
 
-.sign-up label {
-  margin-top: 20px;
-  display: block;
-}
 
 .sign-up input[type='submit']:hover {
   background-image: linear-gradient(rgb(121, 188, 100), rgb(87, 136, 67));
@@ -217,6 +214,13 @@ body {
 
 .sign-up input[type='radio'] {
   display: inline;
+  margin-top: 0px;
+  margin-right: 5px;
+  margin-left: 20px;
+}
+
+.sign-up #female {
+  margin-left: 0px;
 }
 
 // profile-display-header-------------------------------------------------------
