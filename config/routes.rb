@@ -9,4 +9,6 @@ Rails.application.routes.draw do
       patch '/coverphotoupload', to: 'profiles#cover_photo_upload'
     end
   end
+
+  get '*path', to: redirect( '/' )
 end
