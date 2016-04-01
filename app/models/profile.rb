@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
-  has_attached_file :profile_picture, styles: { original: "600", medium: "200x200>" }, default_url: ActionController::Base.helpers.image_url('default_profile_picture.jpg')
-  has_attached_file :cover_photo, styles: { original: "900" }, default_url: ActionController::Base.helpers.image_url('default_profile_picture.jpg')
+  has_attached_file :profile_picture, styles: { original: "600", medium: "200x200>" }, default_url: 'images/default_profile_picture.jpg'
+  has_attached_file :cover_photo, styles: { original: "900" }, default_url: 'images/default_profile_picture.jpg'
 
   validates :user_id, :first_name, :last_name, :birthday, :gender, presence: true
   validates :gender, inclusion: { in: %w(M F), message: 'Please pick a gender' }
