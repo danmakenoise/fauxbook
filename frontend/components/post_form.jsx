@@ -6,7 +6,7 @@ var SessionStore = require( '../stores/session_store' );
 
 var PostForm = React.createClass({
   getInitialState: function () {
-    return { rows: 4, body: '', photo: null, file: null };
+    return { rows: 4, body: '', photo: null, file: null, posting: false };
   },
 
   render: function () {
@@ -16,9 +16,14 @@ var PostForm = React.createClass({
           <span>Post</span>
           <Dropzone className='post-form-image-upload' onDrop={ this._updatePhoto } >Upload Photo</Dropzone>
         </div>
-        { this._displayPhoto() }
-        <ProfilePicture image={ SessionStore.userPicture() } />
-        <textarea onKeyDown={ this._handleKey } ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder="What's going on?" rows={ this.state.rows } cols='71' />
+        <div className='group'>
+          { this._displayPhoto() }
+          <ProfilePicture image={ SessionStore.userPicture() } />
+          <textarea ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder="What's going on?" rows={ this.state.rows } cols='71' />
+        </div>
+        <div className='post-form-submit-container group'>
+          <button onClick={ this._handleSubmit } className='post-form-submit-button'>Post</button>
+        </div>
       </form>
     );
   },
@@ -40,10 +45,12 @@ var PostForm = React.createClass({
     });
   },
 
-  _handleKey: function ( e ) {
-    var enterKey = 13;
-    if ( e.keyCode === enterKey &! e.shiftKey ) {
+  _handleSubmit: function ( e ) {
+    e.preventDefault();
+
+    if ( !this.state.posting ) {
       APIUtil.createPost( this._generatePostData(), this._clearPost);
+      this.setState( { posting: true } );
     }
   },
 
@@ -72,7 +79,7 @@ var PostForm = React.createClass({
   },
 
   _clearPost: function () {
-    this.setState( { rows: 4, body: '', photo: null, file: null });
+    this.setState( { rows: 4, body: '', photo: null, file: null, posting: false });
   }
 });
 

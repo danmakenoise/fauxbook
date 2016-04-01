@@ -356,6 +356,7 @@ body {
 }
 
 .post-form-nav {
+  padding-bottom: 5px;
   margin-bottom: 10px;
   border-bottom: solid 1px #ccc;
 }
@@ -377,6 +378,22 @@ body {
   border: 0;
   font-size: 14px;
   float: right;
+}
+
+.post-form-submit-container {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: solid 1px #ccc;
+}
+
+.post-form-submit-button {
+  float: right;
+  color: white;
+  background-color: rgb(91, 116, 168);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-color: #2f477a #29447e #1a356e;
 }
 
 // -----posts-----
