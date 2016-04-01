@@ -9,6 +9,10 @@ var PostForm = React.createClass({
     return { rows: 4, body: '', photo: null, file: null, posting: false };
   },
 
+  componentWillReceiveProps: function () {
+    this.setState( { rows: 4, body: '', photo: null, file: null, posting: false });
+  },
+
   render: function () {
     return (
       <form className='post-form group' >
@@ -19,13 +23,21 @@ var PostForm = React.createClass({
         <div className='group'>
           { this._displayPhoto() }
           <ProfilePicture image={ SessionStore.userPicture() } />
-          <textarea ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder="What's going on?" rows={ this.state.rows } cols='71' />
+          <textarea ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder={ this._placeHolder() } rows={ this.state.rows } cols='71' />
         </div>
         <div className='post-form-submit-container group'>
           <button onClick={ this._handleSubmit } className='post-form-submit-button'>Post</button>
         </div>
       </form>
     );
+  },
+
+  _placeHolder: function () {
+    if ( this.props.profile.user_id === SessionStore.currentUserId() ) {
+      return "What's going on?";
+    } else {
+      return "Post on " + this.props.profile.first_name + "'s wall.";
+    }
   },
 
   _displayPhoto: function () {
