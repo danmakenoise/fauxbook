@@ -337,19 +337,49 @@ body {
 
 // post-index-------------------------------------------------------------------
 
+// -----post-form-----
+
 .post-form {
   background-color: white;
   border: 1px solid #ccc;
   margin-bottom: 20px;
   padding: 10px;
+  border-radius: 5px;
+}
+
+.post-photo-preview {
+  height: 200px;
+  text-align: center;
+  padding: 10px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
+
+.post-form-nav {
+  margin-bottom: 10px;
+  border-bottom: solid 1px #ccc;
+}
+
+.post-form-nav span, .post-form-image-upload {
+  display: inline;
+  font-size: 12px;
+  color: rgb(58, 87, 149);
+  font-weight: bold;
+}
+
+.post-form-image-upload {
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .post-form-input {
   display: inline;
   border: 0;
   font-size: 14px;
+  float: right;
 }
 
+// -----posts-----
 .post-index {
   margin-top: 20px;
   width: 60%;
@@ -359,6 +389,7 @@ body {
 .post {
   background-color: white;
   border: solid 1px #ccc;
+  border-radius: 5px;
   margin-bottom: 20px;
   padding: 10px;
 }
@@ -391,6 +422,19 @@ body {
 }
 
 .profile-thumb {
+  width: 100%;
+  height: auto;
+}
+
+.post-photo-container {
+  margin-top: 10px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  position: relative;
+  border-radius: 5px;
+}
+
+.post-photo {
   width: 100%;
   height: auto;
 }

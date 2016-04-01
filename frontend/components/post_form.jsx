@@ -25,7 +25,7 @@ var PostForm = React.createClass({
 
   _displayPhoto: function () {
     if ( this.state.photo ) {
-      return <img src={ this.state.photo } />;
+      return <img className='post-photo-preview' src={ this.state.photo } />;
     }
   },
 

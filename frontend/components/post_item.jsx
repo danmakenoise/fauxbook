@@ -14,7 +14,11 @@ var PostItem = React.createClass({
 
   _displayPhoto: function () {
     if ( this.props.post.photo ) {
-      return <img src={ this.props.post.photo } />;
+      return (
+        <div className='post-photo-container'>
+          <img className='post-photo' src={ this.props.post.photo } />
+        </div>
+      );
     }
   }
 });
