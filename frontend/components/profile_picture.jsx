@@ -6,22 +6,26 @@ var ProfilePicture = React.createClass({
   render: function () {
     if ( this.props.profile ) {
       return (
-        <div className='profile-picture'>
+        <a className='profile-picture' href={ this._linkToProfile() } >
           <ProfilePhotoUploadTool callback={ this._onDrop } className='profile-picture-upload' promptMessage='Update Profile Picture' />
           <div className='profile-picture-container'>
             <img src={ this.props.profile.profile_picture } />
           </div>
-        </div>
+        </a>
       );
     } else if ( this.props.image ) {
       return (
-        <div className='profile-thumb-container'>
+        <a className='profile-thumb-container' href={ this._linkToProfile() } >
           <img className='profile-thumb' src={ this.props.image } />
-        </div>
+        </a>
       );
     } else {
       return <div className='profile-picture'></div>;
     }
+  },
+
+  _linkToProfile: function () {
+    return '/#/users/' + this.props.targetUser;
   },
 
   _onDrop: function ( files ) {
