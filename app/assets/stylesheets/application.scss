@@ -60,6 +60,19 @@ body {
   margin: auto;
 }
 
+.small-blue-button {
+  background-color: rgb(91, 116, 168);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-color: #2f477a #29447e #1a356e;
+  color: white;
+}
+
+.transparent {
+  opacity: 0.5;
+}
+
 // unauthenticated user landing page--------------------------------------------
 
 // -----sign-in bar-----
@@ -490,6 +503,10 @@ body {
   height: auto;
 }
 
+.post-delete-button {
+  margin-top: 10px;
+  float: right;
+}
 // about-profile-display--------------------------------------------------------
 
 // -----standard-display-----

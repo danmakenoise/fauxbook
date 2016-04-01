@@ -37,6 +37,13 @@ var APIActions = {
       actionType: ProfileConstants.PROFILE_RECEIVED,
       profile: profile
     });
+  },
+
+  removePost: function ( post ) {
+    AppDispatcher.dispatch({
+      actionType: PostConstants.POST_REMOVED,
+      post: post
+    });
   }
 };
 

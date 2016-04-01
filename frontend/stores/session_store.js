@@ -15,6 +15,10 @@ SessionStore.isLoggedIn = function () {
   return !!_currentUser;
 };
 
+SessionStore.currentUserId = function () {
+  return _currentUser.id;
+};
+
 SessionStore.userPicture = function () {
   return _currentUser.picture;
 };

@@ -30,6 +30,17 @@ var APIUtil = {
     });
   },
 
+  deletePost: function ( postId ) {
+    $.ajax({
+      type: 'DELETE',
+      url: 'api/posts/' + postId,
+      dataType: 'json',
+      success: function ( post ) {
+        APIActions.removePost( post );
+      }
+    });
+  },
+
   fetchPosts: function ( profileId ) {
     $.get({
       url: 'api/posts',

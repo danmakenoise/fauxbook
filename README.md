@@ -89,7 +89,7 @@ Bonus:
 - [x] Create Flux `PostStore`.
 - [x] Create React `Feed`, `PostIndex`, `PostForm`, and `PostItem`.
 - [x] Users now land on their Feed view.
-- [ ] Users can make and delete text/photo posts and see a feed of posts.
+- [x] Users can make and delete text/photo posts and see a feed of posts.
 
 ### [Phase 6][phase-six]: Friendship and Profile Posting (1 Day) (3.75 Days Total)
 

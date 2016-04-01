@@ -16,6 +16,16 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find( params[:id] )
+    if @post.author_id == current_user.id
+      @post.destroy
+      render :show
+    else
+      render text: 'unauthorized', status: 401
+    end
+  end
+
   private
 
   def post_params
