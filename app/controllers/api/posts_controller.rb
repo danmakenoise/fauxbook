@@ -19,7 +19,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require( :post ).permit :body, :profile_id
+    params.require( :post ).permit :body, :profile_id, :photo
   end
 
   def ensure_logged_in

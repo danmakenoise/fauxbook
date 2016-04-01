@@ -1,5 +1,7 @@
 json.array! @posts do |post|
   profile_picture = post.author.profile.profile_picture.exists? ? post.author.profile.profile_picture : asset_path('default_profile_picture.jpg')
+  photo = post.photo.exists? ? post.photo.url(:medium) : false
+  json.photo photo
   json.id post.id
   json.body post.body
   json.author_name "#{post.author.profile.first_name} #{post.author.profile.last_name}"

@@ -43,13 +43,21 @@ var PostForm = React.createClass({
   _handleKey: function ( e ) {
     var enterKey = 13;
     if ( e.keyCode === enterKey &! e.shiftKey ) {
-      APIUtil.createPost({
-        post: {
-          body: this.state.body,
-          profile_id: this.props.profile.id
-        }
-      }, this._clearPost);
+      APIUtil.createPost( this._generatePostData(), this._clearPost);
     }
+  },
+
+  _generatePostData: function () {
+    var data = new FormData();
+
+    if ( this.state.photo ) {
+      data.append( 'post[photo]', this.state.file );
+    }
+
+    data.append( 'post[body]', this.state.body );
+    data.append( 'post[profile_id]', this.props.profile.id );
+
+    return data;
   },
 
   _updatePhoto: function ( files ) {
@@ -64,7 +72,7 @@ var PostForm = React.createClass({
   },
 
   _clearPost: function () {
-    this.setState( { rows: 4, body: '' });
+    this.setState( { rows: 4, body: '', photo: null, file: null });
   }
 });
 

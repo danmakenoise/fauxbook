@@ -1,12 +1,15 @@
 var APIActions = require( '../actions/api_actions' );
 
 var APIUtil = {
-  createPost: function ( post, callback ) {
+  createPost: function ( data, callback ) {
     $.ajax({
       type: 'POST',
       url: 'api/posts',
       dataType: 'json',
-      data: post,
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
       success: function ( post ) {
         APIActions.receivePost( post );
         callback();

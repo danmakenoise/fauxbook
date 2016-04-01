@@ -6,10 +6,16 @@ var PostItem = React.createClass({
     return (
       <div className='post group'>
         <PostAuthorDisplay post={ this.props.post }/>
+        { this._displayPhoto() }
         <p>{ this.props.post.body }</p>
       </div>
     );
+  },
 
+  _displayPhoto: function () {
+    if ( this.props.post.photo ) {
+      return <img src={ this.props.post.photo } />;
+    }
   }
 });
 
