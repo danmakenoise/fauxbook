@@ -25,6 +25,11 @@ var PostIndex = React.createClass({
     this.listener.remove();
   },
 
+  componentWillReceiveProps: function ( newProps ) {
+    PostStore.destroy();
+    APIUtil.fetchPosts( newProps.profile.id );
+  },
+
   render: function () {
     if ( this.state.posts ) {
       return (

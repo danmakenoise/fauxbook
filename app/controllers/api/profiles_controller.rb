@@ -1,6 +1,11 @@
 class Api::ProfilesController < ApplicationController
   def show
-    @profile = current_user.profile
+    if params[:id]
+      @profile = Profile.find_by user_id: params[:id]
+    else
+      @profile = current_user.profile
+    end
+    
     render :show
   end
 

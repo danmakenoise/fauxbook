@@ -12,7 +12,7 @@ var Profile = React.createClass({
 
   componentDidMount: function () {
     this.listener = ProfileStore.addListener( this._handleChange );
-    APIUtil.fetchProfile();
+    this._determineProfile( this.props );
   },
 
   componentWillUnmount: function () {
@@ -20,12 +20,16 @@ var Profile = React.createClass({
     this.listener.remove();
   },
 
+  componentWillReceiveProps: function ( newProps ) {
+    this._determineProfile( newProps );
+  },
+
   render: function () {
     if ( this.state.profile ) {
       return (
         <div className='profile'>
           <ProfileHeader profile={ this.state.profile }/>
-          { React.cloneElement( this.props.children, {
+          { this.props.children && React.cloneElement( this.props.children, {
             profile: this.state.profile
           })}
         </div>
@@ -33,6 +37,16 @@ var Profile = React.createClass({
     } else {
       return <div></div>;
     }
+  },
+
+  _determineProfile: function ( props ) {
+    var targetProfile;
+
+    if ( props.params.hasOwnProperty( 'id' ) ) {
+      targetProfile = props.params.id;
+    }
+
+    APIUtil.fetchProfile( targetProfile );
   },
 
   _handleChange: function () {

@@ -52,10 +52,11 @@ var APIUtil = {
     });
   },
 
-  fetchProfile: function () {
+  fetchProfile: function ( targetProfile ) {
     $.get({
       url: 'api/profile',
       dataType: 'json',
+      data: { id: targetProfile },
       success: function ( profile ) {
         APIActions.receiveProfile( profile );
       }

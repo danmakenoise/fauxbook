@@ -47,6 +47,9 @@ var routes = (
         <IndexRoute component={ PostIndex } />
         <Route path='about' component={ AboutProfileDisplay } />
       </Route>
+      <Route path='/users/:id' component={ Profile } >>
+        <IndexRoute component={ PostIndex } />
+      </Route>
     </Route>
     <Route path='/login' onEnter={ _ensureNotLoggedIn } component={ LogIn } />
   </Route>
