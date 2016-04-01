@@ -6,11 +6,18 @@ var PostForm = require( './post_form' );
 
 var PostIndex = React.createClass({
   getInitialState: function () {
-    return { posts: null };
+    if ( PostStore.hasPosts() ) {
+      return { posts: PostStore.all() };
+    } else {
+      return { posts: null };
+    }
   },
 
   componentDidMount: function () {
-    APIUtil.fetchPosts( this.props.profile.id );
+    if ( !this.state.posts ) {
+      APIUtil.fetchPosts( this.props.profile.id );
+    }
+
     this.listener = PostStore.addListener( this._handleChange );
   },
 

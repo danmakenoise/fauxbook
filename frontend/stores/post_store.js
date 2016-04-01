@@ -6,9 +6,19 @@ var Store = require( 'flux/utils' ).Store;
 var PostStore = new Store( AppDispatcher );
 
 var _posts = [];
+var _hasPosts = false;
 
 PostStore.all = function () {
   return _posts.slice();
+};
+
+PostStore.destroy = function () {
+  _posts = [];
+  _hasPosts = false;
+};
+
+PostStore.hasPosts = function () {
+  return _hasPosts;
 };
 
 PostStore.__onDispatch = function ( payload ) {
@@ -26,11 +36,13 @@ PostStore.__onDispatch = function ( payload ) {
 
 var _receivePost = function ( post ) {
   _posts = [post].concat( _posts );
+  _hasPosts = true;
   PostStore.__emitChange();
 };
 
 var _receivePosts = function ( posts ) {
   _posts = posts;
+  _hasPosts = true;
   PostStore.__emitChange();
 };
 

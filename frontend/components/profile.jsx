@@ -2,6 +2,7 @@ var React = require( 'react' );
 var ProfileDisplay = require( './profile_display' );
 var APIUtil = require( '../utils/api_util' );
 var ProfileStore = require( '../stores/profile_store' );
+var PostStore = require( '../stores/post_store' );
 var ProfileHeader = require( './profile_header' );
 
 var Profile = React.createClass({
@@ -15,6 +16,7 @@ var Profile = React.createClass({
   },
 
   componentWillUnmount: function () {
+    PostStore.destroy();
     this.listener.remove();
   },
 

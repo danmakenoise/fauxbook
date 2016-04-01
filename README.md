@@ -15,7 +15,7 @@
 - [x] Upload a profile picture.
 - [x] Upload a cover photo.
 - [x] Create text posts.
-- [ ] Create photo posts.
+- [x] Create photo posts.
 - [ ] Add other users as friends.
 - [ ] See friend's personal profiles.
 - [ ] Post on friend's personal profiles.
@@ -88,7 +88,7 @@ Bonus:
 - [x] Create JSON-API for Post Create, Show, Index, Destroy.
 - [x] Create Flux `PostStore`.
 - [x] Create React `Feed`, `PostIndex`, `PostForm`, and `PostItem`.
-- [ ] Users now land on their Feed view.
+- [x] Users now land on their Feed view.
 - [ ] Users can make and delete text/photo posts and see a feed of posts.
 
 ### [Phase 6][phase-six]: Friendship and Profile Posting (1 Day) (3.75 Days Total)
