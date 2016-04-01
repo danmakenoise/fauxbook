@@ -21,9 +21,9 @@ var AboutProfileDisplay = React.createClass({
               <span>Basic Information</span>
             </div>
             <div className='about-section-contents'>
-              <ProfileAttributeItem data={ gender } type="gender" />
-              <ProfileAttributeItem data={ birthday } type="birthday" />
-              <ProfileAttributeItem data={ location } type="location" />
+              <ProfileAttributeItem data={ gender } userId={ this.props.profile.user_id }  type="gender" />
+              <ProfileAttributeItem data={ birthday } userId={ this.props.profile.user_id } type="birthday" />
+              <ProfileAttributeItem data={ location } userId={ this.props.profile.user_id } type="location" />
             </div>
           </div>
         </div>

@@ -45,10 +45,10 @@ var routes = (
     <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
       <Route component={ Profile }>
         <IndexRoute component={ PostIndex } />
-        <Route path='about' component={ AboutProfileDisplay } />
       </Route>
       <Route path='/users/:id' component={ Profile } >>
         <IndexRoute component={ PostIndex } />
+        <Route path='about' component={ AboutProfileDisplay } />
       </Route>
     </Route>
     <Route path='/login' onEnter={ _ensureNotLoggedIn } component={ LogIn } />

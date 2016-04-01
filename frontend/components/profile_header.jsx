@@ -1,10 +1,12 @@
 var React = require( 'react' );
 var ProfilePicture = require( './profile_picture' );
 var ProfileHeaderPicture = require( './profile_header_picture' );
+var SessionStore = require( '../stores/session_store' );
 
 var ProfileHeader = React.createClass({
   getInitialState: function () {
-    return { activeTab: 'Posts' };
+    var activeTab = window.location.hash.match(/.+about/) ? 'About' : 'Posts';
+    return { activeTab: activeTab };
   },
 
   render: function () {
@@ -31,18 +33,22 @@ var ProfileHeader = React.createClass({
 
     return (
       <div className='profile-nav group'>
-        <a className={ postClass } href='/#/' onClick={ this._toggleTabs }>Posts</a>
-        <a className={ aboutClass } onClick={ this._toggleTabs } href='/#/about'>About</a>
+        <a className={ postClass } href={ this._generatePostLink() } onClick={ this._toggleTabs.bind( null, 'Posts' ) }>Posts</a>
+        <a className={ aboutClass } onClick={ this._toggleTabs.bind( null, 'About' ) } href={ this._generateAboutLink() }>About</a>
       </div>
     );
   },
 
-  _toggleTabs: function () {
-    if ( this.state.activeTab === 'Posts' ) {
-      this.setState( { activeTab: 'About' } );
-    } else {
-      this.setState( { activeTab: 'Posts' } );
-    }
+  _generatePostLink: function () {
+    return '/#/users/' + this.props.profile.user_id;
+  },
+
+  _generateAboutLink: function () {
+    return '/#/users/' + this.props.profile.user_id + '/about';
+  },
+
+  _toggleTabs: function ( activeTab ) {
+    this.setState( { activeTab: activeTab } );
   }
 });
 
