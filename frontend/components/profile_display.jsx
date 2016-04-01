@@ -7,12 +7,9 @@ var ProfileDisplay = React.createClass({
   render: function () {
     return (
       <div className='profile-display'>
-        <ProfileHeader profile={ this.props.profile }/>
-        <PostIndex profile={ this.props.profile } />
-        <AboutProfileDisplay profile={ this.props.profile }/>
       </div>
     );
-  }
+  },
 });
 
 module.exports = ProfileDisplay;

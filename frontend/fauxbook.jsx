@@ -11,6 +11,8 @@ var App = require( './components/app' );
 var Profile = require( './components/profile' );
 var LogIn = require( './components/login' );
 var SessionStore = require( './stores/session_store' );
+var PostIndex = require( './components/post_index' );
+var AboutProfileDisplay = require( './components/about_profile_display' );
 
 var _ensureLoggedIn = function ( nextState, replace, asyncCallback ) {
   var _redirectIfNotLoggedIn = function ( replace, callback ) {
@@ -41,7 +43,10 @@ var _ensureNotLoggedIn = function ( nextState, replace, asyncCallback ) {
 var routes = (
   <Route>
     <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
-      <IndexRoute components={ Profile } />
+      <Route component={ Profile }>
+        <IndexRoute component={ PostIndex } />
+        <Route path='about' component={ AboutProfileDisplay } />
+      </Route>
     </Route>
     <Route path='/login' onEnter={ _ensureNotLoggedIn } component={ LogIn } />
   </Route>

@@ -2,6 +2,7 @@ var React = require( 'react' );
 var ProfileDisplay = require( './profile_display' );
 var APIUtil = require( '../utils/api_util' );
 var ProfileStore = require( '../stores/profile_store' );
+var ProfileHeader = require( './profile_header' );
 
 var Profile = React.createClass({
   getInitialState: function () {
@@ -21,7 +22,10 @@ var Profile = React.createClass({
     if ( this.state.profile ) {
       return (
         <div className='profile'>
-          <ProfileDisplay profile={ this.state.profile }/>
+          <ProfileHeader profile={ this.state.profile }/>
+          { React.cloneElement( this.props.children, {
+            profile: this.state.profile
+          })}
         </div>
       );
     } else {

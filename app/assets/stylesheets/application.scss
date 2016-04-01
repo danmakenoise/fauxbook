@@ -244,6 +244,30 @@ body {
 
 // profile-display-header-------------------------------------------------------
 
+.profile-nav {
+  position: relative;
+  background-color: white;
+  height: 30px;
+  top: -30px;
+  padding-top: 5px;
+  padding-left: 225px;
+}
+
+.profile-nav-tab {
+  padding: 0 50px;
+  border-left: solid 1px #ccc;
+  text-decoration: none;
+  color: rgb(58, 87, 149);
+}
+
+.profile-nav-tab:last-child {
+  border-right: solid 1px #ccc;
+}
+
+.profile-nav-active-tab {
+  font-weight: bold;
+}
+
 .profile-header {
   margin-top: 20px;
   background-color: white;
@@ -315,7 +339,7 @@ body {
 
 .header-picture-upload {
   position: absolute;
-  bottom: 0px;
+  bottom: 30px;
   width: 100%;
   background-color: black;
   opacity: 0;

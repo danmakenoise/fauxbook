@@ -1,4 +1,5 @@
 var React = require( 'react' );
+var ProfileDisplay = require( './profile_display' );
 
 var Display = React.createClass({
   render: function () {
