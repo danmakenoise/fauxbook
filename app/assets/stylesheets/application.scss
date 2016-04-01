@@ -277,6 +277,16 @@ body {
   position: relative;
 }
 
+.profile-header > h1 {
+  position:relative;
+  top: -107px;
+  left: 195px;
+  color: white;
+  font-size: 24px;
+  z-index: 2;
+  display: inline;
+}
+
 .header-image-container {
   box-sizing: border-box;
   width: 100%;

@@ -13,6 +13,7 @@ var ProfileHeader = React.createClass({
         <ProfileHeaderPicture profile={ this.props.profile } />
         <ProfilePicture profile={ this.props.profile } />
         { this._renderTabs() }
+        <h1>{ this.props.profile.first_name + ' ' + this.props.profile.last_name }</h1>
       </div>
     );
   },
