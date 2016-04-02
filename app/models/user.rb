@@ -21,6 +21,13 @@ class User < ActiveRecord::Base
     return user if user.is_password? password
   end
 
+  def User.search search_query
+    User.joins( :profile ).where(
+      "LOWER(CONCAT(profiles.first_name, ' ', profiles.last_name)) LIKE ?",
+      "%#{search_query.downcase}%"
+    )
+  end
+
   def is_password? password
     BCrypt::Password.new( self.password_digest ).is_password? password
   end
