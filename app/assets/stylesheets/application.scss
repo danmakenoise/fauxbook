@@ -255,6 +255,21 @@ body {
   margin: 15px 10px;
 }
 
+.search-bar {
+  background-color: white;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 40px;
+  font-size: 14px;
+  padding: 5px;
+  width: 250px;
+}
+
+.search-container {
+  display: inline;
+}
+
 // profile-display-header-------------------------------------------------------
 
 .profile-nav {

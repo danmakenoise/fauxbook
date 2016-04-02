@@ -2,6 +2,7 @@ var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var ProfileConstants = require( '../constants/profile_constants' );
 var SessionConstants = require( '../constants/session_constants' );
 var PostConstants = require( '../constants/post_constants' );
+var SearchConstants = require( '../constants/search_constants' );
 
 var APIActions = {
   logOut: function ( callback ) {
@@ -36,6 +37,13 @@ var APIActions = {
     AppDispatcher.dispatch({
       actionType: ProfileConstants.PROFILE_RECEIVED,
       profile: profile
+    });
+  },
+
+  receiveSearchResults: function ( searchResults ) {
+    AppDispatcher.dispatch({
+      actionType: SearchConstants.RESULTS_RECEIVED,
+      results: searchResults
     });
   },
 

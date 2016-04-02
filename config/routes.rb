@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       patch '/photoupload', to: 'profiles#photo_upload'
       patch '/coverphotoupload', to: 'profiles#cover_photo_upload'
     end
+
+    get '/search', to: 'searches#index'
   end
 
   # get '*path', to: redirect( '/' )

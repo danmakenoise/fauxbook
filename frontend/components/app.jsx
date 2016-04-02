@@ -1,6 +1,7 @@
 var APIUtil = require( '../utils/api_util' );
 var React = require( 'react' );
 var Display = require( './display' );
+var Search = require( './search' );
 
 var App = React.createClass({
   render: function () {
@@ -8,6 +9,7 @@ var App = React.createClass({
       <div className='app'>
         <div className='app-logo bar group'>
           <h1>fauxbook</h1>
+          <Search />
           <button className='log-out-button' onClick={ this._logOut } >Log Out</button>
         </div>
         <Display>

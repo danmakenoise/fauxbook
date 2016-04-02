@@ -100,6 +100,17 @@ var APIUtil = {
     });
   },
 
+  search: function ( searchString ) {
+    $.ajax({
+      type: 'GET',
+      url: 'api/search',
+      data: { query: searchString },
+      success: function ( results ) {
+        APIActions.receiveSearchResults( results );
+      }
+    });
+  },
+
   updateProfile: function ( formData, callback ) {
     $.ajax({
       type: 'PATCH',
