@@ -4,9 +4,9 @@ var ProfilePicture = require( './profile_picture' );
 var SearchResultItem = React.createClass({
   render: function () {
     return (
-      <li onClick={ this.props.callback } href={ this._linkToProfile() } className="search-result-item group">
+      <li className="search-result-item group">
         <ProfilePicture targetUser={ this.props.result.id } image={ this.props.result.photo }/>
-        <span>{ this.props.result.name }</span>
+        <a className="search-result-user-name" onClick={ this._redirectToPage } href={ this._linkToProfile() }>{ this.props.result.name }</a>
       </li>
     );
   },
@@ -14,6 +14,10 @@ var SearchResultItem = React.createClass({
   _linkToProfile: function () {
     return '/#/users/' + this.props.result.id;
   },
+
+  _redirectToPage: function ( event ) {
+    this.props.callback( this.props.result.id );
+  }
 });
 
 module.exports = SearchResultItem;

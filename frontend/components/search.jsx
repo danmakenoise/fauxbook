@@ -40,7 +40,7 @@ var Search = React.createClass({
     }
   },
 
-  _searchComplete: function () {
+  _searchComplete: function ( targetId ) {
     this.setState( { results: null, search: '' } );
   }
 });

@@ -278,25 +278,21 @@ body {
   border: 1px solid #ccc;
   left: 167px;
   top: 39px;
-  padding: 10px;
-  width: 240px;
+  width: 260px;
   border-radius: 0 0 10px 10px;
   border-top: 0;
-}
-
-.search-results li {
-  margin-bottom: 10px;
-  cursor: pointer;
+  overflow: hidden;
 }
 
 .search-results li:hover {
   background-color: #ddd;
 }
 
-.search-results li span {
-  position: relative;
-  top: 15px;
-  font-weight: bold;
+.search-result-user-name {
+  padding: 15px;
+  display: block;
+  color: black;
+  text-decoration: none;
   font-size: 14px;
 }
 
