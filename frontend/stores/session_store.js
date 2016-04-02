@@ -20,7 +20,9 @@ SessionStore.currentUserId = function () {
 };
 
 SessionStore.userPicture = function () {
-  return _currentUser.picture;
+  if ( _currentUser.picture ) {
+    return _currentUser.picture;
+  }  
 };
 
 SessionStore.__onDispatch = function ( payload ) {
