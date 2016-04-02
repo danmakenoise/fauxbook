@@ -35,9 +35,13 @@ var Search = React.createClass({
   },
 
   _searchResults: function () {
-    if ( this.state.results ) {
-      return <SearchResultIndex results={ this.state.results } />;
+    if ( this.state.results && this.state.results.length > 0 ) {
+      return <SearchResultIndex callback={ this._searchComplete } results={ this.state.results } />;
     }
+  },
+
+  _searchComplete: function () {
+    this.setState( { results: null, search: '' } );
   }
 });
 

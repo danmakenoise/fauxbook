@@ -264,10 +264,40 @@ body {
   font-size: 14px;
   padding: 5px;
   width: 250px;
+  outline: 0;
 }
 
 .search-container {
   display: inline;
+}
+
+.search-results {
+  position: absolute;
+  z-index: 4;
+  background-color: white;
+  border: 1px solid #ccc;
+  left: 167px;
+  top: 39px;
+  padding: 10px;
+  width: 240px;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;
+}
+
+.search-results li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.search-results li:hover {
+  background-color: #ddd;
+}
+
+.search-results li span {
+  position: relative;
+  top: 15px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 // profile-display-header-------------------------------------------------------
