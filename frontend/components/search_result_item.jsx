@@ -4,7 +4,7 @@ var ProfilePicture = require( './profile_picture' );
 var SearchResultItem = React.createClass({
   render: function () {
     return (
-      <li onClick={ this.props.callback } href={ this._linkToProfile } className="search-result-item group">
+      <li onClick={ this.props.callback } href={ this._linkToProfile() } className="search-result-item group">
         <ProfilePicture targetUser={ this.props.result.id } image={ this.props.result.photo }/>
         <span>{ this.props.result.name }</span>
       </li>
