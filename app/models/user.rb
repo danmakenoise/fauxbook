@@ -15,8 +15,7 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id
 
-  has_many :initiated_friendships, class_name: 'Friendship', foreign_key: 'requester_id'
-  has_many :requested_friendships, class_name: 'Friendship', foreign_key: 'requester_id'
+  has_many :friendships
 
   def User.find_by_credentials email, password
     user = User.find_by email: email
@@ -32,6 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def friends
+    self.friendships.includes( :friend ).where( accepted: true )
   end
 
   def is_password? password
