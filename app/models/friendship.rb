@@ -19,15 +19,11 @@ class Friendship < ActiveRecord::Base
     other_friendship.accepted!
   end
 
-  def deny!
+  def remove!
     other_friendship = Friendship.find_by( user_id: self.friend_id )
 
     self.denied!
     other_friendship.denied!
-  end
-
-  def remove!
-    self.deny
   end
 
   protected

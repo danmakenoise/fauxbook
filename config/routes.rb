@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api do
+    resources :friendships, only: [:create, :update, :destroy]
     resources :posts, only: [:create, :index, :destroy]
     resources :users, only: :create
     resource :session, only: [:create, :show, :destroy]
