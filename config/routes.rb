@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
 
     get '/search', to: 'searches#index'
+    get '/users/:id/friends', to: 'users#friends'
   end
 
   # get '*path', to: redirect( '/' )

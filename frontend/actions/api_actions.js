@@ -3,6 +3,7 @@ var ProfileConstants = require( '../constants/profile_constants' );
 var SessionConstants = require( '../constants/session_constants' );
 var PostConstants = require( '../constants/post_constants' );
 var SearchConstants = require( '../constants/search_constants' );
+var FriendConstants = require( '../constants/friend_constants' );
 
 var APIActions = {
   logOut: function ( callback ) {
@@ -16,6 +17,13 @@ var APIActions = {
     AppDispatcher.dispatch({
       actionType: SessionConstants.CURRENT_USER_RECEIVED,
       currentUser: currentUser
+    });
+  },
+
+  receiveFriends: function ( friends ) {
+    AppDispatcher.dispatch({
+      actionType: FriendConstants.FRIENDS_RECEIVED,
+      friends: friends
     });
   },
 

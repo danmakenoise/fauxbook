@@ -41,6 +41,17 @@ var APIUtil = {
     });
   },
 
+  fetchFriends: function ( friendId ) {
+    $.ajax({
+      type: 'GET',
+      url: 'api/users/' + friendId + '/friends',
+      dataType: 'json',
+      success: function ( friends ) {
+        APIActions.receiveFriends( friends );
+      }
+    });
+  },
+
   fetchPosts: function ( profileId ) {
     $.get({
       url: 'api/posts',

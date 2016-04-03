@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     foreign_key: :author_id
 
   has_many :friendships
+  has_many :friends, through: :friendships, source: :friend
 
   def User.find_by_credentials email, password
     user = User.find_by email: email
@@ -28,10 +29,6 @@ class User < ActiveRecord::Base
       "LOWER(CONCAT(profiles.first_name, ' ', profiles.last_name)) LIKE ?",
       "%#{search_query.downcase}%"
     )
-  end
-
-  def friends
-    self.friendships.includes( :friend ).where( accepted: true )
   end
 
   def is_password? password

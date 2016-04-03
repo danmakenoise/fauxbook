@@ -14,6 +14,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def friends
+    @friends = User.find( params[:id] ).friends
+    render :friends
+  end
+
   private
 
   def user_params
