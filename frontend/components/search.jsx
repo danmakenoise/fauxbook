@@ -31,8 +31,10 @@ var Search = React.createClass({
 
   _handleChange: function () {
     this.setState( { search: this.refs.searchBar.value } );
-    if ( this.refs.searchBar.value.length >= 3 ) {
+    if ( this.refs.searchBar.value.length >= 2 ) {
       APIUtil.search( this.refs.searchBar.value );
+    } else {
+      this.setState( { results: null } );
     }
   },
 

@@ -247,7 +247,7 @@ body {
 }
 
 .app-logo h1 {
-  cursor: default;
+  cursor: pointer;
   font-size: 24px;
   font-weight: bold;
   color: white;
@@ -306,16 +306,26 @@ body {
 // profile-display-header-------------------------------------------------------
 
 .profile-nav {
-  position: relative;
+  position: absolute;
   background-color: white;
-  height: 30px;
-  top: -30px;
-  padding-top: 5px;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
   padding-left: 225px;
 }
 
+.profile-nav > a {
+  display: inline-block;
+  height: 50px;
+  padding: 18px 30px 0 30px;
+  vertical-align: center;
+}
+
+.profile-nav > a:hover {
+  background-color: #eee;
+}
+
 .profile-nav-tab {
-  padding: 0 50px;
   border-left: solid 1px #ccc;
   text-decoration: none;
   color: rgb(58, 87, 149);
@@ -327,6 +337,7 @@ body {
 
 .profile-nav-active-tab {
   font-weight: bold;
+  color: black;
 }
 
 .profile-header {
@@ -340,7 +351,7 @@ body {
 
 .profile-header > h1 {
   position:relative;
-  top: -107px;
+  top: -90px;
   left: 195px;
   color: white;
   font-size: 24px;
@@ -410,7 +421,7 @@ body {
 
 .header-picture-upload {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   width: 100%;
   background-color: black;
   opacity: 0;
@@ -425,9 +436,17 @@ body {
   z-index: 1;
 }
 
+.header-image-container:hover .header-picture-upload:not(:hover) {
+  opacity: .2;
+}
+
 .profile-picture-upload:hover, .profile-picture:hover .profile-picture-upload {
   cursor: pointer;
   opacity: .6;
+}
+
+.profile-picture:hover .profile-picture-upload:not(:hover) {
+  opacity: .2;
 }
 
 // post-index-------------------------------------------------------------------
@@ -518,9 +537,13 @@ body {
   display: block;
 }
 
+.post-author-info > a {
+  text-decoration: none;
+}
+
 .post-date {
   display: block;
-  color: #ccc;
+  color: #bbb;
   font-size: 14px;
 }
 

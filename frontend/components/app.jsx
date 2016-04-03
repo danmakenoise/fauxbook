@@ -8,7 +8,7 @@ var App = React.createClass({
     return (
       <div className='app'>
         <div className='app-logo bar group'>
-          <h1>fauxbook</h1>
+          <a href='/#/'><h1 onClick={ this._goHome }>fauxbook</h1></a>
           <Search />
           <button className='log-out-button' onClick={ this._logOut } >Log Out</button>
         </div>

@@ -8,13 +8,17 @@ var PostAuthorDisplay = React.createClass({
       return (
         <div className='post-author-info group'>
           <ProfilePicture targetUser={ this.props.post.author_id } image={ this.props.post.author_picture }/>
-          <span className='post-author'>{ this.props.post.author_name }</span>
+          <a href={ this._linkToTarget() }><span className='post-author'>{ this.props.post.author_name }</span></a>
           <span className='post-date'>{ this.props.post.date }</span>
         </div>
       );
     } else {
       return <div></div>;
     }
+  },
+
+  _linkToTarget: function () {
+    return '/#/users/' + this.props.post.author_id;
   }
 });
 
