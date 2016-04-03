@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def User.search search_query
-    User.joins( :profile ).where(
+    User.joins( :profile).includes( :profile ).where(
       "LOWER(CONCAT(profiles.first_name, ' ', profiles.last_name)) LIKE ?",
       "%#{search_query.downcase}%"
     )

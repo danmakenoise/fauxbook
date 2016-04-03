@@ -6,7 +6,10 @@ var SearchResultItem = React.createClass({
     return (
       <li className="search-result-item group">
         <ProfilePicture targetUser={ this.props.result.id } image={ this.props.result.photo }/>
-        <a className="search-result-user-name" onClick={ this._redirectToPage } href={ this._linkToProfile() }>{ this.props.result.name }</a>
+        <a className="search-result-user-name" onClick={ this._redirectToPage } href={ this._linkToProfile() }>
+          { this.props.result.name }<br />
+        <span className="search-result-location">{ this.props.result.location }</span>
+        </a>
       </li>
     );
   },

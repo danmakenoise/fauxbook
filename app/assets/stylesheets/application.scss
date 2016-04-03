@@ -283,17 +283,24 @@ body {
   border-top: 0;
   overflow: hidden;
 }
+.search-results li {
+  padding: 0 5px 5px 5px;
+}
 
 .search-results li:hover {
   background-color: #ddd;
 }
 
 .search-result-user-name {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   display: block;
   color: black;
   text-decoration: none;
   font-size: 14px;
+}
+
+.search-result-location {
+  color: #bbb;
 }
 
 // profile-display-header-------------------------------------------------------
