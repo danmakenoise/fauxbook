@@ -11,6 +11,10 @@ FriendStore.all = function () {
   return _friends.slice();
 };
 
+FriendStore.empty = function () {
+  _friends = [];
+};
+
 FriendStore.__onDispatch = function ( payload ) {
   switch ( payload.actionType ) {
   case FriendConstants.FRIENDS_RECEIVED:

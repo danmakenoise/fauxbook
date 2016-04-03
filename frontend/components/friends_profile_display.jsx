@@ -16,6 +16,13 @@ var FriendsProfileDisplay = React.createClass({
     this.listener.remove();
   },
 
+  componentWillReceiveProps: function ( newProps ) {
+    if ( newProps.profile.user_id != this.props.profile.user_id ) {
+      FriendStore.empty();
+      APIUtil.fetchFriends( newProps.profile.user_id );
+    }
+  },
+
   render: function () {
     return (
       <div className="friends-profile-display container group">
