@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
 var FriendStore = require( '../stores/friend_store' );
+var FriendItem = require( './friend_item' );
 
 var FriendsProfileDisplay = React.createClass({
   getInitialState: function () {
@@ -40,7 +41,7 @@ var FriendsProfileDisplay = React.createClass({
   _renderFriends: function () {
     if ( this.state.friends ) {
       return this.state.friends.map( function ( friend ) {
-        return <li>{ friend.name }</li>;
+        return <FriendItem key={ friend.id } friend={ friend } />;
       });
     }
   }
