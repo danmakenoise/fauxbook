@@ -20,7 +20,7 @@
 - [ ] See friend's personal profiles.
 - [ ] Post on friend's personal profiles.
 - [ ] See a feed of friend's posts.
-- [ ] Search for other users.
+- [x] Search for other users.
 - [ ] Comment on friend's posts.
 - [ ] Like friend's posts.
 - [ ] Receive Notifications for relevant events.
@@ -105,9 +105,9 @@ Bonus:
 
 **Objective:** Users can search for other users to add.
 
-- [ ] Create Flux `SearchedUserStore`.
-- [ ] Create React `Search`, `SearchedUserIndex`, and `SearchedUserItem`.
-- [ ] Users can use the search bar to find other users of the site, visit their profiles, and add them as a friend.
+- [x] Create Flux `SearchedUserStore`.
+- [x] Create React `Search`, `SearchedUserIndex`, and `SearchedUserItem`.
+- [x] Users can use the search bar to find other users of the site, visit their profiles, and add them as a friend.
 
 ### [Phase 8][phase-eight]: Commenting (1 Day) (5.25 Days Total)
 
