@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id
 
+  has_many :initiated_friendships, class_name: 'Friendship', foreign_key: 'requester_id'
+  has_many :requested_friendships, class_name: 'Friendship', foreign_key: 'requester_id'
+
   def User.find_by_credentials email, password
     user = User.find_by email: email
     return nil unless user
@@ -26,6 +29,9 @@ class User < ActiveRecord::Base
       "LOWER(CONCAT(profiles.first_name, ' ', profiles.last_name)) LIKE ?",
       "%#{search_query.downcase}%"
     )
+  end
+
+  def friends
   end
 
   def is_password? password
