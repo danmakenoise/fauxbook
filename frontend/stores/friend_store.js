@@ -20,6 +20,9 @@ FriendStore.__onDispatch = function ( payload ) {
   case FriendConstants.FRIENDS_RECEIVED:
     _receiveFriends( payload.friends );
     break;
+  case FriendConstants.FRIEND_REMOVED:
+    _removeFriend( payload.friend, payload.onOwnPage );
+    break;
   default:
     //no-op
   }
@@ -30,4 +33,9 @@ var _receiveFriends = function ( friends ) {
   FriendStore.__emitChange();
 };
 
+var _removeFriend = function ( friend, onOwnPage ) {
+  if ( onOwnPage ) {
+    debugger;
+  }
+};
 module.exports = FriendStore;

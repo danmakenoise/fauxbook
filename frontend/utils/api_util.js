@@ -41,13 +41,13 @@ var APIUtil = {
     });
   },
 
-  fetchFriends: function ( friendId ) {
+  fetchFriends: function ( friendId, onOwnPage ) {
     $.ajax({
       type: 'GET',
       url: 'api/users/' + friendId + '/friends',
       dataType: 'json',
       success: function ( friends ) {
-        APIActions.receiveFriends( friends );
+        APIActions.receiveFriends( friends, onOwnPage );
       }
     });
   },

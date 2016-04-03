@@ -2,6 +2,7 @@ var React = require( 'react' );
 var ProfilePicture = require( './profile_picture' );
 var ProfileHeaderPicture = require( './profile_header_picture' );
 var SessionStore = require( '../stores/session_store' );
+var FriendButton = require( './friend_button' );
 
 var ProfileHeader = React.createClass({
   getInitialState: function () {
@@ -30,7 +31,10 @@ var ProfileHeader = React.createClass({
         <ProfileHeaderPicture profile={ this.props.profile } />
         <ProfilePicture targetUser={ this.props.profile.user_id } profile={ this.props.profile } />
         { this._renderTabs() }
-        <h1>{ this.props.profile.first_name + ' ' + this.props.profile.last_name }</h1>
+        <h1>
+          { this.props.profile.first_name + ' ' + this.props.profile.last_name }
+          <FriendButton friend={ this.props.profile }/>
+        </h1>
       </div>
     );
   },

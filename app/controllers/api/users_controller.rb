@@ -16,6 +16,8 @@ class Api::UsersController < ApplicationController
 
   def friends
     @friends = User.find( params[:id] ).friends
+    @user_friends = current_user.friends
+
     render :friends
   end
 

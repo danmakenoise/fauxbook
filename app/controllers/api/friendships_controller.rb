@@ -1,17 +1,14 @@
 class Api::FriendshipsController < ApplicationController
   def create
-    friendship = Friendship.create(
-      user_id: current_user.id,
-      friend_id: params[:friend_id]
-    )
+    friendship = Friendship.create( current_user.id, params[:friend_id] )
 
     render json: friendship
   end
 
   def update
-    friendship = Friendship.find(
+    friendship = Friendship.find_by(
       user_id: current_user.id,
-      friend_id: params[:friend_id]
+      friend_id: params[:id]
     )
 
     friendship.accept!
@@ -19,9 +16,9 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def destroy
-    friendship = Friendship.find(
+    friendship = Friendship.find_by(
       user_id: current_user.id,
-      friend_id: params[:friend_id]
+      friend_id: params[:id]
     )
 
     friendship.remove!
