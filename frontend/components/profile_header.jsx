@@ -5,8 +5,23 @@ var SessionStore = require( '../stores/session_store' );
 
 var ProfileHeader = React.createClass({
   getInitialState: function () {
-    var activeTab = window.location.hash.match(/.+about/) ? 'About' : 'Posts';
-    return { activeTab: activeTab };
+    var activeTab = window.location.hash.match(/users\/\d+\/(\w+)/);
+
+    if ( activeTab ) {
+      return { activeTab: activeTab[1] };
+    } else {
+      return { activeTab: null };
+    }
+  },
+
+  componentWillReceiveProps: function () {
+    var activeTab = window.location.hash.match(/users\/\d+\/(\w+)/);
+
+    if ( activeTab ) {
+      this.setState( { activeTab: activeTab[1] });
+    } else {
+      this.setState( { activeTab: null });
+    }
   },
 
   render: function () {
@@ -21,20 +36,18 @@ var ProfileHeader = React.createClass({
   },
 
   _renderTabs: function () {
-    var postClass;
-    var aboutClass;
-    if ( this.state.activeTab === 'Posts' ) {
-      postClass = 'profile-nav-tab profile-nav-active-tab';
-      aboutClass = 'profile-nav-tab';
-    } else {
-      postClass = 'profile-nav-tab';
-      aboutClass = 'profile-nav-tab profile-nav-active-tab';
-    }
+    var inactiveClass = 'profile-nav-tab';
+    var activeClass = 'profile-nav-tab profile-nav-active-tab';
+
+    var postClass = this.state.activeTab === null ? activeClass : inactiveClass;
+    var aboutClass = this.state.activeTab === 'about' ? activeClass : inactiveClass;
+    var friendClass = this.state.activeTab === 'friends' ? activeClass : inactiveClass;
 
     return (
       <div className='profile-nav group'>
-        <a className={ postClass } href={ this._generatePostLink() } onClick={ this._toggleTabs.bind( null, 'Posts' ) }>Posts</a>
-        <a className={ aboutClass } onClick={ this._toggleTabs.bind( null, 'About' ) } href={ this._generateAboutLink() }>About</a>
+        <a className={ postClass } href={ this._generatePostLink() }>Posts</a>
+        <a className={ aboutClass } href={ this._generateAboutLink() }>About</a>
+        <a className={ friendClass } href={ this._generateFriendsLink() }>Friends</a>
       </div>
     );
   },
@@ -45,6 +58,10 @@ var ProfileHeader = React.createClass({
 
   _generateAboutLink: function () {
     return '/#/users/' + this.props.profile.user_id + '/about';
+  },
+
+  _generateFriendsLink: function () {
+    return '/#/users/' + this.props.profile.user_id + '/friends';
   },
 
   _toggleTabs: function ( activeTab ) {
