@@ -16,6 +16,14 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def feed
+    friend_ids = current_user.friends.map &:id
+    valid_ids = friend_ids.push current_user.id
+
+    @posts = Post.where( 'posts.author_id IN (?)', valid_ids )
+    render :index
+  end
+
   def destroy
     @post = Post.find( params[:id] )
     if @post.author_id == current_user.id

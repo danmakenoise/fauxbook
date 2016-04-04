@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       patch '/coverphotoupload', to: 'profiles#cover_photo_upload'
     end
 
+    get '/feed', to: 'posts#feed'
     get '/search', to: 'searches#index'
     get '/users/:id/friends', to: 'users#friends'
   end

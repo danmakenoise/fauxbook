@@ -1,5 +1,6 @@
 var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var PostConstants = require( '../constants/post_constants' );
+var FeedConstants = require( '../constants/feed_constants' );
 
 var Store = require( 'flux/utils' ).Store;
 
@@ -9,7 +10,11 @@ var _posts = [];
 var _hasPosts = false;
 
 PostStore.all = function () {
-  return _posts.slice();
+  if ( _hasPosts ) {
+    return _posts.slice();
+  } else {
+    return null;
+  }
 };
 
 PostStore.destroy = function () {
@@ -31,6 +36,9 @@ PostStore.__onDispatch = function ( payload ) {
     break;
   case PostConstants.POST_REMOVED:
     _removePost( payload.post );
+    break;
+  case FeedConstants.FEED_POSTS_RECEIVED:
+    _receivePosts( payload.posts );
     break;
   default:
     // no-op
