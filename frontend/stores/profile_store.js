@@ -6,6 +6,10 @@ var Store = require( 'flux/utils' ).Store;
 var ProfileStore = new Store( AppDispatcher );
 var _profile = {};
 
+ProfileStore.userId = function () {
+  return _profile.user_id;
+}
+
 ProfileStore.getProfile = function () {
   var profile = {};
 

@@ -10,4 +10,6 @@ class Post < ActiveRecord::Base
     foreign_key: :author_id
 
   belongs_to :profile
+
+  has_one :receiver, through: :profile, source: :user
 end

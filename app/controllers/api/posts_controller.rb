@@ -19,8 +19,16 @@ class Api::PostsController < ApplicationController
   def feed
     friend_ids = current_user.friends.map &:id
     valid_ids = friend_ids.push current_user.id
+    valid_profile_ids = current_user.friends.includes( :profile ).map do |friend|
+      friend.profile.id
+    end
 
-    @posts = Post.where( 'posts.author_id IN (?)', valid_ids )
+    @posts = Post.includes( :author ).where(
+      'posts.author_id IN (?) OR posts.profile_id IN (?)',
+      valid_ids,
+      valid_profile_ids
+    )
+
     render :index
   end
 
