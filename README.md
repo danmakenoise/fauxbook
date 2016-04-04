@@ -19,7 +19,7 @@
 - [x] Add other users as friends.
 - [x] See friend's personal profiles.
 - [x] Post on friend's personal profiles.
-- [ ] See a feed of friend's posts.
+- [x] See a feed of friend's posts.
 - [x] Search for other users.
 - [ ] Comment on friend's posts.
 - [ ] Like friend's posts.

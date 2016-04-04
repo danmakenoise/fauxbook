@@ -1,15 +1,22 @@
 var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
 var ProfilePhotoUploadTool = require( './profile_photo_upload_tool' );
+var SessionStore = require( '../stores/session_store' );
 
 var ProfileHeaderPicture = React.createClass({
   render: function () {
     return (
       <div className='header-image-container'>
-        <ProfilePhotoUploadTool callback={ this._onDrop } className='header-picture-upload' promptMessage='Update Cover Photo' />
+        { this._uploadForm() }
         { this._headerImage() }
       </div>
     );
+  },
+
+  _uploadForm: function () {
+    if ( this.props.profile.user_id === SessionStore.currentUserId() ) {
+      return <ProfilePhotoUploadTool callback={ this._onDrop } className='header-picture-upload' promptMessage='Update Cover Photo' />;
+    }
   },
 
   _headerImage: function () {

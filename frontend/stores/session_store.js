@@ -1,6 +1,7 @@
 var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var SessionConstants = require( '../constants/session_constants' );
 var Store = require( 'flux/utils' ).Store;
+var ProfileConstants = require( '../constants/profile_constants' );
 
 var SessionStore = new Store( AppDispatcher );
 
@@ -22,7 +23,7 @@ SessionStore.currentUserId = function () {
 SessionStore.userPicture = function () {
   if ( _currentUser.picture ) {
     return _currentUser.picture;
-  }  
+  }
 };
 
 SessionStore.__onDispatch = function ( payload ) {
@@ -33,8 +34,17 @@ SessionStore.__onDispatch = function ( payload ) {
   case SessionConstants.SESSION_DESTROYED:
     _destroySession ( payload.callback );
     break;
+  case ProfileConstants.PROFILE_RECEIVED:
+    _receiveProfile ( payload.profile );
+    break;
   default:
     // no-op
+  }
+};
+
+var _receiveProfile = function ( profile ) {
+  if ( profile.user_id === SessionStore.currentUserId() ) {
+    _currentUser.picture = profile.profile_picture;
   }
 };
 
