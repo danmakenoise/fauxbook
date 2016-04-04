@@ -24,7 +24,7 @@ var FriendRequestTool = React.createClass({
           onClick={ this._toggleExpand }
           className={ this._determineClass() }
         >
-          { this._hasRequests() ? this.state.requests.length : '' }
+          { this._hasRequests() ? this.state.requests.length : 0 }
         </button>
         { this._renderRequestIndex() }
       </div>

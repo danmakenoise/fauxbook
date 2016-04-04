@@ -1,5 +1,7 @@
 var React = require( 'react' );
 var ProfilePicture = require( '../../profile_picture' );
+var FriendRequestUtil = require( '../../../utils/friend_request_util' );
+
 var FriendRequestItem = React.createClass({
   render: function () {
     return (
@@ -14,6 +16,14 @@ var FriendRequestItem = React.createClass({
         <button onClick={ this._deny }>Deny</button>
       </li>
     );
+  },
+
+  _approve: function () {
+    FriendRequestUtil.approveRequest( this.props.request.id );
+  },
+
+  _deny: function () {
+    FriendRequestUtil.denyRequest( this.props.request.id );
   },
 
   _linkToUser: function () {

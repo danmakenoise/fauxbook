@@ -267,6 +267,12 @@ body {
 
 .friend-request-button {
   cursor: pointer;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  color: white;
+  border: 0;
+  border-radius: 50%;
 }
 
 .friend-request-index {
@@ -287,6 +293,7 @@ body {
   padding: 5px;
   width: 60px;
   border-radius: 5px;
+  margin-top: 5px;
 }
 
 .friend-request-index button:hover {
