@@ -46,6 +46,7 @@ PostStore.__onDispatch = function ( payload ) {
 };
 
 var _receivePost = function ( post ) {
+  debugger;
   _posts = [post].concat( _posts );
   _hasPosts = true;
   PostStore.__emitChange();
