@@ -7,6 +7,7 @@ var Store = require( 'flux/utils' ).Store;
 var FriendStore = new Store( AppDispatcher );
 
 var _friends = [];
+
 var _profileId = null;
 var _onOwnPage = null;
 

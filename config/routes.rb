@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
 
     get '/feed', to: 'posts#feed'
+    get '/requests', to: 'users#friend_requests'
     get '/search', to: 'searches#index'
     get '/users/:id/friends', to: 'users#friends'
   end

@@ -21,6 +21,13 @@ class Api::UsersController < ApplicationController
     render :friends
   end
 
+  def friend_requests
+    @friends = User.find( current_user.id ).friends.where( 'friendships.accepted = false' )
+    @user_friends = current_user.friends
+
+    render :friends
+  end
+
   private
 
   def user_params

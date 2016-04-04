@@ -42,9 +42,6 @@ var APIUtil = {
   },
 
   fetchFriends: function ( friendId, onOwnPage ) {
-    if ( typeof onOwnPage === 'undefined' ) {
-      debugger;
-    }
     $.ajax({
       type: 'GET',
       url: 'api/users/' + friendId + '/friends',
