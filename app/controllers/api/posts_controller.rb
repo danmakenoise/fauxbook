@@ -17,18 +17,14 @@ class Api::PostsController < ApplicationController
   end
 
   def feed
-    friend_ids = current_user.friends.map &:id
-    valid_ids = friend_ids.push current_user.id
-    valid_profile_ids = current_user.friends.includes( :profile ).map do |friend|
+    valid_ids = current_user.friends.includes( :profile ).map do |friend|
       friend.profile.id
     end
 
-    @posts = Post.includes( :author ).where(
-      'posts.author_id IN (?) OR posts.profile_id IN (?)',
-      valid_ids,
-      valid_profile_ids
-    )
-
+    valid_ids.push current_user.profile.id
+    @posts = Post.includes( author: :profile ).includes( receiver: :profile ).where( ' posts.profile_id IN (?) ', valid_ids )
+      .order( created_at: :desc )
+      
     render :index
   end
 
