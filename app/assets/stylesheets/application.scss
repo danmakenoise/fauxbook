@@ -592,16 +592,34 @@ body {
   margin-top: 10px;
 }
 
-.post-author {
+.post-author, .post-receiver {
   vertical-align: top;
   color: rgb(58, 87, 149);
   font-weight: bold;
-  margin-left: 10px;
   display: block;
 }
 
 .post-author-info > a {
   text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.post-receiver-link {
+  margin-left: 15px;
+}
+
+.post-receiver-link:before {
+  content: '';
+  font-size: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  position: absolute;
+  top: 2px;
+  left: -10px;
+  border: 6px solid transparent;
+  border-left: 6px solid #bbb;
 }
 
 .post-date {

@@ -9,9 +9,9 @@ var PostAuthorDisplay = React.createClass({
       return (
         <div className='post-author-info group'>
           <ProfilePicture targetUser={ this.props.post.author_id } image={ this.props.post.author_picture }/>
-          <span className='post-date'>{ this.props.post.date }</span>
           <a href={ this._linkToTarget() }><span className='post-author'>{ this.props.post.author_name }</span></a>
           { this._linkTagToReceiver() }
+          <span className='post-date'>{ this.props.post.date }</span>
         </div>
       );
     } else {
@@ -21,10 +21,10 @@ var PostAuthorDisplay = React.createClass({
 
   _linkTagToReceiver: function () {
     postedOnOwnProfile = this.props.post.author_id === this.props.post.receiver_id;
-    lookingAtReceiversProfile = this.props.post.receiver_id === ProfileStore.userId;
-    if ( this.props.post.author_id !== this.props.post.receiver_id ) {
+    lookingAtReceiversProfile = this.props.post.receiver_id === ProfileStore.userId();
+    if ( !postedOnOwnProfile && !lookingAtReceiversProfile ) {
       return (
-        <a href={ this._linkToReceiver() }><span className='post-receiver'>{ this.props.post.receiver_name }</span></a>
+        <a className="post-receiver-link" href={ this._linkToReceiver() }><span className='post-receiver'>{ this.props.post.receiver_name }</span></a>
       );
     }
   },
