@@ -8,11 +8,11 @@ var FriendButton = React.createClass({
 
   _generateButton: function () {
     if ( this.props.friend.is_friend ) {
-      return <button onClick={ this._removeFriend }>Remove Friend</button>;
+      return <button className='friend-button' onClick={ this._removeFriend }>Remove Friend</button>;
     } else if ( !this.props.friend.is_user ) {
-      return <button onClick={ this._addFriend }>Add Friend</button>;
+      return <button className='friend-button' onClick={ this._addFriend }>Add Friend</button>;
     } else {
-      return <button>You</button>;
+      return <button className='friend-button' >You</button>;
     }
   },
 

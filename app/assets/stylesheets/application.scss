@@ -303,6 +303,21 @@ body {
   color: #bbb;
 }
 
+.friend-button {
+  cursor: pointer;
+  padding: 5px 0;
+  font-weight: bold;
+  float: right;
+  width: 120px
+}
+
+.profile-header .friend-button {
+  margin-left: 546px;
+  position: relative;
+  top: -90px;
+  right: 15px;
+}
+
 // profile-display-header-------------------------------------------------------
 
 .profile-nav {
@@ -312,6 +327,7 @@ body {
   height: 50px;
   bottom: 0;
   padding-left: 225px;
+  box-sizing: border-box;
 }
 
 .profile-nav > a {
@@ -329,6 +345,7 @@ body {
   border-left: solid 1px #ccc;
   text-decoration: none;
   color: rgb(58, 87, 149);
+  font-weight: bold;
 }
 
 .profile-nav-tab:last-child {
@@ -336,7 +353,6 @@ body {
 }
 
 .profile-nav-active-tab {
-  font-weight: bold;
   color: black;
 }
 
@@ -421,7 +437,7 @@ body {
 
 .header-picture-upload {
   position: absolute;
-  bottom: 50px;
+  top: 0px;
   width: 100%;
   background-color: black;
   opacity: 0;
@@ -447,6 +463,42 @@ body {
 
 .profile-picture:hover .profile-picture-upload:not(:hover) {
   opacity: .2;
+}
+
+// friends-list-----------------------------------------------------------------
+
+.friends-list {
+  padding: 10px 10px 0 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.friend-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 49%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  float: left;
+  margin-left: 1%;
+  border-radius: 5px;
+}
+
+.friend-item a {
+  text-decoration: none;
+}
+
+.friend-item .profile-thumb-container {
+}
+
+.friend-item .friend-button {
+
+}
+
+.friend-item .friend-location {
+  color: #777;
 }
 
 // post-index-------------------------------------------------------------------

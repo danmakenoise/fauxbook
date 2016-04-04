@@ -16,9 +16,9 @@
 - [x] Upload a cover photo.
 - [x] Create text posts.
 - [x] Create photo posts.
-- [ ] Add other users as friends.
-- [ ] See friend's personal profiles.
-- [ ] Post on friend's personal profiles.
+- [x] Add other users as friends.
+- [x] See friend's personal profiles.
+- [x] Post on friend's personal profiles.
 - [ ] See a feed of friend's posts.
 - [x] Search for other users.
 - [ ] Comment on friend's posts.
@@ -95,8 +95,8 @@ Bonus:
 
 **Objective:** Users can add other users and friends and post on their profiles.
 
-- [ ] Create Rails' `Friendship` backend, model, and controller.
-- [ ] Create JSON-API for Friendship Create, Index, Update, and Destroy.
+- [x] Create Rails' `Friendship` backend, model, and controller.
+- [x] Create JSON-API for Friendship Create, Index, Update, and Destroy.
 - [ ] Create Flux `FriendStore` and `FriendRequestStore`
 - [ ] Create React `Navigation`, `FriendRequestNotificationButton`, `FriendRequestIndex`, `FriendRequestItem`, `FriendIndex`, `FriendItem`, `FriendRequestButton`, and `FriendSummary`.
 - [ ] Users can now add friends, accept and reject friend requests, and see information about their friends, and their friend's friends on their profiles.

@@ -33,8 +33,8 @@ var ProfileHeader = React.createClass({
         { this._renderTabs() }
         <h1>
           { this.props.profile.first_name + ' ' + this.props.profile.last_name }
-          <FriendButton friend={ this.props.profile }/>
         </h1>
+        <FriendButton friend={ this.props.profile }/>
       </div>
     );
   },

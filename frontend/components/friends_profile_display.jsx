@@ -30,7 +30,7 @@ var FriendsProfileDisplay = React.createClass({
   render: function () {
     return (
       <div className="friends-profile-display container group">
-        <ul className="friends-list">
+        <ul className="friends-list group">
           { this._renderFriends() }
         </ul>
       </div>
