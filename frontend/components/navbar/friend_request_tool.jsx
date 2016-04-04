@@ -18,16 +18,27 @@ var FriendRequestTool = React.createClass({
 
   render: function () {
     return (
-      <button className='friend-request-button'>
-        { this.state.requests.length ? this.state.requests.length : '' }
+      <button className={ this._determineClass() }>
+        { this._hasRequests() ? this.state.requests.length : '' }
       </button>
     );
   },
 
+  _determineClass: function () {
+    if ( this._hasRequests() ) {
+      return 'friend-request-button red-circle';
+    } else {
+      return 'friend-request-button';
+    }
+  },
+
   _handleChange: function () {
     this.setState( { requests: FriendRequestStore.all() });
-  }
+  },
 
+  _hasRequests: function () {
+    return this.state.requests.length > 0;
+  }
 });
 
 module.exports = FriendRequestTool;

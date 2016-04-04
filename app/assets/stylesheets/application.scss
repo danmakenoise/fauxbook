@@ -248,6 +248,10 @@ body {
 
 .friend-request-button {
   cursor: pointer;
+  margin-left: 500px;
+}
+
+.red-circle {
   border: 0;
   border-radius: 50%;
   background-color: red;
@@ -256,7 +260,6 @@ body {
   color: white;
   font-weight: bold;
   font-size: 14px;
-  margin-left: 500px;
 }
 
 .app-logo h1 {
