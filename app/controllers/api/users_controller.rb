@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
   end
 
   def friends
-    @friends = User.find( params[:id] ).friends
+    @friends = User.find( params[:id] ).friends.where( accepted: true )
     @user_friends = current_user.friends
 
     render :friends
