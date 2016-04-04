@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
   before_filter :ensure_logged_in
 
   def index
-    @posts = Post.where( profile_id: params['profileId'] ).includes( author: :profile ).order( created_at: :desc )
+    @posts = Post.where( profile_id: params['profileId'] ).includes( author: :profile ).includes( receiver: :profile ).order( created_at: :desc )
     render :index
   end
 
