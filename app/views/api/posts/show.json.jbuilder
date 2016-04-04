@@ -7,3 +7,6 @@ json.author_id @post.author_id
 json.author_picture profile_picture
 json.photo photo
 json.date @post.created_at.strftime("%B %d, %Y")
+json.receiver_name "#{@post.receiver.profile.first_name} #{@post.receiver.profile.last_name}"
+json.receiver_id @post.receiver.id
+json.receiver_picture @post.receiver.profile.profile_picture
