@@ -246,6 +246,19 @@ body {
   cursor: pointer;
 }
 
+.friend-request-button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 500px;
+}
+
 .app-logo h1 {
   cursor: pointer;
   font-size: 24px;
