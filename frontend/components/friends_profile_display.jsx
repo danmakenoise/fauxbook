@@ -10,7 +10,7 @@ var FriendsProfileDisplay = React.createClass({
   },
 
   componentDidMount: function () {
-    var onOwnPage = SessionStore.currentUserId === this.props.profile.user_id;
+    var onOwnPage = SessionStore.currentUserId() === this.props.profile.user_id;
     APIUtil.fetchFriends( this.props.profile.user_id, onOwnPage );
     this.listener = FriendStore.addListener( this._handleChange );
   },

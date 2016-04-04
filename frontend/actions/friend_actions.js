@@ -9,10 +9,11 @@ var FriendActions = {
     });
   },
 
-  removeFriend: function ( friend ) {
+  removeFriend: function ( friend, onOwnPage ) {
     AppDispatcher.dispatch({
       actionType: FriendConstants.FRIEND_REMOVED,
-      friend: friend
+      friend: friend,
+      onOwnPage: onOwnPage
     });
   },
 };

@@ -20,11 +20,12 @@ var APIActions = {
     });
   },
 
-  receiveFriends: function ( friends, onOwnPage ) {
+  receiveFriends: function ( friends, onOwnPage, friendId ) {
     AppDispatcher.dispatch({
       actionType: FriendConstants.FRIENDS_RECEIVED,
       friends: friends,
-      onOwnPage: onOwnPage
+      onOwnPage: onOwnPage,
+      profileId: friendId
     });
   },
 

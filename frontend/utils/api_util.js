@@ -42,12 +42,15 @@ var APIUtil = {
   },
 
   fetchFriends: function ( friendId, onOwnPage ) {
+    if ( typeof onOwnPage === 'undefined' ) {
+      debugger;
+    }
     $.ajax({
       type: 'GET',
       url: 'api/users/' + friendId + '/friends',
       dataType: 'json',
       success: function ( friends ) {
-        APIActions.receiveFriends( friends, onOwnPage );
+        APIActions.receiveFriends( friends, onOwnPage, friendId );
       }
     });
   },

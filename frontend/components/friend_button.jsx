@@ -2,6 +2,10 @@ var React = require( 'react' );
 var FriendUtil = require( '../utils/friend_util' );
 
 var FriendButton = React.createClass({
+  getInitialState: function () {
+    return { disabled: false };
+  },
+
   render: function () {
     return this._generateButton();
   },
@@ -17,16 +21,22 @@ var FriendButton = React.createClass({
   },
 
   _addFriend: function () {
-    FriendUtil.addFriend( this.props.friend.id, this._toggleButton );
+    if ( !this.state.disabled ) {
+      this.setState( { disabled: true } );
+      FriendUtil.addFriend( this.props.friend.id, this._toggleButton );
+    }
   },
 
   _removeFriend: function () {
-    FriendUtil.removeFriend( this.props.friend.id, this._toggleButton );
+    if ( !this.state.disabled ) {
+      this.setState( { disabled: true } );
+      FriendUtil.removeFriend( this.props.friend.id, this._toggleButton );
+    }
   },
 
   _toggleButton: function () {
     this.props.friend.is_friend = !this.props.friend.is_friend;
-    this.forceUpdate();
+    this.setState( { disabled: false } );
   }
 });
 
