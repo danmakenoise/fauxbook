@@ -2,7 +2,7 @@ var APIUtil = require( '../utils/api_util' );
 var React = require( 'react' );
 var Display = require( './display' );
 var Search = require( './search' );
-var FriendRequestTool = require( './navbar/friend_request_tool' );
+var FriendRequestTool = require( './navbar/friend_request_tool/friend_request_tool' );
 
 var App = React.createClass({
   render: function () {

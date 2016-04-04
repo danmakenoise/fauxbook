@@ -238,17 +238,13 @@ body {
 
 .log-out-button {
   margin: 10px;
-  float: right;
+  right: 10px;
+  position: absolute;
   padding: 10px;
   border-radius: 5px;
   background-color: #eee;
   font-weight: bold;
   cursor: pointer;
-}
-
-.friend-request-button {
-  cursor: pointer;
-  margin-left: 500px;
 }
 
 .red-circle {
@@ -260,6 +256,53 @@ body {
   color: white;
   font-weight: bold;
   font-size: 14px;
+}
+
+.friend-request-tool-container {
+  display: inline;
+  position: absolute;
+  right: 98px;
+  top: 17px;
+}
+
+.friend-request-button {
+  cursor: pointer;
+}
+
+.friend-request-index {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  padding: 10px 10px 0 10px;;
+  z-index: 11;
+}
+
+.friend-request-index button {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  margin-right: 10px;
+  padding: 5px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.friend-request-index button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.friend-request-index li {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.friend-request-index span {
 }
 
 .app-logo h1 {
