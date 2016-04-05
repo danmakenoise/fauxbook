@@ -1,10 +1,11 @@
 var React = require( 'react' );
 var CommentUtil = require( '../../utils/comment_util' );
+var CommentItem = require( './comment_item' );
 
 var CommentIndex = React.createClass({
   render: function () {
     return (
-      <div className='comment-index'>
+      <div className='comment-index group'>
         { this._renderComments() }
       </div>
     );
@@ -12,7 +13,7 @@ var CommentIndex = React.createClass({
 
   _renderComments: function () {
     return this.props.comments.map( function ( comment ) {
-      return <p>{ comment.body }</p>;
+      return <CommentItem key={ comment.id } comment={ comment } />;
     });
   },
 });
