@@ -688,7 +688,7 @@ body {
   text-decoration: none;
   display: inline-block;
   position: relative;
-  margin: 10px;
+  margin: 10px 0px 0px 10px;
 }
 
 .post-receiver-link {
@@ -712,6 +712,8 @@ body {
   display: block;
   color: #bbb;
   font-size: 14px;
+  position: relative;
+  left: 10px;
 }
 
 .profile-thumb-container {
