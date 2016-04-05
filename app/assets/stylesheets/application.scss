@@ -671,7 +671,6 @@ body {
   border: solid 1px #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
-  // padding: 10px;
 }
 
 .post > p {
@@ -743,9 +742,11 @@ body {
 }
 
 .post-delete-button {
-  margin-top: 10px;
+  margin: 10px;
   float: right;
 }
+
+// comments---------------------------------------------------------------------
 
 // -----comment-index-----
 
@@ -753,6 +754,35 @@ body {
   border-top: 1px solid #ccc;
   background-color: #eee;
   padding: 10px;
+}
+
+// -----comment-items-----
+
+.comment-container .profile-thumb-container {
+  width: 40px;
+}
+
+.comment-author {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(58, 87, 149);
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.comment-author:hover {
+  text-decoration: underline;
+}
+
+.comment-body {
+  font-size: 14px;
+}
+
+// -----comment-delete-----
+
+.comment-delete-button {
+  float: right;
+  border: 0;
 }
 
 // about-profile-display--------------------------------------------------------
