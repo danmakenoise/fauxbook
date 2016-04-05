@@ -97,9 +97,9 @@ Bonus:
 
 - [x] Create Rails' `Friendship` backend, model, and controller.
 - [x] Create JSON-API for Friendship Create, Index, Update, and Destroy.
-- [ ] Create Flux `FriendStore` and `FriendRequestStore`
-- [ ] Create React `Navigation`, `FriendRequestNotificationButton`, `FriendRequestIndex`, `FriendRequestItem`, `FriendIndex`, `FriendItem`, `FriendRequestButton`, and `FriendSummary`.
-- [ ] Users can now add friends, accept and reject friend requests, and see information about their friends, and their friend's friends on their profiles.
+- [x] Create Flux `FriendStore` and `FriendRequestStore`
+- [x] Create React `Navigation`, `FriendRequestNotificationButton`, `FriendRequestIndex`, `FriendRequestItem`, `FriendIndex`, `FriendItem`, `FriendRequestButton`, and `FriendSummary`.
+- [x] Users can now add friends, accept and reject friend requests, and see information about their friends, and their friend's friends on their profiles.
 
 ### [Phase 7][phase-seven]: Navigation and User Search (0.5 Days) (4.25 Days Total)
 

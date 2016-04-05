@@ -26,7 +26,7 @@ var PostForm = React.createClass({
           <textarea ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder={ this._placeHolder() } rows={ this.state.rows } cols='71' />
         </div>
         <div className='post-form-submit-container group'>
-          <button onClick={ this._handleSubmit } className='post-form-submit-button'>Post</button>
+          <button onClick={ this._handleSubmit } className='post-form-submit-button'>{ this._submitMessage() }</button>
         </div>
       </form>
     );
@@ -59,10 +59,21 @@ var PostForm = React.createClass({
 
   _handleSubmit: function ( e ) {
     e.preventDefault();
+    isUser = this.props.profile.user.is_user;
+    isFriend = this.props.profile.user.id_friend;
+    isPosting = this.state.posting;
 
-    if ( !this.state.posting ) {
+    if ( !isPosting && ( isUser || isFriend ) ) {
       APIUtil.createPost( this._generatePostData(), this._clearPost);
       this.setState( { posting: true } );
+    }
+  },
+
+  _submitMessage: function () {
+    if ( this.props.profile.user.is_user || this.props.profile.user.is_friend ) {
+      return 'Post';
+    } else {
+      return 'Add ' + this.props.profile.first_name + ' as a friend to post!';
     }
   },
 
