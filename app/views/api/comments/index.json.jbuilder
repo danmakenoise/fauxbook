@@ -12,6 +12,8 @@ json.array! @comments do |comment|
   end
 
   json.author do
+    puts comment.author
+    puts comment.author_id
     json.id comment.author.id
     json.name "#{comment.author.profile.first_name} #{comment.author.profile.last_name}"
     json.image comment.author.profile.profile_picture.url( :thumb )

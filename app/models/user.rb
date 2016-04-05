@@ -46,6 +46,8 @@ class User < ActiveRecord::Base
     through: :requested_friendships,
     source: :user
 
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
+
   def friends
     created_friends + requested_friends
   end
