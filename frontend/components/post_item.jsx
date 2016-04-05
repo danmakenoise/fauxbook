@@ -2,6 +2,7 @@ var React = require( 'react' );
 var PostAuthorDisplay = require( './post_author_display' );
 var SessionStore = require( '../stores/session_store' );
 var APIUtil = require( '../utils/api_util' );
+var CommentIndex = require( './comments/comment_index' );
 
 var PostItem = React.createClass({
   getInitialState: function () {
@@ -15,6 +16,7 @@ var PostItem = React.createClass({
         { this._displayPhoto() }
         <p>{ this.props.post.body }</p>
         { this._postEditForm() }
+        <CommentIndex />
       </div>
     );
   },
@@ -36,7 +38,7 @@ var PostItem = React.createClass({
       var buttonClass = 'post-delete-button small-blue-button' + activeClass;
 
       return (
-        <div className='post-edit-form'>
+        <div className='post-edit-form group'>
           <button className={ buttonClass } onClick={ this._deletePost }>
             { buttonText }
           </button>
