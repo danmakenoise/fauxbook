@@ -4,6 +4,7 @@ var SessionStore = require( '../stores/session_store' );
 var APIUtil = require( '../utils/api_util' );
 var CommentIndex = require( './comments/comment_index' );
 var CommentStore = require( '../stores/comment_store' );
+var CommentForm = require( './comments/comment_form' );
 
 var PostItem = React.createClass({
   getInitialState: function () {
@@ -26,6 +27,7 @@ var PostItem = React.createClass({
         <p>{ this.props.post.body }</p>
         { this._postEditForm() }
         { this._renderComments() }
+        <CommentForm postId={ this.props.post.id } />
       </div>
     );
   },

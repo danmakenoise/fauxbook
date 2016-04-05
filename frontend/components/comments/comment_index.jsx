@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var CommentUtil = require( '../../utils/comment_util' );
 var CommentItem = require( './comment_item' );
+var CommentForm = require( './comment_form' );
 
 var CommentIndex = React.createClass({
   render: function () {

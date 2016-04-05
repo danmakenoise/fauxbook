@@ -753,7 +753,7 @@ body {
 .comment-index {
   border-top: 1px solid #ccc;
   background-color: #eee;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 // -----comment-items-----
@@ -778,9 +778,30 @@ body {
   font-size: 14px;
 }
 
+// -----comment-forms-----
+
+.post-comment-form {
+  border-top: 1px solid #ccc;
+  background-color: #eee;
+}
+
+.post-comment-form .profile-thumb-container {
+  margin: 10px 10px 0 10px;
+  width: 40px;
+}
+
+.post-comment-form input {
+  background-color: white;
+  padding: 5px;
+  width: 517px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 // -----comment-delete-----
 
 .comment-delete-button {
+  cursor: pointer;
   float: right;
   border: 0;
 }
