@@ -11,14 +11,17 @@ var LogIn = React.createClass({
 
             <h1>fauxbook</h1>
 
+            <button onClick={ this._jack } className="small-blue-button guest-login">Log In As Jack</button>
+            <button onClick={ this._diane } className="small-blue-button guest-login">Log In As Diane</button>
+
             <form ref='logInForm' onSubmit={ this._logIn }>
 
               <label>Email
-                <input type='text' name='user[email]' placeholder='me@example.com' />
+                <input ref='email' type='text' name='user[email]' placeholder='me@example.com' />
               </label>
 
               <label>Password
-                <input type='password' name='user[password]' placeholder='********' />
+                <input ref='password' type='password' name='user[password]' placeholder='********' />
               </label>
 
               <input type='submit' value='Log In' />
@@ -71,8 +74,20 @@ var LogIn = React.createClass({
     );
   },
 
+  _jack: function () {
+    this.refs.email.value = "jack@fauxbook.com";
+    this.refs.password.value = "password";
+    this._logIn();
+  },
+
+  _diane: function () {
+    this.refs.email.value = "diane@fauxbook.com";
+    this.refs.password.value = "password";
+    this._logIn();
+  },
+
   _logIn: function ( event ) {
-    event.preventDefault();
+    event && event.preventDefault();
     var formData = $( this.refs.logInForm ).serialize();
     APIUtil.logInUser( formData, this._redirectToApp );
   },
