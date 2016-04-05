@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var ProfilePicture = require( '../profile_picture' );
 var SessionStore = require( '../../stores/session_store' );
+var CommentUtil = require( '../../utils/comment_util' );
 
 var CommentItem = React.createClass({
   getInitialState: function () {
@@ -42,7 +43,7 @@ var CommentItem = React.createClass({
 
   _deleteComment: function () {
     if ( this.state.deleting ) {
-      // delete comment
+      CommentUtil.deleteComment( this.props.comment.id );
     } else {
       this.setState( { deleting: true } );
     }

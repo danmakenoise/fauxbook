@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var ProfilePicture = require( '../profile_picture' );
 var SessionStore = require( '../../stores/session_store' );
+var CommentUtil = require( '../../utils/comment_util' );
 
 var CommentForm = React.createClass({
   render: function () {
@@ -11,10 +12,11 @@ var CommentForm = React.createClass({
           image={ SessionStore.userPicture() }
         />
       <input
-        refs="input"
+        ref="input"
         onKeyDown={ this._handleKeyDown }
         type='text'
         placeholder='Write a comment.'
+        defaultValue=''
       />
       </div>
     );
@@ -24,8 +26,15 @@ var CommentForm = React.createClass({
     var enterKey = 13;
 
     if ( event.keyCode === enterKey ) {
-      // post comment
+      this._submitComment();
     }
+  },
+
+  _submitComment: function () {
+    CommentUtil.createComment({
+      post_id: this.props.postId,
+      body: this.refs.input.value
+    });
   },
 });
 
