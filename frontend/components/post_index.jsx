@@ -28,7 +28,7 @@ var PostIndex = React.createClass({
 
   componentWillReceiveProps: function ( newProps ) {
     PostStore.destroy();
-    APIUtil.fetchPosts( newProps.profile.id );
+    APIUtil.fetchPosts( newProps.profile.id, this._fetchAllComments );
   },
 
   render: function () {

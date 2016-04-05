@@ -1,3 +1,5 @@
+var CommentActions = require( '../actions/comment_actions' );
+
 var CommentUtil = {
   fetchAllComments: function ( postIds ) {
     $.ajax({
@@ -5,8 +7,7 @@ var CommentUtil = {
       data: { ids: postIds },
       dataType: 'json',
       success: function ( comments ) {
-        console.log( comments );
-        // update comment store
+        CommentActions.receiveComments( comments );
       }
     });
   }
