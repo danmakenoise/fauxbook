@@ -13,5 +13,5 @@ class Post < ActiveRecord::Base
 
   has_one :receiver, through: :profile, source: :user
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 end
