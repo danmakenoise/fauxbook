@@ -52,13 +52,14 @@ var APIUtil = {
     });
   },
 
-  fetchPosts: function ( profileId ) {
+  fetchPosts: function ( profileId, callback ) {
     $.get({
       url: 'api/posts',
       dataType: 'json',
       data: { profileId: profileId },
       success: function ( posts ) {
         APIActions.receivePosts( posts );
+        callback && callback( posts.ids );
       }
     });
   },

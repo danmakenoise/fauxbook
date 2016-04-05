@@ -3,6 +3,7 @@ var PostItem = require( './post_item' );
 var PostStore = require( '../stores/post_store' );
 var APIUtil = require( '../utils/api_util' );
 var PostForm = require( './post_form' );
+var CommentUtil = require( '../utils/comment_util' );
 
 var PostIndex = React.createClass({
   getInitialState: function () {
@@ -15,7 +16,7 @@ var PostIndex = React.createClass({
 
   componentDidMount: function () {
     if ( !this.state.posts ) {
-      APIUtil.fetchPosts( this.props.profile.id );
+      APIUtil.fetchPosts( this.props.profile.id, this._fetchAllComments );
     }
 
     this.listener = PostStore.addListener( this._handleChange );
@@ -43,6 +44,10 @@ var PostIndex = React.createClass({
     } else {
       return <div></div>;
     }
+  },
+
+  _fetchAllComments: function ( postIds ) {
+    CommentUtil.fetchAllComments( postIds );
   },
 
   _handleChange: function () {

@@ -1,4 +1,6 @@
-json.array! @posts do |post|
+json.ids @posts.map(&:id)
+
+json.posts @posts do |post|
   json.photo post.photo( :medium )
   json.id post.id
   json.body post.body

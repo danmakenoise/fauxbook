@@ -1,4 +1,5 @@
 var React = require( 'react' );
+var CommentUtil = require( '../../utils/comment_util' );
 
 var CommentIndex = React.createClass({
   render: function () {

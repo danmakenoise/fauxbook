@@ -2,6 +2,7 @@ var React = require( 'react' );
 var PostIndex = require( './post_index' );
 var PostForm = require( './post_form' );
 var APIUtil = require( '../utils/api_util' );
+var CommentUtil = require( '../utils/comment_util' );
 var SessionStore = require( '../stores/session_store' );
 var ProfileStore = require( '../stores/profile_store' );
 var FeedUtil = require( '../utils/feed_util' );
@@ -15,7 +16,7 @@ var Feed = React.createClass({
 
   componentDidMount: function () {
     APIUtil.fetchProfile( SessionStore.currentUserId() );
-    FeedUtil.fetchFeed();
+    FeedUtil.fetchFeed( this._fetchAllComments );
     this.profileListener = ProfileStore.addListener( this._handleProfileChange );
     this.postListener = PostStore.addListener( this._handlePostChange );
   },
@@ -39,6 +40,10 @@ var Feed = React.createClass({
     } else {
       return <div></div>;
     }
+  },
+
+  _fetchAllComments: function ( postIds ) {
+    CommentUtil.fetchAllComments( postIds );
   },
 
   _handleProfileChange: function () {
