@@ -16,7 +16,7 @@ var PostItem = React.createClass({
         { this._displayPhoto() }
         <p>{ this.props.post.body }</p>
         { this._postEditForm() }
-        <CommentIndex />
+        <CommentIndex postId={ this.props.post.id } />
       </div>
     );
   },
