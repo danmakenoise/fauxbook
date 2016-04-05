@@ -44,7 +44,7 @@ var FriendsProfileDisplay = React.createClass({
   _renderFriends: function () {
     if ( this.state.friends ) {
       return this.state.friends.map( function ( friend ) {
-        return <FriendItem key={ friend.id } friend={ friend } />;
+        return <FriendItem key={ 'friend-' + friend.id } friend={ friend } />;
       });
     }
   }
