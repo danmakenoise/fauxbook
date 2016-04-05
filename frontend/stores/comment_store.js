@@ -17,6 +17,9 @@ CommentStore.subComments = function ( commentId ) {
 
 CommentStore.__onDispatch = function ( payload ) {
   switch ( payload.actionType ) {
+  case CommentConstants.COMMENT_DELETED:
+    _deleteComment( payload.comment );
+    break;
   case CommentConstants.COMMENT_RECEIVED:
     _receiveComment( payload.comment );
     break;
@@ -25,6 +28,21 @@ CommentStore.__onDispatch = function ( payload ) {
     break;
   default:
     // no-op
+  }
+};
+
+var _deleteComment = function ( comment ) {
+  var id = comment.commentable_id;
+  if ( comment.commentable_type === 'Post' ) {
+    var comments = _comments.postComments[id];
+    for ( var i = 0; i < comments.length; i++ ) {
+      if ( comments[i].id === comment.id ) {
+        comments.splice( i, 1 );
+        console.log( _comments);
+        CommentStore.__emitChange();
+        return;
+      }
+    }
   }
 };
 

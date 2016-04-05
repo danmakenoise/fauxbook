@@ -2,6 +2,13 @@ var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var CommentConstants = require( '../constants/comment_constants' );
 
 var CommentActions = {
+  deleteComment: function ( comment ) {
+    AppDispatcher.dispatch({
+      actionType: CommentConstants.COMMENT_DELETED,
+      comment: comment
+    });
+  },
+
   receiveComment: function ( comment ) {
     AppDispatcher.dispatch({
       actionType: CommentConstants.COMMENT_RECIEVED,

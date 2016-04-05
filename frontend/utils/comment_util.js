@@ -14,8 +14,13 @@ var CommentUtil = {
   },
 
   deleteComment: function ( commentId ) {
-    // delete comment
-    console.log( commentId );
+    $.ajax({
+      url: '/api/comments/' + commentId,
+      method: 'DELETE',
+      success: function ( comment ) {
+        CommentActions.deleteComment( comment );
+      }
+    });
   },
 
   fetchAllComments: function ( postIds ) {
