@@ -16,10 +16,14 @@ class Api::CommentsController < ApplicationController
       @comments = target.comments
     elsif params[:ids]
       post_ids = params[:ids]
+
       comments = Comment
+        .includes( author: :profile )
         .where( "commentable_id IN (?) AND commentable_type = 'Post'", post_ids )
       comment_ids = comments.map &:id
+
       sub_comments = Comment
+        .includes( author: :profile )
         .where( "commentable_id IN (?) AND commentable_type = 'Comment'", comment_ids )
       @comments = comments + sub_comments
     end
