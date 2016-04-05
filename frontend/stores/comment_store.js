@@ -17,12 +17,24 @@ CommentStore.subComments = function ( commentId ) {
 
 CommentStore.__onDispatch = function ( payload ) {
   switch ( payload.actionType ) {
+  case CommentConstants.COMMENT_RECEIVED:
+    _receiveComment( payload.comment );
+    break;
   case CommentConstants.COMMENTS_RECEIVED:
     _receiveComments( payload.comments );
     break;
   default:
     // no-op
   }
+};
+
+var _receiveComment = function ( comment ) {
+  var id = comment.commentable_id;
+  if ( comment.commentable_type === 'Post' ) {
+    _comments.postComments[id] = _comments.postComments[id] || [];
+    _comments.postComments[id].push( comment );
+  }
+  CommentStore.__emitChange();
 };
 
 var _receiveComments = function ( comments ) {

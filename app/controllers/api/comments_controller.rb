@@ -2,11 +2,11 @@ class Api::CommentsController < ApplicationController
   def create
     target = determine_target params
 
-    comment = target.comments.build comment_params
-    comment.author = current_user
+    @comment = target.comments.build comment_params
+    @comment.author = current_user
 
-    if comment.save
-      render json: comment
+    if @comment.save
+      render :show
     end
   end
 
@@ -39,6 +39,10 @@ class Api::CommentsController < ApplicationController
   end
 
   private
+
+  def comment_params
+    params.require( :comment ).permit( :body )
+  end
 
   def determine_target params
     if params[:post_id]

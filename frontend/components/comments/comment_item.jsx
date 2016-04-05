@@ -10,7 +10,7 @@ var CommentItem = React.createClass({
 
   render: function () {
     return (
-      <div className='comment-container'>
+      <div className='comment-container group'>
         <ProfilePicture
           targetUser={ this.props.comment.author_id }
           image={ this.props.comment.author.image }

@@ -758,7 +758,16 @@ body {
 
 // -----comment-items-----
 
+.comment-container {
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  min-height: 40px;
+}
+
 .comment-container .profile-thumb-container {
+  position: absolute;
+  left: 0px;
   width: 40px;
 }
 
@@ -775,6 +784,7 @@ body {
 }
 
 .comment-body {
+  width: 529px;
   font-size: 14px;
 }
 
