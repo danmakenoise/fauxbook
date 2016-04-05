@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :friendships, only: [:create, :update, :destroy]
-    resources :posts, only: [:create, :index, :destroy]
+    resources :posts, only: [:create, :index, :destroy] do
+      resources :comments, only: [:create, :destroy]
+    end
     resources :users, only: :create
+    resources :comments do
+      resources :comments, only: [:create, :destroy]
+    end
     resource :session, only: [:create, :show, :destroy]
     resource :profile, only: [:show, :update] do
       patch '/photoupload', to: 'profiles#photo_upload'
