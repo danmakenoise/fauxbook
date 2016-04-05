@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
   def index
     if params[:id]
       target = determine_target params
-      render json: target.comments
+      @comments = target.comments
     elsif params[:ids]
       post_ids = params[:ids]
       comments = Comment
@@ -21,8 +21,10 @@ class Api::CommentsController < ApplicationController
       comment_ids = comments.map &:id
       sub_comments = Comment
         .where( "commentable_id IN (?) AND commentable_type = 'Comment'", comment_ids )
-      render json: ( comments + sub_comments )
+      @comments = comments + sub_comments
     end
+
+    render :index
   end
 
   def destroy
