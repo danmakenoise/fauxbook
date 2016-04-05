@@ -5,5 +5,7 @@ json.cover_photo @profile.cover_photo
 json.user do
   json.id @profile.user_id
   json.is_friend current_user.friends.include? @profile.user
+  json.is_pending current_user.pending_friend_requests.include? @profile.user
   json.is_user current_user.id == @profile.user_id
+  json.is_requested current_user.friend_requests.include? @profile.user
 end

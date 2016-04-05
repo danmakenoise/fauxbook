@@ -1,14 +1,15 @@
 var FriendRequestActions = require( '../actions/friend_request_actions' );
 
 var FriendRequestUtil = {
-  approveRequest: function ( user_id ) {
+  approveRequest: function ( user_id, callback ) {
     $.ajax({
       url: 'api/friendships/' + user_id,
       type: 'PATCH',
       dataType: 'json',
       success: function ( friend ) {
-        console.log( friend );
-      }
+        this.fetchRequests();
+        callback && callback();
+      }.bind( this )
     });
   },
 
@@ -18,8 +19,8 @@ var FriendRequestUtil = {
       type: 'DELETE',
       dataType: 'json',
       success: function ( friend ) {
-        console.log( friend );
-      }
+        this.fetchRequests();
+      }.bind( this )
     });
   },
 

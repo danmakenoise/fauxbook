@@ -15,8 +15,37 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :author_id
 
-  has_many :friendships
-  has_many :friends, through: :friendships, source: :friend
+  has_many :created_friendships,
+    class_name: 'Friendship',
+    foreign_key: :user_id
+
+  has_many :requested_friendships,
+    class_name: 'Friendship',
+    foreign_key: :friend_id
+
+  has_many :pending_friend_requests,
+    -> { where( friendships: { accepted: false } ) },
+    through: :created_friendships,
+    source: :friend
+
+  has_many :friend_requests,
+    -> { where( friendships: { accepted: false } ) },
+    through: :requested_friendships,
+    source: :user
+
+  has_many :created_friends,
+    -> { where( friendships: { accepted: true } ) },
+    through: :created_friendships,
+    source: :friend
+
+  has_many :requested_friends,
+    -> { where( friendships: { accepted: true } ) },
+    through: :requested_friendships,
+    source: :user
+
+  def friends
+    created_friends + requested_friends
+  end
 
   def User.find_by_credentials email, password
     user = User.find_by email: email

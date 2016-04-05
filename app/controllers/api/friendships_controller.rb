@@ -7,11 +7,12 @@ class Api::FriendshipsController < ApplicationController
 
   def update
     friendship = Friendship.find_by(
-      user_id: current_user.id,
-      friend_id: params[:id]
+      friend_id: current_user.id,
+      user_id: params[:id]
     )
 
     friendship.accept!
+
     render json: friendship
   end
 
@@ -21,7 +22,15 @@ class Api::FriendshipsController < ApplicationController
       friend_id: params[:id]
     )
 
+    unless friendship
+      friendship = Friendship.find_by(
+        user_id: params[:id],
+        friend_id: current_user.id
+      )
+    end
+
     friendship.remove!
+
     render json: friendship
   end
 end
