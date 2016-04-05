@@ -13,15 +13,18 @@ class User < ActiveRecord::Base
   has_many :authored_posts,
     class_name: 'Post',
     primary_key: :id,
-    foreign_key: :author_id
+    foreign_key: :author_id,
+    dependent: :destroy
 
   has_many :created_friendships,
     class_name: 'Friendship',
-    foreign_key: :user_id
+    foreign_key: :user_id,
+    dependent: :destroy
 
   has_many :requested_friendships,
     class_name: 'Friendship',
-    foreign_key: :friend_id
+    foreign_key: :friend_id,
+    dependent: :destroy
 
   has_many :pending_friend_requests,
     -> { where( friendships: { accepted: false } ) },
