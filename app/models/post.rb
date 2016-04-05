@@ -12,4 +12,6 @@ class Post < ActiveRecord::Base
   belongs_to :profile
 
   has_one :receiver, through: :profile, source: :user
+
+  has_many :comments, as: :commentable
 end
