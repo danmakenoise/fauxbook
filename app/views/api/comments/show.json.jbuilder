@@ -13,5 +13,5 @@ end
 json.author do
   json.id @comment.author.id
   json.name "#{@comment.author.profile.first_name} #{@comment.author.profile.last_name}"
-  json.image @comment.author.profile.profile_picture.url
+  json.image @comment.author.profile.profile_picture.url( :medium )
 end
