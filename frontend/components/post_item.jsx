@@ -3,10 +3,19 @@ var PostAuthorDisplay = require( './post_author_display' );
 var SessionStore = require( '../stores/session_store' );
 var APIUtil = require( '../utils/api_util' );
 var CommentIndex = require( './comments/comment_index' );
+var CommentStore = require( '../stores/comment_store' );
 
 var PostItem = React.createClass({
   getInitialState: function () {
-    return { deleting: false };
+    return { comments: null, deleting: false };
+  },
+
+  componentDidMount: function () {
+    this.listener = CommentStore.addListener( this._handleCommentsChange );
+  },
+
+  componentWillUnmount: function () {
+    this.listener.remove();
   },
 
   render: function () {
@@ -16,9 +25,27 @@ var PostItem = React.createClass({
         { this._displayPhoto() }
         <p>{ this.props.post.body }</p>
         { this._postEditForm() }
-        <CommentIndex postId={ this.props.post.id } />
+        { this._renderComments() }
       </div>
     );
+  },
+
+  _handleCommentsChange: function () {
+    var comments = CommentStore.postComments( this.props.post.id );
+    if ( comments ) {
+      this.setState( { comments: comments } );
+    }
+  },
+
+  _renderComments: function () {
+    if ( this.state.comments ) {
+      return (
+        <CommentIndex
+          postId={ this.props.post.id }
+          comments={ this.state.comments }
+        />
+      );
+    }
   },
 
   _displayPhoto: function () {

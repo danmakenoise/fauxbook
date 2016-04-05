@@ -1,5 +1,5 @@
 var CommentConstants = {
-  RECEIVED_COMMENTS: 'RECEIVED_COMMENTS'
+  COMMENTS_RECEIVED: 'COMMENTS_RECEIVED'
 };
 
 module.exports = CommentConstants;
