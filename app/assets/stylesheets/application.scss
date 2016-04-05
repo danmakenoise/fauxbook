@@ -281,10 +281,13 @@ body {
 
 .app-logo > .profile-thumb-container {
   width: 40px;
+  height: 40px;
   position: absolute;
   right: 213px;
+  overflow: hidden;
   top: 8px;
 }
+
 .friend-request-button {
   cursor: pointer;
   border: 0;
@@ -585,6 +588,7 @@ body {
 }
 
 .friend-item .profile-thumb-container {
+  overflow: hidden;
 }
 
 .friend-item .friend-button {
@@ -771,6 +775,8 @@ body {
   position: absolute;
   left: 0px;
   width: 40px;
+  height: 40px;
+  overflow: hidden;
 }
 
 .comment-author {
@@ -798,8 +804,10 @@ body {
 }
 
 .post-comment-form .profile-thumb-container {
-  margin: 10px 10px 0 10px;
+  margin: 10px;
   width: 40px;
+  height: 40px;
+  overflow: hidden;
 }
 
 .post-comment-form input {
