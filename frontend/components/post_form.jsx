@@ -60,7 +60,7 @@ var PostForm = React.createClass({
   _handleSubmit: function ( e ) {
     e.preventDefault();
     isUser = this.props.profile.user.is_user;
-    isFriend = this.props.profile.user.id_friend;
+    isFriend = this.props.profile.user.is_friend;
     isPosting = this.state.posting;
 
     if ( !isPosting && ( isUser || isFriend ) ) {

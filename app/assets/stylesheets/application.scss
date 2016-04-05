@@ -269,6 +269,22 @@ body {
   top: 17px;
 }
 
+.user-name {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  position: absolute;
+  right: 176px;
+  top: 20px;
+}
+
+.app-logo > .profile-thumb-container {
+  width: 40px;
+  position: absolute;
+  right: 213px;
+  top: 8px;
+}
 .friend-request-button {
   cursor: pointer;
   border: 0;
