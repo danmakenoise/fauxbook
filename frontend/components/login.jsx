@@ -2,6 +2,10 @@ var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
 
 var LogIn = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   render: function () {
     return (
       <div>
@@ -99,7 +103,7 @@ var LogIn = React.createClass({
   },
 
   _redirectToApp: function () {
-    this.props.history.push('/');
+    this.context.router.push('/');
   }
 });
 

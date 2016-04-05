@@ -5,6 +5,10 @@ var Search = require( './search' );
 var FriendRequestTool = require( './navbar/friend_request_tool/friend_request_tool' );
 
 var App = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   render: function () {
     return (
       <div className='app'>
@@ -26,7 +30,7 @@ var App = React.createClass({
   },
 
   _redirectToLogin: function () {
-    this.props.history.push( '/login' );
+    this.context.router.push( '/login' );
   }
 });
 
