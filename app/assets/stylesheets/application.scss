@@ -671,11 +671,11 @@ body {
   border: solid 1px #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
-  padding: 10px;
+  // padding: 10px;
 }
 
 .post > p {
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .post-author, .post-receiver {
@@ -689,6 +689,7 @@ body {
   text-decoration: none;
   display: inline-block;
   position: relative;
+  margin: 10px;
 }
 
 .post-receiver-link {
@@ -745,6 +746,15 @@ body {
   margin-top: 10px;
   float: right;
 }
+
+// -----comment-index-----
+
+.comment-index {
+  border-top: 1px solid #ccc;
+  background-color: #eee;
+  padding: 10px;
+}
+
 // about-profile-display--------------------------------------------------------
 
 // -----standard-display-----
