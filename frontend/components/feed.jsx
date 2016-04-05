@@ -16,8 +16,8 @@ var Feed = React.createClass({
   componentDidMount: function () {
     APIUtil.fetchProfile( SessionStore.currentUserId() );
     FeedUtil.fetchFeed();
-    this.profileListener = ProfileStore.addListener( this._handleChange );
-    this.postListener = PostStore.addListener( this._handleChange );
+    this.profileListener = ProfileStore.addListener( this._handleProfileChange );
+    this.postListener = PostStore.addListener( this._handlePostChange );
   },
 
   componentWillUnmount: function () {
@@ -41,8 +41,12 @@ var Feed = React.createClass({
     }
   },
 
-  _handleChange: function () {
-    this.setState( { profile: ProfileStore.getProfile(), posts: PostStore.all() } );
+  _handleProfileChange: function () {
+    this.setState( { profile: ProfileStore.getProfile() } );
+  },
+
+  _handlePostChange: function () {
+    this.setState( { posts: PostStore.all() } );
   }
 });
 
