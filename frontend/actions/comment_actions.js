@@ -1,8 +1,12 @@
 var AppDispatcher = require( '../dispatcher/app_dispatcher' );
+var CommentConstants = require( '../constants/comment_constants' );
 
 var CommentActions = {
   receiveComments: function ( comments ) {
-    //dispatch comments
+    AppDispatcher.dispatch({
+      actionType: CommentConstants.RECEIVED_COMMENTS,
+      comments: comments
+    });
   }
 };
 
