@@ -113,10 +113,10 @@ Bonus:
 
 **Objective:** Users can comment on posts, and other comments, one-level deep.
 
-- [ ] Create Rails' `Comment` backend, model and controller.
-- [ ] Create JSON-API for Comment Create, Index, and Destroy.
-- [ ] Create support for Post Comments in Post Flux `PostStore`.
-- [ ] Create React `CommentButton`, `CommentForm`, `CommentIndex`, and `CommentItem`.
+- [x] Create Rails' `Comment` backend, model and controller.
+- [x] Create JSON-API for Comment Create, Index, and Destroy.
+- [x] Create support for Post Comments in Post Flux `PostStore`.
+- [x] Create React `CommentButton`, `CommentForm`, `CommentIndex`, and `CommentItem`.
 - [ ] Users can now comment on posts and other comments, up to one-level deep.
 
 ### [Phase 9][phase-nine]: Liking (0.75 Days) (6 Days Total)
