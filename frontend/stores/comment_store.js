@@ -33,9 +33,22 @@ CommentStore.__onDispatch = function ( payload ) {
 
 var _deleteComment = function ( comment ) {
   var id = comment.commentable_id;
+  var comments;
+  var i;
+
   if ( comment.commentable_type === 'Post' ) {
-    var comments = _comments.postComments[id];
-    for ( var i = 0; i < comments.length; i++ ) {
+    comments = _comments.postComments[id];
+    for ( i = 0; i < comments.length; i++ ) {
+      if ( comments[i].id === comment.id ) {
+        comments.splice( i, 1 );
+        console.log( _comments);
+        CommentStore.__emitChange();
+        return;
+      }
+    }
+  } else {
+    comments = _comments.subComments[id];
+    for ( i = 0; i < comments.length; i++ ) {
       if ( comments[i].id === comment.id ) {
         comments.splice( i, 1 );
         console.log( _comments);
@@ -51,6 +64,9 @@ var _receiveComment = function ( comment ) {
   if ( comment.commentable_type === 'Post' ) {
     _comments.postComments[id] = _comments.postComments[id] || [];
     _comments.postComments[id].push( comment );
+  } else if ( comment.commentable_type === 'Comment' ) {
+    _comments.subComments[id] = _comments.subComments[id] || [];
+    _comments.subComments[id].push( comment );
   }
   CommentStore.__emitChange();
 };

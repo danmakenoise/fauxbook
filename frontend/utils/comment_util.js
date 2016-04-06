@@ -1,6 +1,18 @@
 var CommentActions = require( '../actions/comment_actions' );
 
 var CommentUtil = {
+  createSubComment: function ( commentId, commentBody, callback ) {
+    $.ajax({
+      url: '/api/comments/' + commentId + '/comments',
+      type: 'POST',
+      data: { comment: { body: commentBody } },
+      success: function ( comment ) {
+        CommentActions.receiveComment( comment );
+        callback && callback();
+      }
+    });
+  },
+
   createPostComment: function ( postId, commentBody, callback ) {
     $.ajax({
       url: '/api/posts/' + postId + '/comments',

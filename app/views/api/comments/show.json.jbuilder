@@ -6,6 +6,8 @@ json.extract! @comment,
   :author_id,
   :created_at
 
+json.date @comment.created_at.strftime("%B %d, %Y")
+
 if @comment.commentable_type == 'Comment'
   json.post_id @comment.commentable.commentable_id
 end

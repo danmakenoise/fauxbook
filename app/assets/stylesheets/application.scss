@@ -798,9 +798,23 @@ body {
 
 .comment-body {
   width: 529px;
+  word-wrap: break-word;
   font-size: 14px;
 }
 
+.comment-date {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.comment-main-section {
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.comment-main-section:hover {
+  background-color: #ddd;
+}
 // -----comment-forms-----
 
 .post-comment-form {
@@ -815,7 +829,7 @@ body {
   overflow: hidden;
 }
 
-.post-comment-form input {
+.post-comment-form input, .post-sub-comment-form input {
   background-color: white;
   padding: 5px;
   width: 517px;
@@ -830,6 +844,87 @@ body {
   float: right;
   border: 0;
 }
+
+// sub-comments-----------------------------------------------------------------
+
+.sub-comment-index {
+  background-color: #eee;
+  padding: 20px 10px 0 10px;
+  border-left: 2px solid #ccc;
+}
+
+.post-sub-comment-form input {
+  width: 300px;
+  position: relative;
+  top: -10px;
+  left: 39px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.post-sub-comment-form .profile-thumb-container {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  float: none;
+  margin-left: 50px;
+}
+
+.reply-button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  color: rgb(58, 87, 149);
+  font-weight: bold;
+}
+
+.sub-comment-container {
+  margin-bottom: 20px;
+  padding-left: 40px;
+  position: relative;
+  top: -10px;
+}
+
+.sub-comment-container:hover {
+  background-color: #ddd;
+}
+
+.sub-comment-container > a {
+  color: rgb(58, 87, 149);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.sub-comment-author {
+  border: 0;
+  position: relative;
+}
+
+.sub-comment-author:hover {
+  text-decoration: underline;
+}
+
+.sub-comment-body {
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 5px;
+  word-wrap: break-word;
+}
+
+.sub-comment-delete-button {
+  cursor: pointer;
+  border: 0;
+  float: right;
+}
+
+.sub-comment-container .profile-thumb-container {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
 
 // about-profile-display--------------------------------------------------------
 
