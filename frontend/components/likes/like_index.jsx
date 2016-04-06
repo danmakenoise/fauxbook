@@ -5,7 +5,7 @@ var LikeIndex = React.createClass({
     return (
       <div className='like-index'>
         <a>Like</a>
-        <span>{ this.props.target }</span>
+        <span>{ this.props.likesCount }</span>
       </div>
     );
   }

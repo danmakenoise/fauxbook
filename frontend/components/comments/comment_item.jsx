@@ -41,7 +41,7 @@ var CommentItem = React.createClass({
           { this._commentDeleteButton() }
         </div>
         <div className='group'>
-          <SubCommentForm commentId={ this.props.comment.id } />
+          <SubCommentForm comment={ this.props.comment } />
           { this._renderSubComments() }
         </div>
       </div>
