@@ -802,6 +802,7 @@ body {
   width: 529px;
   word-wrap: break-word;
   font-size: 14px;
+  margin-right: 5px;
 }
 
 .comment-date {
@@ -815,7 +816,6 @@ body {
 }
 
 .comment-main-section:hover {
-  background-color: #ddd;
 }
 // -----comment-forms-----
 
@@ -887,10 +887,6 @@ body {
   top: -10px;
 }
 
-.sub-comment-container:hover {
-  background-color: #ddd;
-}
-
 .sub-comment-container > a {
   color: rgb(58, 87, 149);
   text-decoration: none;
@@ -902,6 +898,7 @@ body {
 .sub-comment-author {
   border: 0;
   position: relative;
+  margin-right: 5px;
 }
 
 .sub-comment-author:hover {
@@ -910,7 +907,6 @@ body {
 
 .sub-comment-body {
   font-size: 14px;
-  margin-left: 5px;
   margin-right: 5px;
   word-wrap: break-word;
 }
@@ -1022,4 +1018,36 @@ body {
   background-color: white;
   border: solid 1px #ccc;
   border-radius: 5px;
+}
+
+// likes------------------------------------------------------------------------
+
+.like-index {
+  color: rgb(58, 87, 149);
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.post > .like-index {
+  font-size: 14px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-comment-container > .like-index {
+  display: block;
+}
+
+.like-index > a {
+}
+
+.like-index > a:hover {
+  color: rgb(78, 97, 250);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.like-index > span {
+  margin-left: 5px;
 }

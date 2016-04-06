@@ -3,6 +3,7 @@ var ProfilePicture = require( '../profile_picture' );
 var SessionStore = require( '../../stores/session_store' );
 var CommentUtil = require( '../../utils/comment_util' );
 var CommentStore = require( '../../stores/comment_store' );
+var LikeIndex = require( '../likes/like_index' );
 
 var SubCommentItem = React.createClass({
   getInitialState: function () {
@@ -25,6 +26,7 @@ var SubCommentItem = React.createClass({
         <span className='sub-comment-body'>{ this.props.comment.body }</span>
         <span className='comment-date'>{ this.props.comment.date }</span>
         { this._commentDeleteButton() }
+        <LikeIndex />
       </div>
     );
   },

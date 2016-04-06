@@ -2,6 +2,7 @@ var React = require( 'react' );
 var ProfilePicture = require( '../profile_picture' );
 var SessionStore = require( '../../stores/session_store' );
 var CommentUtil = require( '../../utils/comment_util' );
+var LikeIndex = require( '../likes/like_index' );
 
 var SubCommentForm = React.createClass({
   getInitialState: function () {
@@ -12,6 +13,15 @@ var SubCommentForm = React.createClass({
     if ( this.state.replying ) {
       return (
         <div className='post-sub-comment-form group'>
+          <div className='post-sub-comment-reply'>
+            <LikeIndex />
+            <button
+              className='reply-button'
+              onClick={ this._expand }
+              >
+              Reply
+            </button>
+          </div>
           <ProfilePicture
             targetUser={ SessionStore.currentUserId() }
             image={ SessionStore.userPicture() }
@@ -27,6 +37,7 @@ var SubCommentForm = React.createClass({
     } else {
       return (
         <div className='post-sub-comment-reply'>
+          <LikeIndex />
           <button
             className='reply-button'
             onClick={ this._expand }

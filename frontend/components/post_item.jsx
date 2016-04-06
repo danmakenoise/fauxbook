@@ -5,6 +5,7 @@ var APIUtil = require( '../utils/api_util' );
 var CommentIndex = require( './comments/comment_index' );
 var CommentStore = require( '../stores/comment_store' );
 var CommentForm = require( './comments/comment_form' );
+var LikeIndex = require( './likes/like_index' );
 
 var PostItem = React.createClass({
   getInitialState: function () {
@@ -26,6 +27,7 @@ var PostItem = React.createClass({
         { this._displayPhoto() }
         <p>{ this.props.post.body }</p>
         { this._postEditForm() }
+        <LikeIndex />
         { this._renderComments() }
         <CommentForm postId={ this.props.post.id } />
       </div>
