@@ -7,7 +7,7 @@ json.extract! @comment,
   :created_at
 
 json.date @comment.created_at.strftime("%B %d, %Y")
-json.likes @comment.likes.count
+json.likes @comment.likes.size
 json.liked @comment.likers.include? current_user
 
 if @comment.commentable_type == 'Comment'

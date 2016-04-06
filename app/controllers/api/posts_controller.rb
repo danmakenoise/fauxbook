@@ -2,14 +2,19 @@ class Api::PostsController < ApplicationController
   before_filter :ensure_logged_in
 
   def index
-    @posts = Post.where( profile_id: params['profileId'] ).includes( author: :profile ).includes( receiver: :profile ).order( created_at: :desc )
+    @posts = Post
+      .where( profile_id: params['profileId'] )
+      .includes( author: :profile )
+      .includes( receiver: :profile )
+      .includes( :likes )
+      .order( created_at: :desc )
     render :index
   end
 
   def create
     @post = Post.new( post_params )
     @post.author_id = current_user.id
-    
+
     if @post.save
       render :show
     else
@@ -25,6 +30,8 @@ class Api::PostsController < ApplicationController
     @posts = Post.where( ' posts.profile_id IN (?) ', valid_ids )
       .includes( author: :profile )
       .includes( receiver: :profile )
+      .includes( :likes )
+      .includes( :likers )
       .order( created_at: :desc )
 
     render :index

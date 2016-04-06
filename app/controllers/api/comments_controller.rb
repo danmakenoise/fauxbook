@@ -19,12 +19,17 @@ class Api::CommentsController < ApplicationController
 
       comments = Comment
         .includes( author: :profile )
+        .includes( :likes )
+        .includes( :likers )
         .where( "commentable_id IN (?) AND commentable_type = 'Post'", post_ids )
-      comment_ids = comments.map &:id
 
       sub_comments = Comment
         .includes( author: :profile )
-        .where( "commentable_id IN (?) AND commentable_type = 'Comment'", comment_ids )
+        .includes( :likes )
+        .includes( :likers )
+        .includes( :commentable )
+        .where( "commentable_id IN (?) AND commentable_type = 'Comment'", comments.pluck(:id) )
+
       @comments = comments + sub_comments
     end
 
