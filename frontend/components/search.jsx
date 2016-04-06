@@ -15,6 +15,7 @@ var Search = React.createClass({
   },
 
   componentWillUnmount: function () {
+    this.modalListener.remove();
     this.listener.remove();
   },
 
