@@ -2,6 +2,7 @@ var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
 var SearchResultStore = require( '../stores/search_result_store' );
 var SearchResultIndex = require( './search_result_index' );
+var ModalStore = require( '../stores/modal_store' );
 
 var Search = React.createClass({
   getInitialState: function () {
@@ -9,6 +10,7 @@ var Search = React.createClass({
   },
 
   componentDidMount: function () {
+    this.modalListener = ModalStore.addListener( this._handleModals );
     this.listener = SearchResultStore.addListener( this._handleSearch );
   },
 
@@ -36,6 +38,10 @@ var Search = React.createClass({
     } else {
       this.setState( { results: null } );
     }
+  },
+
+  _handleModals: function () {
+    this.setState( { results: null, search: '' } );
   },
 
   _searchResults: function () {

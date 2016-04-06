@@ -428,7 +428,8 @@ body {
   width: 260px;
   border-radius: 0 0 10px 10px;
   border-top: 0;
-  overflow: hidden;
+  max-height: 400px;
+  overflow: scroll;
 }
 .search-results li {
   padding: 0 5px 5px 5px;
