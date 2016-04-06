@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406133613) do
+ActiveRecord::Schema.define(version: 20160406175543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 20160406133613) do
   end
 
   add_index "likes", ["likeable_id", "user_id"], name: "index_likes_on_likeable_id_and_user_id", unique: true, using: :btree
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "notifiable_id"
+    t.string  "notifiable_type"
+    t.boolean "seen"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer  "author_id",          null: false
