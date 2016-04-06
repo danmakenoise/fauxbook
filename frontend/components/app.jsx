@@ -6,6 +6,7 @@ var FriendRequestTool = require( './navbar/friend_request_tool/friend_request_to
 var ProfilePicture = require( './profile_picture' );
 var SessionStore = require( '../stores/session_store' );
 var NotificationTool = require( './navbar/notifications/notification_tool' );
+var ModalActions = require( '../actions/modal_actions' );
 
 var App = React.createClass({
   contextTypes: {
@@ -14,7 +15,7 @@ var App = React.createClass({
 
   render: function () {
     return (
-      <div className='app'>
+      <div className='app' onClick={ this._closeModals }>
         <div className='top-bar app-logo bar group'>
           <a href='/#/'><h1 onClick={ this._goHome }>fauxbook</h1></a>
           <Search />
@@ -29,6 +30,10 @@ var App = React.createClass({
         </Display>
       </div>
     );
+  },
+
+  _closeModals: function () {
+    ModalActions.closeModals();
   },
 
   _logOut: function () {

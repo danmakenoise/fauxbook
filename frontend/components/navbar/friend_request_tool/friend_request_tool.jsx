@@ -2,6 +2,8 @@ var React = require( 'react' );
 var FriendRequestUtil = require( '../../../utils/friend_request_util' );
 var FriendRequestStore = require( '../../../stores/friend_request_store' );
 var FriendRequestIndex = require( './friend_request_index' );
+var ModalConstants = require( '../../../constants/modal_constants' );
+var ModalStore = require( '../../../stores/modal_store' );
 
 var FriendRequestTool = React.createClass({
   getInitialState: function () {
@@ -10,10 +12,12 @@ var FriendRequestTool = React.createClass({
 
   componentDidMount: function () {
     FriendRequestUtil.fetchRequests();
+    this.modalListener = ModalStore.addListener( this._handleModals );
     this.listener = FriendRequestStore.addListener( this._handleChange );
   },
 
   componentWillUnmount: function () {
+    this.modalListener.remove();
     this.listener.remove();
   },
 
@@ -55,6 +59,12 @@ var FriendRequestTool = React.createClass({
     }
   },
 
+  _handleModals: function () {
+    if ( this.state.expanded ) {
+      this.setState( { expanded: false } );
+    }
+  },
+  
   _toggleExpand: function () {
     this.setState( { expanded: !this.state.expanded } );
   }

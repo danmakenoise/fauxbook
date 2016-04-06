@@ -2,6 +2,8 @@ var React = require( 'react' );
 var NotificationIndex = require( './notification_index' );
 var NotificationUtil = require( '../../../utils/notification_util' );
 var NotificationStore = require( '../../../stores/notification_store' );
+var ModalConstants = require( '../../../constants/modal_constants' );
+var ModalStore = require( '../../../stores/modal_store' );
 
 var NotificationTool = React.createClass({
   getInitialState: function () {
@@ -10,10 +12,12 @@ var NotificationTool = React.createClass({
 
   componentDidMount: function () {
     NotificationUtil.fetchNotifications();
+    this.modalListener = ModalStore.addListener( this._handleModals );
     this.listener = NotificationStore.addListener( this._handleChange );
   },
 
   componentWillUnmount: function () {
+    this.modalListener.remove();
     this.listener.remove();
   },
 
@@ -55,6 +59,12 @@ var NotificationTool = React.createClass({
           onClick={ this._toggleExpand }
         />
       );
+    }
+  },
+
+  _handleModals: function () {
+    if ( this.state.expanded ) {
+      this.setState( { expanded: false } );
     }
   },
 
