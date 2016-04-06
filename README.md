@@ -22,7 +22,7 @@
 - [x] See a feed of friend's posts.
 - [x] Search for other users.
 - [x] Comment on friend's posts.
-- [ ] Like friend's posts.
+- [x] Like friend's posts.
 - [ ] Receive Notifications for relevant events.
 
 Bonus:
@@ -123,11 +123,11 @@ Bonus:
 
 **Objective:** Users can like posts and comments.
 
-- [ ] Create Rails' `Like` backend, model, and controller.
-- [ ] Create JSON-API for Like Create, Index, and Destroy.
-- [ ] Create support for Likes in `PostStore`.
-- [ ] Create React `LikeButton`.
-- [ ] Users can Like and unLike posts/comments and see Like counts.
+- [x] Create Rails' `Like` backend, model, and controller.
+- [x] Create JSON-API for Like Create, Index, and Destroy.
+- [x] Create support for Likes in `PostStore`.
+- [x] Create React `LikeButton`.
+- [x] Users can Like and unLike posts/comments and see Like counts.
 
 ### [Phase 10][phase-ten]: Notifications (0.5 Days) (6.5 Days Total)
 
