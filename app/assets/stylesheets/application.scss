@@ -240,6 +240,12 @@ body {
 }
 // main-app-styles--------------------------------------------------------------
 
+.top-bar {
+  position: fixed;
+  top: 0;
+  z-index: 9001; /* it's over 9000 */
+}
+
 .log-out-button {
   margin: 10px;
   right: 10px;

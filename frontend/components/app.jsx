@@ -14,7 +14,7 @@ var App = React.createClass({
   render: function () {
     return (
       <div className='app'>
-        <div className='app-logo bar group'>
+        <div className='top-bar app-logo bar group'>
           <a href='/#/'><h1 onClick={ this._goHome }>fauxbook</h1></a>
           <Search />
           <ProfilePicture image={ SessionStore.userPicture() } targetUser={ SessionStore.currentUserId() } />
