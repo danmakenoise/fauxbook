@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     end
 
     get '/notifications', to: 'notifications#index'
+    patch '/notifications', to: 'notifications#all_seen'
+
     get '/feed', to: 'posts#feed'
     get '/requests', to: 'users#friend_requests'
     get '/search', to: 'searches#index'

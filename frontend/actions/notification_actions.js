@@ -7,6 +7,12 @@ var NotificationActions = {
       actionType: NotificationConstants.NOTIFICATIONS_RECEIVED,
       notifications: notifications
     });
+  },
+
+  markAllAsSeen: function () {
+    AppDispatcher.dispatch({
+      actionType: NotificationConstants.MARK_ALL_AS_SEEN
+    });
   }
 };
 

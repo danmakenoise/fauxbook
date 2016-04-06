@@ -12,7 +12,15 @@ NotificationStore.all = function () {
 };
 
 NotificationStore.count = function () {
-  return _notifications.length;
+  var count = 0;
+
+  for ( var i = 0; i < _notifications.length; i++ ) {
+    if ( !_notifications[i].seen ) {
+      count++;
+    }
+  }
+
+  return count;
 };
 
 NotificationStore.__onDispatch = function ( payload ) {

@@ -9,7 +9,18 @@ var NotificationUtil = {
         NotificationActions.receiveNotifications( notifications );
       }
     });
-  }
+  },
+
+  markAllAsSeen: function () {
+    $.ajax({
+      method: 'PATCH',
+      url: 'api/notifications',
+      dataType: 'json',
+      success: function ( notifications ) {
+        NotificationActions.receiveNotifications( notifications );
+      }
+    });
+  },
 };
 
 module.exports = NotificationUtil;

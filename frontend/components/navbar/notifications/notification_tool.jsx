@@ -24,7 +24,7 @@ var NotificationTool = React.createClass({
           onClick={ this._toggleExpand }
           className={ this._determineClass() }
         >
-          { this._hasNotifications() ? this.state.notifications.length : 0 }
+          { NotificationStore.count() }
         </button>
         { this._renderNotificationIndex() }
       </div>
@@ -32,7 +32,7 @@ var NotificationTool = React.createClass({
   },
 
   _determineClass: function () {
-    if ( this._hasNotifications() ) {
+    if ( NotificationStore.count() > 0 ) {
       return 'notification-button info-button red-circle';
     } else {
       return 'notification-button info-button';
@@ -50,12 +50,18 @@ var NotificationTool = React.createClass({
   _renderNotificationIndex: function () {
     if ( this.state.expanded ) {
       return (
-        <NotificationIndex notifications={ this.state.notifications }/>
+        <NotificationIndex
+          notifications={ this.state.notifications }
+          onClick={ this._toggleExpand }
+        />
       );
     }
   },
 
   _toggleExpand: function () {
+    if ( this.state.expanded ) {
+      NotificationUtil.markAllAsSeen();
+    }
     this.setState( { expanded: !this.state.expanded } );
   }
 });
