@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
 
   has_many :comments, foreign_key: :author_id, dependent: :destroy
 
+  has_many :notifications
+
   def friends
     created_friends + requested_friends
   end
