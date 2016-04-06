@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       post = item
     elsif item.class == Comment
       if item.commentable_type == 'Post'
-        users.push item.commentable.user
+        users.push item.commentable.author
         messages.push "#{name} Commented on Your Post"
         post = item.commentable
       elsif item.commentable_type == 'Comment'
@@ -52,7 +52,6 @@ class ApplicationController < ActionController::Base
         user_id: user.id,
         post_id: post.id,
         body: body,
-        seen: false
       })
     end
   end

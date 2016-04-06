@@ -1,6 +1,7 @@
 var React = require( 'react' );
 var NotificationIndex = require( './notification_index' );
 var NotificationUtil = require( '../../../utils/notification_util' );
+var NotificationStore = require( '../../../stores/notification_store' );
 
 var NotificationTool = React.createClass({
   getInitialState: function () {
@@ -9,11 +10,11 @@ var NotificationTool = React.createClass({
 
   componentDidMount: function () {
     NotificationUtil.fetchNotifications();
-    // this.listener = NotificationStore.addListener( this._handleChange );
+    this.listener = NotificationStore.addListener( this._handleChange );
   },
 
   componentWillUnmount: function () {
-    // this.listener.remove();
+    this.listener.remove();
   },
 
   render: function () {
@@ -39,7 +40,7 @@ var NotificationTool = React.createClass({
   },
 
   _handleChange: function () {
-    // this.setState( { notifications: NotificationStore.all() });
+    this.setState( { notifications: NotificationStore.all() });
   },
 
   _hasNotifications: function () {

@@ -1,4 +1,4 @@
-// NotificationActions = require( '../actions/notification_actions' );
+NotificationActions = require( '../actions/notification_actions' );
 
 var NotificationUtil = {
   fetchNotifications: function () {
@@ -6,8 +6,7 @@ var NotificationUtil = {
       url: 'api/notifications',
       dataType: 'json',
       success: function ( notifications ) {
-        debugger;
-        console.log( notifications );
+        NotificationActions.receiveNotifications( notifications );
       }
     });
   }
