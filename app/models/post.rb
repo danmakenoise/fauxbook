@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   include Likeable
-  
+
   has_attached_file :photo, styles: { original: "600", medium: "400x400>" }, default_url: ''
 
   validates :author_id, :profile_id, :body, presence: true
@@ -15,5 +15,7 @@ class Post < ActiveRecord::Base
 
   has_one :receiver, through: :profile, source: :user
 
+  has_many :notifications, dependent: :destroy
+  
   has_many :comments, as: :commentable, dependent: :destroy
 end

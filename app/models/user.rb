@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
+  has_many :notifications, dependent: :destroy
+  
   has_many :authored_posts,
     class_name: 'Post',
     primary_key: :id,
