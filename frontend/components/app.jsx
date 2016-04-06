@@ -5,6 +5,7 @@ var Search = require( './search' );
 var FriendRequestTool = require( './navbar/friend_request_tool/friend_request_tool' );
 var ProfilePicture = require( './profile_picture' );
 var SessionStore = require( '../stores/session_store' );
+var NotificationTool = require( './navbar/notifications/notification_tool' );
 
 var App = React.createClass({
   contextTypes: {
@@ -19,6 +20,7 @@ var App = React.createClass({
           <Search />
           <ProfilePicture image={ SessionStore.userPicture() } targetUser={ SessionStore.currentUserId() } />
           <span className='user-name'>{ SessionStore.currentUserName() }</span>
+          <NotificationTool />
           <FriendRequestTool />
           <button className='log-out-button' onClick={ this._logOut } >Log Out</button>
         </div>
