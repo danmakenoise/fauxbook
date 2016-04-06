@@ -1,4 +1,5 @@
 var React = require( 'react' );
+var NotificationIndex = require( './notification_index' );
 
 var NotificationTool = React.createClass({
   getInitialState: function () {
@@ -47,11 +48,10 @@ var NotificationTool = React.createClass({
   _renderNotificationIndex: function () {
     if ( this.state.expanded ) {
       return (
-        <div>Expanded</div>
+        <NotificationIndex notifications={ this.state.notifications }/>
       );
     }
   },
-  // <NotificationIndex notifications={ this.state.notifications }/>
 
   _toggleExpand: function () {
     this.setState( { expanded: !this.state.expanded } );
