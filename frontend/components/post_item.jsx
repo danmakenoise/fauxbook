@@ -30,6 +30,7 @@ var PostItem = React.createClass({
         <LikeIndex
           target={ 'posts/' + this.props.post.id }
           likesCount={ this.props.post.likes }
+          liked={ this.props.post.liked }
         />
         { this._renderComments() }
         <CommentForm postId={ this.props.post.id } />

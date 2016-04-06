@@ -9,6 +9,7 @@ json.array! @comments do |comment|
 
   json.date comment.created_at.strftime("%B %d, %Y")
   json.likes comment.likes.count
+  json.liked comment.likers.include? current_user
 
   if comment.commentable_type == 'Comment'
     json.post_id comment.commentable.commentable_id

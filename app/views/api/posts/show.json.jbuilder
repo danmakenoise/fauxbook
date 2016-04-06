@@ -10,3 +10,4 @@ json.receiver_name "#{@post.receiver.profile.first_name} #{@post.receiver.profil
 json.receiver_id @post.receiver.id
 json.receiver_picture @post.receiver.profile.profile_picture.url( :thumb )
 json.likes @post.likes.count
+json.liked @post.likers.include? current_user

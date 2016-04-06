@@ -17,6 +17,7 @@ var SubCommentForm = React.createClass({
             <LikeIndex
               target={ '/comments/' + this.props.comment.id }
               likesCount={ this.props.comment.likes }
+              liked={ this.props.comment.liked }
             />
             <button
               className='reply-button'
@@ -43,6 +44,7 @@ var SubCommentForm = React.createClass({
           <LikeIndex
             target={ '/comments/' + this.props.comment.id }
             likesCount={ this.props.comment.likes }
+            liked={ this.props.comment.liked }
           />
           <button
             className='reply-button'

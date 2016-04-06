@@ -29,6 +29,7 @@ var SubCommentItem = React.createClass({
         <LikeIndex
           target={ '/comments/' + this.props.comment.id }
           likesCount={ this.props.comment.likes }
+          liked={ this.props.comment.liked }
         />
       </div>
     );

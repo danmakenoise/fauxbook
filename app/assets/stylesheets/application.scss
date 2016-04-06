@@ -1039,11 +1039,11 @@ body {
   display: block;
 }
 
-.like-index > a {
+.liked, .like-index > a:hover {
+  color: rgb(78, 97, 250);
 }
 
 .like-index > a:hover {
-  color: rgb(78, 97, 250);
   cursor: pointer;
   text-decoration: underline;
 }

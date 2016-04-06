@@ -12,4 +12,5 @@ json.posts @posts do |post|
   json.receiver_id post.receiver.id
   json.receiver_picture post.receiver.profile.profile_picture
   json.likes post.likes.count
+  json.liked post.likers.include? current_user
 end
