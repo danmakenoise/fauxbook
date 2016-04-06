@@ -14,7 +14,7 @@ var SubCommentForm = React.createClass({
       return (
         <div className='post-sub-comment-form group'>
           <div className='post-sub-comment-reply'>
-            <LikeIndex />
+            <LikeIndex target={ '/comments/' + this.props.commentId } />
             <button
               className='reply-button'
               onClick={ this._expand }
@@ -37,7 +37,7 @@ var SubCommentForm = React.createClass({
     } else {
       return (
         <div className='post-sub-comment-reply'>
-          <LikeIndex />
+          <LikeIndex target={ '/comments/' + this.props.commentId } />
           <button
             className='reply-button'
             onClick={ this._expand }

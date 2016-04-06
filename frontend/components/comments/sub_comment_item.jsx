@@ -26,7 +26,7 @@ var SubCommentItem = React.createClass({
         <span className='sub-comment-body'>{ this.props.comment.body }</span>
         <span className='comment-date'>{ this.props.comment.date }</span>
         { this._commentDeleteButton() }
-        <LikeIndex />
+        <LikeIndex target={ '/comments/' + this.props.comment.id }/>
       </div>
     );
   },
