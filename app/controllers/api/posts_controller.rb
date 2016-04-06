@@ -16,6 +16,7 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
 
     if @post.save
+      create_notification_for @post if @post.profile_id != current_user.profile.id
       render :show
     else
       render text: 'something went wrong', status: 422

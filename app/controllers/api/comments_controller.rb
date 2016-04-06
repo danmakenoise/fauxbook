@@ -5,7 +5,9 @@ class Api::CommentsController < ApplicationController
     @comment = target.comments.build comment_params
     @comment.author = current_user
 
+
     if @comment.save
+      create_notification_for @comment if target.author_id != current_user.id
       render :show
     end
   end

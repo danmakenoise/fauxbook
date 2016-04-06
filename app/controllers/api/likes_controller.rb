@@ -3,6 +3,8 @@ class Api::LikesController < ApplicationController
     targetItem = determine_target params
     like = targetItem.likes.build user_id: current_user.id
     like.save
+    create_notification_for like if targetItem.author_id != current_user.id
+
     render json: like
   end
 
