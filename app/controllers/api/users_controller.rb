@@ -22,7 +22,7 @@ class Api::UsersController < ApplicationController
   end
 
   def friend_requests
-    @friends = current_user.friend_requests
+    @friends = current_user.friend_requests.order( created_at: :desc )
     render :friends
   end
 

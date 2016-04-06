@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 class Post < ActiveRecord::Base
   include Likeable
 
@@ -16,6 +18,10 @@ class Post < ActiveRecord::Base
   has_one :receiver, through: :profile, source: :user
 
   has_many :notifications, dependent: :destroy
-  
+
   has_many :comments, as: :commentable, dependent: :destroy
+
+  def created_in_words
+    "#{time_ago_in_words self.created_at} ago"
+  end
 end

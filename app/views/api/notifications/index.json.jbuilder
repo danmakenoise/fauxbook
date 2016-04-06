@@ -5,5 +5,5 @@ json.array! @notifications do |notification|
   json.post_id notification.post_id
   json.seen notification.seen
   json.body notification.body
-  json.time notification.created_at
+  json.time notification.created_in_words
 end

@@ -5,9 +5,9 @@ json.array! @comments do |comment|
     :commentable_id,
     :commentable_type,
     :author_id,
-    :created_at
+    :created_in_words
 
-  json.date comment.created_at.strftime("%B %d, %Y")
+  json.date  comment.created_in_words
   json.likes comment.likes.size
   json.liked comment.likers.include? current_user
 

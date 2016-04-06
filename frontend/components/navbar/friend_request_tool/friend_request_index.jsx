@@ -16,7 +16,7 @@ var FriendRequestIndex = React.createClass({
         return <FriendRequestItem key={ request.id } request={ request } />;
       });
     } else {
-      return <li>No Friend Requests Here!</li>;
+      return <li>No Friend Requests</li>;
     }
   }
 });

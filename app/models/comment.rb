@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 class Comment < ActiveRecord::Base
   include Likeable
 
@@ -7,4 +9,8 @@ class Comment < ActiveRecord::Base
   belongs_to :author, class_name: 'User'
 
   has_many :comments, as: :commentable, dependent: :destroy
+
+  def created_in_words
+    "#{time_ago_in_words self.created_at} ago"
+  end
 end
