@@ -11,7 +11,9 @@ var NotificationItem = React.createClass({
           image={ this.props.notification.photo }
           targetUser={ this.props.notification.author_id }
         />
-        <a href={ this._linkToPost() }>{ this.props.notification.body }</a>
+        <a href={ this._linkToPost() }>{ this.props.notification.body }
+          <span className='notification-time'>{ this.props.notification.time }</span>
+        </a>
       </li>
     );
   },

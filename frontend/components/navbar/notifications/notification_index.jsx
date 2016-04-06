@@ -4,7 +4,7 @@ var NotificationItem = require( './notification_item' );
 var NotificationIndex = React.createClass({
   render: function () {
     return (
-      <ul onClick={ this.props.onClick } className='friend-request-index'>
+      <ul onClick={ this.props.onClick } className='notification-index friend-request-index'>
         { this._generateFriendRequests() }
       </ul>
     );

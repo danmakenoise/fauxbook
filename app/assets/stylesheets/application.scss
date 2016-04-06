@@ -47,6 +47,10 @@ body {
   color: #444;
 }
 
+.app {
+  margin-top: 78px;
+}
+
 .bar {
   background-color: rgb(58, 87, 149);
   background-image: url(image_path('header_background.png'));
@@ -318,12 +322,12 @@ body {
 .friend-request-index {
   position: absolute;
   right: 0;
+  top: 41px;
   background-color: white;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-  padding: 10px 10px 0 10px;;
+  width: 400px;
   z-index: 11;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
 }
 
 .friend-request-index button {
@@ -332,24 +336,57 @@ body {
   margin-right: 10px;
   padding: 5px;
   width: 60px;
-  border-radius: 5px;
-  margin-top: 5px;
+  margin-top: 12px;
 }
 
 .friend-request-index button:hover {
   cursor: pointer;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 
 .friend-request-index li {
-  width: 100%;
+  width: 390px;
   display: block;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding: 5px;
 }
 
-.friend-request-index span {
+.friend-request-index a {
+  margin-right: 34px;
+  text-decoration: none;
+}
+
+.friend-request-index a:hover {
+  text-decoration: underline;
+}
+
+.friend-request-index li:last-child {
+  border-bottom: 0;
+}
+
+.notification-index li a {
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 10px;
+  color: rgb(91, 116, 168);
+}
+
+.notification-index li > a:nth-child(2) {
+  position: relative;
+  top: 8px;
+  height: 50px;
+  width: 330px;
+  margin-right: 0px;
+}
+
+.notification-time {
+  color: #777;
+  display: block;
+}
+
+.notification-time span {
+  text-decoration: none;
 }
 
 .app-logo h1 {
