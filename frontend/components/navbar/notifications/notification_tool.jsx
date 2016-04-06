@@ -1,5 +1,6 @@
 var React = require( 'react' );
 var NotificationIndex = require( './notification_index' );
+var NotificationUtil = require( '../../../utils/notification_util' );
 
 var NotificationTool = React.createClass({
   getInitialState: function () {
@@ -7,7 +8,7 @@ var NotificationTool = React.createClass({
   },
 
   componentDidMount: function () {
-    // NotificationUtil.fetchNotifications();
+    NotificationUtil.fetchNotifications();
     // this.listener = NotificationStore.addListener( this._handleChange );
   },
 

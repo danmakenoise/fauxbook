@@ -47,9 +47,13 @@ class ApplicationController < ActionController::Base
     until users.empty?
       body = messages.shift
       user = users.shift
-      puts "To: #{user.profile.first_name} #{user.profile.last_name}"
-      puts "On: #{post.body}"
-      puts body
+      Notification.create! ({
+        author_id: current_user.id,
+        user_id: user.id,
+        post_id: post.id,
+        body: body,
+        seen: false
+      })
     end
   end
 
