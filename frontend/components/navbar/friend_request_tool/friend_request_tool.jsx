@@ -14,11 +14,13 @@ var FriendRequestTool = React.createClass({
     FriendRequestUtil.fetchRequests();
     this.modalListener = ModalStore.addListener( this._handleModals );
     this.listener = FriendRequestStore.addListener( this._handleChange );
+    this.interval = window.setInterval( FriendRequestUtil.fetchRequests, 5000 );
   },
 
   componentWillUnmount: function () {
     this.modalListener.remove();
     this.listener.remove();
+    window.clearInterval( this.interval );
   },
 
   render: function () {
@@ -64,7 +66,7 @@ var FriendRequestTool = React.createClass({
       this.setState( { expanded: false } );
     }
   },
-  
+
   _toggleExpand: function () {
     this.setState( { expanded: !this.state.expanded } );
   }
