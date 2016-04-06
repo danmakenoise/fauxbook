@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(version: 20160406175543) do
   add_index "likes", ["likeable_id", "user_id"], name: "index_likes_on_likeable_id_and_user_id", unique: true, using: :btree
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "notifiable_id"
-    t.string  "notifiable_type"
-    t.boolean "seen"
+    t.integer  "user_id",         null: false
+    t.integer  "notifiable_id",   null: false
+    t.string   "notifiable_type", null: false
+    t.boolean  "seen",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", force: :cascade do |t|
