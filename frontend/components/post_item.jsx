@@ -64,7 +64,7 @@ var PostItem = React.createClass({
     if ( SessionStore.currentUserId() === this.props.post.author_id ) {
       var buttonText = this.state.deleting ? 'Are You Sure?' : 'Delete';
       var activeClass = this.state.deleting ? '' : ' transparent';
-      var buttonClass = 'post-delete-button small-blue-button' + activeClass;
+      var buttonClass = 'post-delete-button' + activeClass;
 
       return (
         <div className='post-edit-form group'>
