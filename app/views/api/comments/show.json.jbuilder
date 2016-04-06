@@ -7,6 +7,7 @@ json.extract! @comment,
   :created_at
 
 json.date @comment.created_at.strftime("%B %d, %Y")
+json.likes comment.likes.count
 
 if @comment.commentable_type == 'Comment'
   json.post_id @comment.commentable.commentable_id

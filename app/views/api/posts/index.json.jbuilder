@@ -11,4 +11,5 @@ json.posts @posts do |post|
   json.receiver_name "#{post.receiver.profile.first_name} #{post.receiver.profile.last_name}"
   json.receiver_id post.receiver.id
   json.receiver_picture post.receiver.profile.profile_picture
+  json.likes post.likes.count
 end
