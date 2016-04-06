@@ -23,7 +23,7 @@
 - [x] Search for other users.
 - [x] Comment on friend's posts.
 - [x] Like friend's posts.
-- [ ] Receive Notifications for relevant events.
+- [x] Receive Notifications for relevant events.
 
 Bonus:
 - [ ] Summary of recent actions by friends.
@@ -133,11 +133,11 @@ Bonus:
 
 **Objective:** Users get notifications for all relevant events.
 
-- [ ] Create Rails' `Notification` backend, model, and controller.
-- [ ] Create JSON-API for Notification Create, Update
-- [ ] Create Flux `NotificationStore`.
-- [ ] Create React `NotificationButton`, `NotificationIndex`, `NotificationItem`
-- [ ] Users receive notifications whenever a post or comment of their's is liked or commented upon.
+- [x] Create Rails' `Notification` backend, model, and controller.
+- [x] Create JSON-API for Notification Create, Update
+- [x] Create Flux `NotificationStore`.
+- [x] Create React `NotificationButton`, `NotificationIndex`, `NotificationItem`
+- [x] Users receive notifications whenever a post or comment of their's is liked or commented upon.
 
 ### [Phase 11][phase-eleven]: Polish (1.5 Days) (8 Days Total)
 
