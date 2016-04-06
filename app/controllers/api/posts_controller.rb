@@ -23,6 +23,11 @@ class Api::PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find params[:id]
+    render :show
+  end
+
   def feed
     valid_friend_ids = current_user.friends.map(&:id)
     valid_ids = Profile.where( 'profiles.user_id in (?)', valid_friend_ids ).map(&:id)

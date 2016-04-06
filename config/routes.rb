@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :friendships, only: [:create, :update, :destroy]
-    resources :posts, only: [:create, :index, :destroy] do
+    resources :posts, only: [:create, :index, :destroy, :show] do
       resources :comments, only: [:create, :index]
       resources :likes, only: :create
       delete '/unlike', to: 'likes#destroy'

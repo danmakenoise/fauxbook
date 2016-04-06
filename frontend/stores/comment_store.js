@@ -7,6 +7,10 @@ var CommentStore = new Store( AppDispatcher );
 
 var _comments = {};
 
+CommentStore.destroy = function () {
+  _comments = {};
+};
+
 CommentStore.postComments = function ( postId ) {
   return _comments.postComments[postId] || null;
 };

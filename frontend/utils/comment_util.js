@@ -35,6 +35,10 @@ var CommentUtil = {
     });
   },
 
+  fetchComments: function ( postId ) {
+    this.fetchAllComments( [postId] );
+  },
+
   fetchAllComments: function ( postIds ) {
     $.ajax({
       url: 'api/comments',

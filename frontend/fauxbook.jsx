@@ -6,7 +6,7 @@ var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
 var hashHistory = ReactRouter.hashHistory;
 var IndexRoute = ReactRouter.IndexRoute;
-
+var PostDisplay = require( './components/posts/post_display' );
 var App = require( './components/app' );
 var Profile = require( './components/profile' );
 var LogIn = require( './components/login' );
@@ -51,6 +51,7 @@ var routes = (
         <Route path='about' component={ AboutProfileDisplay } />
         <Route path='friends' component={ FriendsProfileDisplay } />
       </Route>
+      <Route path='/posts/:id' component={ PostDisplay } />
     </Route>
     <Route path='/login' onEnter={ _ensureNotLoggedIn } component={ LogIn } />
   </Route>
