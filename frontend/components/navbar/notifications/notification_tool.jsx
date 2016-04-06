@@ -14,11 +14,13 @@ var NotificationTool = React.createClass({
     NotificationUtil.fetchNotifications();
     this.modalListener = ModalStore.addListener( this._handleModals );
     this.listener = NotificationStore.addListener( this._handleChange );
+    this.interval = window.setInterval( NotificationUtil.fetchNotifications, 5000 );
   },
 
   componentWillUnmount: function () {
     this.modalListener.remove();
     this.listener.remove();
+    window.clearInterval( this.interval );
   },
 
   render: function () {
