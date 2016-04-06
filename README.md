@@ -21,7 +21,7 @@
 - [x] Post on friend's personal profiles.
 - [x] See a feed of friend's posts.
 - [x] Search for other users.
-- [ ] Comment on friend's posts.
+- [x] Comment on friend's posts.
 - [ ] Like friend's posts.
 - [ ] Receive Notifications for relevant events.
 
@@ -117,7 +117,7 @@ Bonus:
 - [x] Create JSON-API for Comment Create, Index, and Destroy.
 - [x] Create support for Post Comments in Post Flux `PostStore`.
 - [x] Create React `CommentButton`, `CommentForm`, `CommentIndex`, and `CommentItem`.
-- [ ] Users can now comment on posts and other comments, up to one-level deep.
+- [x] Users can now comment on posts and other comments, up to one-level deep.
 
 ### [Phase 9][phase-nine]: Liking (0.75 Days) (6 Days Total)
 
