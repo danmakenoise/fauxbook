@@ -32,14 +32,6 @@ class Api::UsersController < ApplicationController
 
   private
 
-  def get_birthday params
-    month = Date::MONTHNAMES.index params[:profile][:birthday_month]
-    day = params[:profile][:birthday_day].to_i
-    year = params[:profile][:birthday_year].to_i
-
-    Date.new(year, day, month)
-  end
-
   def user_params
     params.require( :user ).permit :email, :password
   end

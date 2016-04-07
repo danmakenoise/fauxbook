@@ -1,10 +1,14 @@
 var React = require( 'react' );
 var APIUtil = require( '../utils/api_util' );
+var BirthdayHelper = require( '../utils/helpers/birthday_helper' );
 
 var EditProfileAttributeForm = React.createClass({
   render: function () {
     return (
       <form className="edit-attr-form" ref="form" onSubmit={ this._handleSubmit }>
+        <span className='about-tag'>
+          { this.props.type + ':' }
+        </span>
         { this._generateForm() }
       </form>
     );
@@ -22,9 +26,31 @@ var EditProfileAttributeForm = React.createClass({
   },
 
   _generateBirthdayForm: function () {
+    var defaultDate = this.props.data.split(' ');
+    var month = defaultDate[0];
+    var year = parseInt( defaultDate[2] );
+    var day = parseInt( defaultDate[1].substring( 0, 2 ));
+
     return (
       <div>
-        <input type='date' value={ this.props.data } className='edit-date-input' name='profile[birthday]' />
+        <select
+          defaultValue={ month }
+          className='form__input form__select select__month'
+          name='profile[birthday_month]'>
+          { BirthdayHelper.generateMonthOptions( month ) }
+        </select>
+        <select
+          defaultValue={ day }
+          className='form__input form__select select__day'
+          name='profile[birthday_day]'>
+          { BirthdayHelper.generateDayOptions( day ) }
+        </select>
+        <select
+          defaultValue={ year }
+          className='form__input form__select select__year'
+          name='profile[birthday_year]'>
+          { BirthdayHelper.generateYearOptions( year ) }
+        </select>
         <input type="submit" value="Save" />
       </div>
     );
@@ -32,7 +58,7 @@ var EditProfileAttributeForm = React.createClass({
 
   _generateGenderForm: function () {
     return (
-      <div>
+      <div className='form__input'>
         <input type='radio' id="female" name='profile[gender]' defaultChecked={ this.props.data === 'Female' ? true : false } value='F' />
         <label htmlFor="female">  Female  </label>
         <input type='radio' id="male" name='profile[gender]' defaultChecked={ this.props.data === 'Female' ? false : true } value='M' />
@@ -44,7 +70,7 @@ var EditProfileAttributeForm = React.createClass({
 
   _generateTextForm: function () {
     return (
-      <div>
+      <div className='form__input'>
         <input type='text' name={ 'profile[' + this.props.type + ']' } defaultValue={ this.props.data } />
         <input type="submit" value="Save" />
       </div>

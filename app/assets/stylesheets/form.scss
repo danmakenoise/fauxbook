@@ -42,10 +42,14 @@
   margin-bottom: 10px;
 }
 
-.sign-up-form__select {
+.form__select {
   -webkit-appearance: menulist-button;
   height: 37px;
   font-size: 16px;
   margin-right: 10px;
   margin-bottom: 20px;
+}
+
+.form__input {
+  margin-top: 10px;
 }

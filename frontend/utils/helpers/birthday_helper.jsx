@@ -25,7 +25,7 @@ var BirthdayHelper = {
     for ( var i = 1; i <= 31; i++ ) {
       output.push( i );
     }
-    
+
     return output;
   },
 

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
-  
+
   def current_user
     @current_user ||= User.find_by session_token: session[:session_token]
   end
@@ -55,6 +55,14 @@ class ApplicationController < ActionController::Base
         body: body,
       })
     end
+  end
+
+  def get_birthday params
+    month = Date::MONTHNAMES.index params[:profile][:birthday_month]
+    day = params[:profile][:birthday_day].to_i
+    year = params[:profile][:birthday_year].to_i
+
+    Date.new(year, day, month)
   end
 
   def logged_in?

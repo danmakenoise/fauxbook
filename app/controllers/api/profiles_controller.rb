@@ -11,6 +11,7 @@ class Api::ProfilesController < ApplicationController
 
   def update
     @profile = current_user.profile
+    @profile.birthday = get_birthday params
     @profile.update!( profile_params );
     render :show
   end
@@ -41,6 +42,6 @@ class Api::ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require( :profile ).permit( :gender, :birthday, :location )
+    params.require( :profile ).permit( :gender, :location )
   end
 end
