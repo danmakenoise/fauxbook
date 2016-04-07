@@ -20,7 +20,7 @@ class Api::SessionsController < ApplicationController
       @user = user
       render :show
     else
-      render text: 'bad credentials', status: 401
+      render json: { errors: ['Invalid Username or Password'] }
     end
   end
 

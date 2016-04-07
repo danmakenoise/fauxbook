@@ -103,8 +103,12 @@ var APIUtil = {
       dataType: 'json',
       data: formData,
       success: function ( currentUser ) {
-        APIActions.receiveCurrentUser( currentUser );
-        callback();
+        if ( currentUser.errors ) {
+          ErrorActions.receiveErrors( currentUser.errors );
+        } else {
+          APIActions.receiveCurrentUser( currentUser );
+          callback();
+        }
       }
     });
   },

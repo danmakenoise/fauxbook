@@ -13,6 +13,11 @@ var ErrorBar = React.createClass({
     this.modalsListener = ModalStore.addListener( this._handleModals );
   },
 
+  componentWillUnmount: function () {
+    this.errorsListener.remove();
+    this.modalsListener.remove();
+  },
+
   render: function () {
     if ( this.state.errors ) {
       return this._renderErrorList();
