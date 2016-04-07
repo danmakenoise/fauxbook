@@ -231,7 +231,7 @@ body {
   top: 20px;
 }
 
-.app-logo > .profile-thumb-container {
+.nav-bar > .profile-thumb-container {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -336,7 +336,11 @@ body {
   text-decoration: none;
 }
 
-.app-logo h1 {
+.nav-bar {
+  position: relative;
+}
+
+.nav-bar h1 {
   cursor: pointer;
   font-size: 24px;
   font-weight: bold;
