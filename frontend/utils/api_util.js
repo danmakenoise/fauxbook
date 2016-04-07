@@ -1,5 +1,6 @@
 var APIActions = require( '../actions/api_actions' );
 var ErrorActions = require( '../actions/error_actions' );
+var ErrorHelper = require( './helpers/error_helper' );
 
 var APIUtil = {
   createPost: function ( data, callback ) {
@@ -12,11 +13,7 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function ( post ) {
-        if ( post.errors ) {
-          ErrorActions.receiveErrors( post.errors );
-        } else {
-          APIActions.receivePost( post );
-        }
+        ErrorHelper.checkForErrors( post, APIActions.receivePost );
         callback();
       },
     });
@@ -29,12 +26,10 @@ var APIUtil = {
       dataType: 'json',
       data: formData,
       success: function ( currentUser ) {
-        if ( currentUser.errors ) {
-          ErrorActions.receiveErrors( currentUser.errors );
-        } else {
+        ErrorHelper.checkForErrors( currentUser, function () {
           APIActions.receiveCurrentUser( currentUser );
           callback();
-        }
+        });
       },
     });
   },
@@ -174,7 +169,7 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function( profile ) {
-        _checkForErrors( profile, APIActions.receiveProfile );
+        ErrorHelper.checkForErrors( profile, APIActions.receiveProfile );
       }
     });
   },
@@ -194,17 +189,9 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function( profile ) {
-        _checkForErrors( profile, APIActions.receiveProfile );
+        ErrorHelper.checkForErrors( profile, APIActions.receiveProfile );
       }
     });
-  }
-};
-
-var _checkForErrors = function( object, callback ) {
-  if ( object.errors ) {
-    ErrorActions.receiveErrors( object.errors );
-  } else {
-    callback( object );
   }
 };
 
