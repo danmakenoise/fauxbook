@@ -101,8 +101,12 @@ var PostForm = React.createClass({
     reader.readAsDataURL( file );
   },
 
-  _clearPost: function () {
-    this.setState( { rows: 4, body: '', photo: null, file: null, posting: false });
+  _clearPost: function ( errors ) {
+    if ( errors ) {
+      this.setState({ posting: false });
+    } else {
+      this.setState( { rows: 4, body: '', photo: null, file: null, posting: false });
+    }
   }
 });
 

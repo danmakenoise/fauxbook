@@ -12,7 +12,11 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function ( post ) {
-        APIActions.receivePost( post );
+        if ( post.errors ) {
+          ErrorActions.receiveErrors( post.errors );
+        } else {
+          APIActions.receivePost( post );
+        }
         callback();
       },
     });

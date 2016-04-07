@@ -19,7 +19,7 @@ class Api::PostsController < ApplicationController
       create_notification_for @post if @post.profile_id != current_user.profile.id
       render :show
     else
-      render text: 'something went wrong', status: 422
+      render json: { errors: @post.errors.full_messages }
     end
   end
 
