@@ -1,6 +1,7 @@
 var React = require( 'react' );
 
 var APIUtil = require( '../../../utils/api_util' );
+
 var SignUpBar = React.createClass({
   render: function () {
     return (

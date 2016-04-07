@@ -1,6 +1,9 @@
 var React = require( 'react' );
+
 var APIUtil = require( '../../utils/api_util' );
+
 var SignUpBar = require( './components/sign_up_bar' );
+var Splash = require( './components/splash' );
 
 var LogIn = React.createClass({
   contextTypes: {
@@ -12,17 +15,7 @@ var LogIn = React.createClass({
       <div>
         <SignUpBar signInCallBack={ this._redirectToApp } />
         <div className='container group'>
-
-          <div className='splash'>
-
-            <h2>Connect with friends and the world around you on Fauxbook.</h2>
-            <ul>
-              <li><span><strong>See photos and updates</strong> linked straight from Tumblr.</span></li>
-              <li><span><strong>Share what's new</strong> and engage in rational political discourse.</span></li>
-              <li><span><strong>Find more</strong> ads featuring that thing you just saw on Amazon.</span></li>
-            </ul>
-          </div>
-
+          <Splash />
           <div className='sign-up'>
 
             <h1>Sign Up</h1>
