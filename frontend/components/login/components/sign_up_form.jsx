@@ -42,23 +42,23 @@ var SignUpForm = React.createClass({
 
           <label className="label__birthday">Birthday</label>
           <select
-            className='sign-up-form__select select__month'
+            className='form__select select__month'
             name='profile[birthday_month]'>
             { BirthdayHelper.generateMonthOptions() }
           </select>
           <select
-            className='sign-up-form__select select__day'
+            className='form__select select__day'
             name='profile[birthday_day]'>
             { BirthdayHelper.generateDayOptions() }
           </select>
           <select
-            className='sign-up-form__select select__year'
+            className='form__select select__year'
             name='profile[birthday_year]'>
             { BirthdayHelper.generateYearOptions() }
           </select>
 
           <br />
-          
+
           <input
             className='form__input-radio input-radio--first'
             id='female'
