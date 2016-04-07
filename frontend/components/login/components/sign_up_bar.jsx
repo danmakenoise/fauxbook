@@ -63,7 +63,7 @@ var SignUpBar = React.createClass({
   _logIn: function ( event ) {
     event && event.preventDefault();
     var formData = $( this.refs.logInForm ).serialize();
-    APIUtil.logInUser( formData, this.props.signInCallBack );
+    APIUtil.logInUser( formData, this.props.signInCallback );
   },
 });
 
