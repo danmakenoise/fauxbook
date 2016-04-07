@@ -28,7 +28,7 @@
 }
 
 .link__icon {
-  background-image: url('icons.png');
+  background-image: url(image_path('icons.png'));
 }
 
 .link__icon--newsfeed {
@@ -36,5 +36,5 @@
 }
 
 .link__icon--edit {
-  background-position: 0 -454px;
+  background-position: -64px -659px;
 }
