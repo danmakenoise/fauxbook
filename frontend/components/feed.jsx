@@ -8,6 +8,7 @@ var ProfileStore = require( '../stores/profile_store' );
 var FeedUtil = require( '../utils/feed_util' );
 var PostStore = require( '../stores/post_store' );
 var PostItem = require( './post_item' );
+var SideBar = require( './sidebar' );
 
 var Feed = React.createClass({
   getInitialState: function () {
@@ -30,11 +31,14 @@ var Feed = React.createClass({
   render: function () {
     if ( this.state.profile && this.state.posts ) {
       return (
-        <div className="container group feed">
-          <PostForm profile={ this.state.profile } />
-          { this.state.posts.map( function ( post ) {
-            return <PostItem key={ post.id } post={ post } />;
-          })}
+        <div>
+          <SideBar />
+          <div className="container group feed">
+            <PostForm profile={ this.state.profile } />
+            { this.state.posts.map( function ( post ) {
+              return <PostItem key={ post.id } post={ post } />;
+            })}
+          </div>
         </div>
       );
     } else {

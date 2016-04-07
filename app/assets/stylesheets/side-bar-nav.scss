@@ -27,7 +27,14 @@
   font-weight: bold;
 }
 
-.link__icon--newsfeed {
+.link__icon {
   background-image: url('icons.png');
+}
+
+.link__icon--newsfeed {
+  background-position: 0 -454px;
+}
+
+.link__icon--edit {
   background-position: 0 -454px;
 }

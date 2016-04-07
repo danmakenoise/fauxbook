@@ -24,10 +24,9 @@ var SideBar = React.createClass({
             className='list-item__link'
             href={ '/#/users/' + SessionStore.currentUserId() + '/about' }
           >
-            <img
-              className='link__icon'
-              src={ SessionStore.userPicture() }>
-            </img>
+            <div
+              className='link__icon link__icon--edit'>
+            </div>
             <span className='link__text'>
               Edit Profile
             </span>
