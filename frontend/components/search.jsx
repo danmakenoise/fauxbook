@@ -42,7 +42,7 @@ var Search = React.createClass({
   },
 
   _handleModals: function () {
-    this.setState( { results: null, search: '' } );
+    this.setState( { results: null } );
   },
 
   _searchResults: function () {
