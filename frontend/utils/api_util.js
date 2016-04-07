@@ -1,4 +1,5 @@
 var APIActions = require( '../actions/api_actions' );
+var ErrorActions = require( '../actions/error_actions' );
 
 var APIUtil = {
   createPost: function ( data, callback ) {
@@ -24,9 +25,13 @@ var APIUtil = {
       dataType: 'json',
       data: formData,
       success: function ( currentUser ) {
-        APIActions.receiveCurrentUser( currentUser );
-        callback();
-      }
+        if ( currentUser.errors ) {
+          ErrorActions.receiveErrors( currentUser.errors );
+        } else {
+          APIActions.receiveCurrentUser( currentUser );
+          callback();
+        }
+      },
     });
   },
 

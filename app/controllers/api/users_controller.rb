@@ -10,7 +10,9 @@ class Api::UsersController < ApplicationController
       @user = user
       render :show
     else
-      render text: 'invalid information', status: 422
+      render json: {
+        errors: user.errors.full_messages + user.profile.errors.full_messages
+      }
     end
   end
 

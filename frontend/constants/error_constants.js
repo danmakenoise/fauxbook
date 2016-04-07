@@ -1,5 +1,5 @@
 var ErrorConstants = {
-  ERRORS_RECEIVED: 'ERRORS_RECEIVED'
+  RECEIVE_ERRORS: 'RECEIVE_ERRORS'
 };
 
 module.exports = ErrorConstants;

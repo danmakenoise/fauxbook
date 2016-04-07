@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 8, allow_nil: true }
   validates_format_of :email, with: /.+@.+\.+/
   validates_uniqueness_of :email, :session_token
-
+  validates_associated :profile
+  
   after_initialize :ensure_session_token
 
   attr_reader :password
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
 
   has_many :notifications, dependent: :destroy
-  
+
   has_many :authored_posts,
     class_name: 'Post',
     primary_key: :id,

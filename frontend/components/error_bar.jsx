@@ -32,13 +32,13 @@ var ErrorBar = React.createClass({
   },
 
   _renderErrorItems: function () {
-    return this.state.errors.map( function ( error ) {
-      return <li>{ error }</li>;
+    return this.state.errors.map( function ( error, index ) {
+      return <li className='error-list__list-item' key={ index }>{ error }</li>;
     });
   },
 
   _handleErrors: function () {
-    this.setState({ errors: ErrorState.all() });
+    this.setState({ errors: ErrorStore.all() });
   },
 
   _handleModals: function () {
