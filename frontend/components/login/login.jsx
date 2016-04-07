@@ -1,5 +1,6 @@
 var React = require( 'react' );
-var APIUtil = require( '../utils/api_util' );
+var APIUtil = require( '../../utils/api_util' );
+var SignUpBar = require( './components/sign_up_bar' );
 
 var LogIn = React.createClass({
   contextTypes: {
@@ -9,31 +10,7 @@ var LogIn = React.createClass({
   render: function () {
     return (
       <div>
-        <div className='bar group'>
-
-          <div className='sign-in container'>
-
-            <h1>fauxbook</h1>
-
-            <button onClick={ this._jack } className="small-blue-button guest-login">Log In As Jack</button>
-            <button onClick={ this._diane } className="small-blue-button guest-login">Log In As Diane</button>
-
-            <form ref='logInForm' onSubmit={ this._logIn }>
-
-              <label>Email
-                <input ref='email' type='text' name='user[email]' placeholder='me@example.com' />
-              </label>
-
-              <label>Password
-                <input ref='password' type='password' name='user[password]' placeholder='********' />
-              </label>
-
-              <input type='submit' value='Log In' />
-
-            </form>
-          </div>
-        </div>
-
+        <SignUpBar signInCallBack={ this._redirectToApp } />
         <div className='container group'>
 
           <div className='splash'>
@@ -76,24 +53,6 @@ var LogIn = React.createClass({
         </div>
       </div>
     );
-  },
-
-  _jack: function () {
-    this.refs.email.value = "jack@fauxbook.com";
-    this.refs.password.value = "password";
-    this._logIn();
-  },
-
-  _diane: function () {
-    this.refs.email.value = "diane@fauxbook.com";
-    this.refs.password.value = "password";
-    this._logIn();
-  },
-
-  _logIn: function ( event ) {
-    event && event.preventDefault();
-    var formData = $( this.refs.logInForm ).serialize();
-    APIUtil.logInUser( formData, this._redirectToApp );
   },
 
   _createUser: function ( event ) {
