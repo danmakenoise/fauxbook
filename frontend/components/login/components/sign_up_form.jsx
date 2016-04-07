@@ -13,27 +13,27 @@ var SignUpForm = React.createClass({
         <form ref="signUpForm" onSubmit={ this._createUser } >
           <input
             type='text'
-            className='name-input'
+            className='name-input form__input-text'
             name='profile[first_name]'
             placeholder='First name'>
           </input>
 
           <input
             type='text'
-            className='name-input'
+            className='name-input form__input-text'
             name='profile[last_name]'
             placeholder='Last name'>
           </input>
 
           <input
             type='text'
-            className='sign-up-full-input'
+            className='sign-up-full-input form__input-text'
             name='user[email]'
             placeholder='Email'>
           </input>
 
           <input type='password'
-            className='sign-up-full-input'
+            className='sign-up-full-input form__input-text'
             name='user[password]'
             placeholder='New Password'>
           </input>
@@ -41,31 +41,39 @@ var SignUpForm = React.createClass({
           <label>Birthday
             <input
               type='date'
-              className='sign-up-full-input'
+              className='sign-up-full-input form__input-text'
               name='profile[birthday]'>
             </input>
           </label>
 
-          <label>
-            <input
-              type='radio'
-              name='profile[gender]'
-              defaultChecked={ true }
-              value='F'>
-            </input>
+          <input
+            className='form__input-radio input-radio--first'
+            id='female'
+            type='radio'
+            name='profile[gender]'
+            defaultChecked={ true }
+            value='F'>
+          </input>
+          <label htmlFor='female' className='input-radio__label'>
             Female
           </label>
 
-          <label>
-            <input
-              type='radio'
-              name='profile[gender]'
-              value='M'>
-            </input>
+          <input
+            className='form__input-radio'
+            id='male'
+            type='radio'
+            name='profile[gender]'
+            value='M'>
+          </input>
+          <label htmlFor='male' className='input-radio__label'>
             Male
           </label>
 
-          <input type='submit' value='Sign Up' />
+          <input
+            className='form__button--big-green'
+            type='submit'
+            value='Sign Up'>
+          </input>
 
         </form>
       </div>

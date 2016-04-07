@@ -1,44 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-// css reset--------------------------------------------------------------------
-
-body, div, h1, h2, input, p, ul, li, label, table, td, tr {
-  padding: 0;
-  border: 0;
-  margin: 0;
-  font: inherit;
-  font-family: sans-serif;
-  box-sizing: inherit;
-  color: inherit;
-  text-decoration: none;
-  background: transparent;
-}
-
-ul {
-  list-style-type: none;
-}
-
-// clearfix---------------------------------------------------------------------
-
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
+*= require reset
+*= require clearfix
+*= require_self
+*= require form
+*/
 
 // fauxbook sitewide styles-----------------------------------------------------
 
@@ -197,11 +162,6 @@ body {
   font-size: 20px;
 }
 
-.sign-up input {
-  display: block;
-  margin-top: 20px;
-}
-
 .sign-up-full-input, .name-input {
   padding: 10px;
   width: 300px;
@@ -211,15 +171,6 @@ body {
   margin-bottom: 20px;
 }
 
-.sign-up input[type='submit'] {
-  color: white;
-  background-image: linear-gradient(rgb(103, 174, 85), rgb(87, 136, 67));
-  padding: 10px 50px;
-  border: solid 1px #222;
-  text-shadow: rgba(0, 0, 0, 0.498039) 0px 1px 2px;
-  cursor: pointer;
-}
-
 .name-input {
   width: 130px;
   float: left;
@@ -227,20 +178,6 @@ body {
   margin-bottom: 20px;
 }
 
-.sign-up input[type='submit']:hover {
-  background-image: linear-gradient(rgb(121, 188, 100), rgb(87, 136, 67));
-}
-
-.sign-up input[type='radio'] {
-  display: inline;
-  margin-top: 0px;
-  margin-right: 5px;
-  margin-left: 20px;
-}
-
-.sign-up #female {
-  margin-left: 0px;
-}
 // main-app-styles--------------------------------------------------------------
 
 .top-bar {

@@ -1,0 +1,17 @@
+// css-reset--------------------------------------------------------------------
+
+body, div, h1, h2, input, p, ul, li, label, table, td, tr {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  font-family: sans-serif;
+  box-sizing: inherit;
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
+}
+
+ul {
+  list-style-type: none;
+}
