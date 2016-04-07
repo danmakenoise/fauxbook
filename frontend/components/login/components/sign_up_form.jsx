@@ -6,27 +6,64 @@ var SignUpForm = React.createClass({
   render: function () {
     return (
       <div className='sign-up'>
-
         <h1>Sign Up</h1>
+
         <h2>It's free because you are the product.</h2>
 
         <form ref="signUpForm" onSubmit={ this._createUser } >
-          <input type='text' className='name-input' name='profile[first_name]' placeholder='First name' />
+          <input
+            type='text'
+            className='name-input'
+            name='profile[first_name]'
+            placeholder='First name'>
+          </input>
 
-          <input type='text' className='name-input' name='profile[last_name]' placeholder='Last name' />
+          <input
+            type='text'
+            className='name-input'
+            name='profile[last_name]'
+            placeholder='Last name'>
+          </input>
 
-          <input type='text' className='sign-up-full-input' name='user[email]' placeholder='Email' />
+          <input
+            type='text'
+            className='sign-up-full-input'
+            name='user[email]'
+            placeholder='Email'>
+          </input>
 
-          <input type='password' className='sign-up-full-input' name='user[password]' placeholder='New Password' />
+          <input type='password'
+            className='sign-up-full-input'
+            name='user[password]'
+            placeholder='New Password'>
+          </input>
 
           <label>Birthday
-            <input type='date' className='sign-up-full-input' name='profile[birthday]' />
+            <input
+              type='date'
+              className='sign-up-full-input'
+              name='profile[birthday]'>
+            </input>
           </label>
 
-          <input type='radio' id="female" name='profile[gender]' defaultChecked={ true } value='F' />
-          <label htmlFor="female">  Female</label>
-          <input type='radio' id="male" name='profile[gender]' value='M' />
-          <label htmlFor="male">  Male</label>
+          <label>
+            <input
+              type='radio'
+              name='profile[gender]'
+              defaultChecked={ true }
+              value='F'>
+            </input>
+            Female
+          </label>
+
+          <label>
+            <input
+              type='radio'
+              name='profile[gender]'
+              value='M'>
+            </input>
+            Male
+          </label>
 
           <input type='submit' value='Sign Up' />
 
