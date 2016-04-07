@@ -4,6 +4,7 @@
 *= require_self
 *= require form
 *= require error_bar
+*= require side-bar-nav
 */
 
 // fauxbook sitewide styles-----------------------------------------------------
@@ -32,6 +33,7 @@ body {
 .container {
   width: 1000px;
   margin: auto;
+  position: relative;
 }
 
 .small-blue-button {
@@ -346,7 +348,7 @@ body {
   font-weight: bold;
   color: white;
   float: left;
-  margin: 15px 10px;
+  margin: 15px 0px;
 }
 
 .search-bar {
@@ -765,7 +767,7 @@ body {
 
 .comment-index {
   border-top: 1px solid #ccc;
-  background-color: #eee;
+  background-color: #fafafa;
   padding: 10px 10px 0 10px;
 }
 
@@ -821,7 +823,7 @@ body {
 
 .post-comment-form {
   border-top: 1px solid #ccc;
-  background-color: #eee;
+  background-color: #fafafa;
 }
 
 .post-comment-form .profile-thumb-container {

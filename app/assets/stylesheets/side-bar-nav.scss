@@ -1,0 +1,33 @@
+.side-bar-nav {
+  position: fixed;
+  top: 78px;
+}
+
+.link__icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.link__text {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.list-item {
+  margin-bottom: 5px;
+}
+
+.list-item__link {
+  color: #555;
+  text-decoration: none;
+}
+
+.link__text--active {
+  font-weight: bold;
+}
+
+.link__icon--newsfeed {
+  background-image: url('icons.png');
+  background-position: 0 -454px;
+}

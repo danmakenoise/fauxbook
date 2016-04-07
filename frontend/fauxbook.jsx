@@ -11,6 +11,7 @@ var App = require( './components/app' );
 var Profile = require( './components/profile' );
 var LogIn = require( './components/login/login' );
 var SessionStore = require( './stores/session_store' );
+var SideBar = require( './components/sidebar' );
 var PostIndex = require( './components/post_index' );
 var AboutProfileDisplay = require( './components/about_profile_display' );
 var FriendsProfileDisplay = require( './components/friends_profile_display' );
@@ -45,6 +46,7 @@ var _ensureNotLoggedIn = function ( nextState, replace, asyncCallback ) {
 var routes = (
   <Route>
     <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
+      <IndexRoute component={ SideBar } />
       <IndexRoute component={ Feed } />
       <Route path='/users/:id' component={ Profile } >
         <IndexRoute component={ PostIndex } />
