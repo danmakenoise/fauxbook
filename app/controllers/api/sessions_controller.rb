@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
       @user = current_user
       render :show
     else
-      render text: 'not logged in', status: 401
+      render json: { errors: "not logged in" }
     end
   end
 

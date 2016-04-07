@@ -86,7 +86,9 @@ var APIUtil = {
       url: 'api/session',
       dataType: 'json',
       success: function ( currentUser ) {
-        APIActions.receiveCurrentUser( currentUser );
+        if ( !currentUser.errors ) {
+          APIActions.receiveCurrentUser( currentUser );
+        }
       },
       complete: function() {
         completion && completion();
