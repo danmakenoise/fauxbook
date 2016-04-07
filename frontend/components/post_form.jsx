@@ -3,6 +3,7 @@ var APIUtil = require( '../utils/api_util' );
 var ProfilePicture = require( './profile_picture' );
 var Dropzone = require( 'react-dropzone' );
 var SessionStore = require( '../stores/session_store' );
+var ErrorActions = require( '../actions/error_actions' );
 
 var PostForm = React.createClass({
   getInitialState: function () {
@@ -94,11 +95,14 @@ var PostForm = React.createClass({
     var file = files[0];
     var reader = new FileReader();
 
-    reader.addEventListener( 'load', function () {
-      this.setState( { photo: reader.result, file: file } );
-    }.bind( this ));
-
-    reader.readAsDataURL( file );
+    if ( file.type.match(/\Aimage\/.*\Z/) ) {
+      reader.addEventListener( 'load', function () {
+        this.setState( { photo: reader.result, file: file } );
+      }.bind( this ));
+      reader.readAsDataURL( file );
+    } else {
+      ErrorActions.receiveErrors(['There was an error processing your image.']);
+    }
   },
 
   _clearPost: function ( errors ) {

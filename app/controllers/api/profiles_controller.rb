@@ -5,7 +5,7 @@ class Api::ProfilesController < ApplicationController
     else
       @profile = current_user.profile
     end
-    
+
     render :show
   end
 
@@ -19,8 +19,11 @@ class Api::ProfilesController < ApplicationController
     new_profile_picture = params['0']
     @profile = current_user.profile
     @profile.profile_picture = new_profile_picture
-    @profile.save
-    render :show
+    if @profile.save
+      render :show
+    else
+      render json: { errors: ['There was an error processing your image.'] }
+    end
   end
 
   def cover_photo_upload
@@ -28,7 +31,11 @@ class Api::ProfilesController < ApplicationController
     @profile = current_user.profile
     @profile.cover_photo = new_cover_photo
     @profile.save
-    render :show
+    if @profile.save
+      render :show
+    else
+      render json: { errors: ['There was an error processing your image.'] }
+    end
   end
 
   private

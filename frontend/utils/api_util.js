@@ -174,7 +174,7 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function( profile ) {
-        APIActions.receiveProfile( profile );
+        _checkForErrors( profile, APIActions.receiveProfile );
       }
     });
   },
@@ -194,9 +194,17 @@ var APIUtil = {
       processData: false,
       contentType: false,
       success: function( profile ) {
-        APIActions.receiveProfile( profile );
+        _checkForErrors( profile, APIActions.receiveProfile );
       }
     });
+  }
+};
+
+var _checkForErrors = function( object, callback ) {
+  if ( object.errors ) {
+    ErrorActions.receiveErrors( object.errors );
+  } else {
+    callback( object );
   }
 };
 
