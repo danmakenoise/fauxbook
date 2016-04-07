@@ -1,4 +1,5 @@
 var CommentActions = require( '../actions/comment_actions' );
+var CommentActions = require( '../actions/comment_actions' );
 var ErrorHelper = require( './helpers/error_helper' );
 var ErrorActions = require( '../actions/error_actions' );
 
@@ -31,6 +32,13 @@ var CommentUtil = {
       method: 'DELETE',
       success: function ( comment ) {
         CommentActions.deleteComment( comment );
+      },
+      error: function ( response ) {
+        if ( response.status === 404 ) {
+          ErrorActions.receiveErrors( ['Comment has already been deleted'] );
+        } else {
+          ErrorActions.apiError();
+        }
       }
     });
   },
