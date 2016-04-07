@@ -46,6 +46,14 @@ var APIUtil = {
       dataType: 'json',
       success: function ( post ) {
         APIActions.removePost( post );
+      },
+      error: function ( response ) {
+        if ( response.status === 404 ) {
+          ErrorActions.receiveErrors( ['Post has already been deleted'] );
+          APIActions.removePost( {id: postId} );
+        } else {
+          ErrorActions.apiError();
+        }
       }
     });
   },

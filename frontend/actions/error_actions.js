@@ -8,6 +8,13 @@ var ErrorActions = {
       errors: errors
     });
   },
+
+  apiError: function () {
+    AppDispatcher.dispatch({
+      actionType: ErrorConstants.RECEIVE_ERRORS,
+      errors: ['Something Went Wrong']
+    });
+  },
 };
 
 module.exports = ErrorActions;

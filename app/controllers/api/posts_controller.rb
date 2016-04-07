@@ -45,6 +45,7 @@ class Api::PostsController < ApplicationController
 
   def destroy
     @post = Post.find( params[:id] )
+
     if @post.author_id == current_user.id
       @post.destroy
       render :show
