@@ -11,7 +11,7 @@ var CommentActions = {
 
   receiveComment: function ( comment ) {
     AppDispatcher.dispatch({
-      actionType: CommentConstants.COMMENT_RECIEVED,
+      actionType: CommentConstants.COMMENT_RECEIVED,
       comment: comment
     });
   },

@@ -9,6 +9,8 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       create_notification_for @comment if target.author_id != current_user.id
       render :show
+    else
+      render json: { errors: @comment.errors.full_messages }
     end
   end
 

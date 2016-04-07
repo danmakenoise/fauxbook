@@ -59,7 +59,7 @@ var SubCommentForm = React.createClass({
 
   _confirmSubmit: function () {
     this.refs.input.value = '';
-    this.setState( { posting: false, replying: false } );
+    this.setState( { posting: false } );
   },
 
   _expand: function () {

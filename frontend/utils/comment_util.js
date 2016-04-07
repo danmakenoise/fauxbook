@@ -1,4 +1,6 @@
 var CommentActions = require( '../actions/comment_actions' );
+var ErrorHelper = require( './helpers/error_helper' );
+var ErrorActions = require( '../actions/error_actions' );
 
 var CommentUtil = {
   createSubComment: function ( commentId, commentBody, callback ) {
@@ -7,8 +9,7 @@ var CommentUtil = {
       type: 'POST',
       data: { comment: { body: commentBody } },
       success: function ( comment ) {
-        CommentActions.receiveComment( comment );
-        callback && callback();
+        _handleSuccess( comment, callback );
       }
     });
   },
@@ -19,8 +20,7 @@ var CommentUtil = {
       type: 'POST',
       data: { comment: { body: commentBody } },
       success: function ( comment ) {
-        CommentActions.receiveComment( comment );
-        callback && callback();
+        _handleSuccess( comment, callback );
       }
     });
   },
@@ -49,6 +49,13 @@ var CommentUtil = {
       }
     });
   }
+};
+
+var _handleSuccess = function ( comment, callback ) {
+  ErrorHelper.checkForErrors( comment, function () {
+    CommentActions.receiveComment( comment );
+  });
+  callback();
 };
 
 module.exports = CommentUtil;
