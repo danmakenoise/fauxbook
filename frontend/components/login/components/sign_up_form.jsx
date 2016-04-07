@@ -1,6 +1,7 @@
 var React = require( 'react' );
 
 var APIUtil = require( '../../../utils/api_util' );
+var BirthdayHelper = require( '../../../utils/helpers/birthday_helper' );
 
 var SignUpForm = React.createClass({
   render: function () {
@@ -32,20 +33,32 @@ var SignUpForm = React.createClass({
             placeholder='Email'>
           </input>
 
-          <input type='password'
+          <input
+            type='password'
             className='sign-up-full-input form__input-text'
             name='user[password]'
             placeholder='New Password'>
           </input>
 
-          <label>Birthday
-            <input
-              type='date'
-              className='sign-up-full-input form__input-text'
-              name='profile[birthday]'>
-            </input>
-          </label>
+          <label className="label__birthday">Birthday</label>
+          <select
+            className='sign-up-form__select select__month'
+            name='profile[birthday_month]'>
+            { BirthdayHelper.generateMonthOptions() }
+          </select>
+          <select
+            className='sign-up-form__select select__day'
+            name='profile[birthday_day]'>
+            { BirthdayHelper.generateDayOptions() }
+          </select>
+          <select
+            className='sign-up-form__select select__year'
+            name='profile[birthday_year]'>
+            { BirthdayHelper.generateYearOptions() }
+          </select>
 
+          <br />
+          
           <input
             className='form__input-radio input-radio--first'
             id='female'

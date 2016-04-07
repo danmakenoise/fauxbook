@@ -1,7 +1,9 @@
 class Api::UsersController < ApplicationController
   def create
     user = User.new user_params
+
     user.profile = Profile.new profile_params
+    user.profile.birthday = get_birthday params
 
     if user.save
       user.profile.user_id = user.id
@@ -30,11 +32,24 @@ class Api::UsersController < ApplicationController
 
   private
 
+  def get_birthday params
+    month = Date::MONTHNAMES.index params[:profile][:birthday_month]
+    day = params[:profile][:birthday_day].to_i
+    year = params[:profile][:birthday_year].to_i
+
+    Date.new(year, day, month)
+  end
+
   def user_params
     params.require( :user ).permit :email, :password
   end
 
   def profile_params
-    params.require( :profile ).permit :first_name, :last_name, :birthday, :gender
+    params.require( :profile )
+      .permit(
+        :first_name,
+        :last_name,
+        :gender
+      )
   end
 end
