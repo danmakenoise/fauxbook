@@ -33,6 +33,7 @@ var FriendsSummary = React.createClass({
           <a href={ '/#/users/' + this.props.profile.user_id + '/friends' }>
             Friends
           </a>
+          <span className="header__sub">{ this.state.count }</span>
         </h1>
         <ul className="friends-list--summary group">
           { this._renderFriends() }
@@ -42,7 +43,10 @@ var FriendsSummary = React.createClass({
   },
 
   _handleChange: function () {
-    this.setState( { friends: FriendStore.all() } );
+    var allFriends = FriendStore.all();
+    var subFriends = allFriends.slice(0, 9);
+
+    this.setState( { count: allFriends.length, friends: subFriends } );
   },
 
   _renderFriends: function () {

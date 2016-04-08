@@ -63,7 +63,7 @@ var APIUtil = {
       }
     });
   },
-
+  
   fetchPosts: function ( profileId, callback ) {
     $.get({
       url: 'api/posts',
