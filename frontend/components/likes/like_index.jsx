@@ -12,14 +12,14 @@ var LikeIndex = React.createClass({
   render: function () {
     return (
       <div className='like-index'>
-        { this._generateLikeLink() }
         { this._generateLikeCount() }
+        { this._generateLikeLink() }
       </div>
     );
   },
 
   _generateLikeCount: function () {
-    var className = this.state.liked ? 'liked' : '';
+    var className = this.state.liked ? 'like-count like-count--liked' : 'like-count';
 
     if ( this.state.likesCount > 0 ) {
       return (
