@@ -11,7 +11,9 @@ class Api::ProfilesController < ApplicationController
 
   def update
     @profile = current_user.profile
-    @profile.birthday = get_birthday params
+    if params[:profile][:birthday_month]
+      @profile.birthday = get_birthday params
+    end
     @profile.update!( profile_params );
     render :show
   end
