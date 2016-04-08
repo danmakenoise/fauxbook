@@ -20,6 +20,10 @@
   background-image: url(image_path('aveeasy.jpg'));
 }
 
+.img--fake {
+  background-image: url(image_path('fakebook.jpg'));
+}
+
 .img--table {
   background-image: url(image_path('formitable.jpg'));
 }
@@ -28,8 +32,16 @@
   background-image: url(image_path('foxnote.jpg'));
 }
 
+.img--friend {
+  background-image: url(image_path('friendbook.jpg'));
+}
+
+.img--ripple {
+  background-image: url(image_path('ripple.jpg'));
+}
+
 .ad__link__img {
-  background-size: cover;
+  background-size:contain;
   margin-bottom: 5px;
   width: 140px;
   height: 140px;

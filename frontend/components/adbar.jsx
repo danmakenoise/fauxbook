@@ -63,6 +63,21 @@ var AdBar = React.createClass({
       url: 'http://ave-easy.herokuapp.com/',
       body: 'AveEasy is a web application inspired by StreetEasy built using Ruby on Rails and React.js.'
     },
+    { name: 'fakebook',
+      className: 'fake',
+      url: 'http://fakeboook.herokuapp.com',
+      body: 'Another Facebook clone!',
+    },
+    { name: 'friendbook',
+      className: 'friend',
+      url: 'http://friendbookaa.herokuapp.com',
+      body: 'Friendbook is a web application modeled on Facebook that uses Ruby on Rails for its backend and React.js for its frontend.',
+    },
+    { name: 'Ripple',
+      className: 'ripple',
+      url: 'http://ripplestarter.herokuapp.com/',
+      body: 'Ripple is a web application inspired by KickStarter built using Ruby on Rails and React.js.',
+    },
   ],
 });
 
