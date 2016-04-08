@@ -30,5 +30,5 @@ Rails.application.routes.draw do
     get '/users/:id/friends', to: 'users#friends'
   end
 
-  # get '*path', to: redirect( '/' )
+  get '*path', to: redirect( '/' )
 end
