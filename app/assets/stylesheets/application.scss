@@ -271,22 +271,27 @@ body {
 }
 
 .user-name {
+  cursor: pointer;
   position: relative;
   color: white;
   font-weight: bold;
   font-size: 14px;
   position: absolute;
-  right: 176px;
+  right: 217px;
   top: 20px;
 }
 
+.home-link {
+  right: 170px;
+}
+
 .nav-bar > .profile-thumb-container {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  right: 213px;
+  right: 255px;
   overflow: hidden;
-  top: 8px;
+  top: 13px;
 }
 
 .info-button {

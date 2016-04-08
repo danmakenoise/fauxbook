@@ -22,10 +22,11 @@ var App = React.createClass({
       <div className='app' onClick={ this._closeModals }>
         <div className='bar group top-bar'>
           <div className='container nav-bar group'>
-            <a href='/#/'><h1 onClick={ this._goHome }>fauxbook</h1></a>
+            <a href='/#/'><h1>fauxbook</h1></a>
             <Search />
             <ProfilePicture image={ SessionStore.userPicture() } targetUser={ SessionStore.currentUserId() } />
-            <span className='user-name'>{ SessionStore.currentUserName() }</span>
+            <a href={'/#/users/' + SessionStore.currentUserId() } className='user-name'>{ SessionStore.currentUserName() }</a>
+            <a href='/#/' className='user-name home-link'>Home</a>
             <NotificationTool />
             <FriendRequestTool />
             <button className='log-out-button' onClick={ this._logOut } >Log Out</button>
