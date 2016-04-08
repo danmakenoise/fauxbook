@@ -1,0 +1,46 @@
+.ad-bar-nav {
+  position: fixed;
+  top: 78px;
+  right: 258px;
+  width: 160px;
+}
+
+.ad-bar__ad {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+.img--ok9 {
+  background-image: url(image_path('ok9cupid.jpg'));
+}
+
+.img--ave {
+  background-image: url(image_path('aveeasy.jpg'));
+}
+
+.img--table {
+  background-image: url(image_path('formitable.jpg'));
+}
+
+.img--fox {
+  background-image: url(image_path('foxnote.jpg'));
+}
+
+.ad__link__img {
+  background-size: cover;
+  margin-bottom: 5px;
+  width: 140px;
+  height: 140px;
+}
+
+.ad__header {
+  font-weight: bold;
+}
+
+.ad__body {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}

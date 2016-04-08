@@ -9,6 +9,7 @@ var FeedUtil = require( '../utils/feed_util' );
 var PostStore = require( '../stores/post_store' );
 var PostItem = require( './post_item' );
 var SideBar = require( './sidebar' );
+var AdBar = require( './adbar' );
 
 var Feed = React.createClass({
   getInitialState: function () {
@@ -39,6 +40,7 @@ var Feed = React.createClass({
               return <PostItem key={ post.id } post={ post } />;
             })}
           </div>
+          <AdBar />
         </div>
       );
     } else {
