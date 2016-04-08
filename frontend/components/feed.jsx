@@ -32,9 +32,9 @@ var Feed = React.createClass({
   render: function () {
     if ( this.state.profile && this.state.posts ) {
       return (
-        <div>
+        <div className="container">
           <SideBar />
-          <div className="container group feed">
+          <div className="group feed">
             <PostForm profile={ this.state.profile } />
             { this.state.posts.map( function ( post ) {
               return <PostItem key={ post.id } post={ post } />;

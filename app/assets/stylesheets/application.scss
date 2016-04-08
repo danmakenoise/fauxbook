@@ -473,8 +473,10 @@ body {
 // feed-------------------------------------------------------------------------
 
 .feed {
-  width:  60%;
+  position: relative;
+  width:  600px;
   margin-top: 20px;
+  margin-left: 200px;
 }
 
 // profile-display-header-------------------------------------------------------
