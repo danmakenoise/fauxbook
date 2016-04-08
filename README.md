@@ -143,7 +143,7 @@ Bonus:
 
 **Objective::** Final styling and UI improvements.
 
-- [ ] Add React `LeftSideBarNavigation`, `ProfileSummary`
+- [x] Add React `LeftSideBarNavigation`, `ProfileSummary`
 - [x] Finalize CSS for entire site.
 - [x] Ensure clear and responsive usability of entire site with excellent feedback to the user.
 
