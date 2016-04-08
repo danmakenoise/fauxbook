@@ -5,6 +5,7 @@
 *= require form
 *= require error_bar
 *= require side-bar-nav
+*= require profile_summary
 */
 
 // fauxbook sitewide styles-----------------------------------------------------
@@ -12,6 +13,32 @@
 body {
   background-color: rgb(237, 240, 245);
   color: #444;
+}
+
+.section {
+  box-sizing: border-box;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.section__header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+}
+
+.section--white {
+  background-color: white
+}
+
+.section__header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section--grey {
+  background-color: #fafafa;
 }
 
 .app {
@@ -671,6 +698,7 @@ body {
   margin-top: 20px;
   width: 60%;
   margin: 20px auto;
+  float: right;
 }
 
 .post {

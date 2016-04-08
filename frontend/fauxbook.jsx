@@ -15,6 +15,7 @@ var PostIndex = require( './components/post_index' );
 var AboutProfileDisplay = require( './components/about_profile_display' );
 var FriendsProfileDisplay = require( './components/friends_profile_display' );
 var Feed = require( './components/feed' );
+var ProfileDisplay = require( './components/profile_display' );
 
 var _ensureLoggedIn = function ( nextState, replace, asyncCallback ) {
   var _redirectIfNotLoggedIn = function ( replace, callback ) {
@@ -47,7 +48,7 @@ var routes = (
     <Route path='/' onEnter={ _ensureLoggedIn } component={ App }>
       <IndexRoute component={ Feed } />
       <Route path='/users/:id' component={ Profile } >
-        <IndexRoute component={ PostIndex } />
+        <IndexRoute component={ ProfileDisplay } />
         <Route path='about' component={ AboutProfileDisplay } />
         <Route path='friends' component={ FriendsProfileDisplay } />
       </Route>

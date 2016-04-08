@@ -1,0 +1,53 @@
+// profile-summary--------------------------------------------------------------
+
+.profile-summary {
+  height: 200px;
+  width: 378px;
+  float: left;
+}
+
+.about-summary, .friends-summary {
+  width: 100%;
+}
+
+.friend-item__container {
+  width: 118px;
+  height: 118px;
+  overflow: hidden;
+}
+
+.friend-item__photo {
+  width: 100%;
+  height: auto;
+}
+
+.friend-item--square {
+  float: left;
+  position: relative;
+}
+
+.list-item {
+  color: #999;
+  margin-top: 10px;
+}
+
+.list-item__header {
+  font-weight: bold;
+}
+
+.list-item__body {
+  margin-left: 10px;
+}
+
+.friends-list--summary {
+  margin-top: 10px;
+  border: 0;
+}
+
+.friend-item__name {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 10px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .52);
+}

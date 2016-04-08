@@ -1,6 +1,10 @@
 class Api::NotificationsController < ApplicationController
   def index
-    @notifications = current_user.notifications.order( created_at: :desc )
+    @notifications = current_user
+      .notifications
+      .includes( author: :profile )
+      .order( created_at: :desc )
+
     render :index
   end
 
