@@ -7,6 +7,12 @@ var FriendButton = React.createClass({
     return { disabled: false, message: '' };
   },
 
+  componentWillReceiveProps: function ( newProps ) {
+    if ( newProps.friend.id !== this.props.friend.id ) {
+      this.setState({ disabled: false, message: '' });
+    }
+  },
+
   render: function () {
     return this._generateButton();
   },
