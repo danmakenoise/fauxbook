@@ -11,8 +11,8 @@ var FriendRequestItem = React.createClass({
           targetUser={ this.props.request.id }
         />
         <a href={ this._linkToUser() }>{ this.props.request.name }</a>
-        <button onClick={ this._approve }>Approve</button>
-        <button onClick={ this._deny }>Deny</button>
+        <button className='request-button' onClick={ this._approve }>Approve</button>
+        <button className='request-button' onClick={ this._deny }>Deny</button>
       </li>
     );
   },

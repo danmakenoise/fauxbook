@@ -303,6 +303,10 @@ body {
 
 }
 
+.request-button {
+  float: right;
+}
+
 .friend-request-index {
   position: absolute;
   right: 0;
@@ -339,8 +343,12 @@ body {
 }
 
 .friend-request-index a {
-  margin-right: 34px;
   text-decoration: none;
+}
+
+.friend-request-index a:nth-child(2) {
+  position: relative;
+  top: 15px;
 }
 
 .friend-request-index a:hover {
