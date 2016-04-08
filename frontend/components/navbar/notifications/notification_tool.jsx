@@ -25,9 +25,8 @@ var NotificationTool = React.createClass({
 
   render: function () {
     return (
-      <div className='notification-tool-container info-bubble'>
+      <div onClick={ this._toggleExpand } className='notification-tool-container info-bubble'>
         <button
-          onClick={ this._toggleExpand }
           className={ this._determineClass() }
         >
           { NotificationStore.count() }
@@ -41,7 +40,7 @@ var NotificationTool = React.createClass({
     if ( NotificationStore.count() > 0 ) {
       return 'notification-button info-button red-circle';
     } else {
-      return 'notification-button info-button';
+      return 'hidden';
     }
   },
 

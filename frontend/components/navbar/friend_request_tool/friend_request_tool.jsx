@@ -25,9 +25,8 @@ var FriendRequestTool = React.createClass({
 
   render: function () {
     return (
-      <div className='info-bubble friend-request-tool-container'>
+      <div onClick={ this._toggleExpand } className='info-bubble friend-request-tool-container'>
         <button
-          onClick={ this._toggleExpand }
           className={ this._determineClass() }
         >
           { this._hasRequests() ? this.state.requests.length : 0 }
@@ -41,7 +40,7 @@ var FriendRequestTool = React.createClass({
     if ( this._hasRequests() ) {
       return 'info-button friend-request-button red-circle';
     } else {
-      return 'info-button friend-request-button';
+      return 'hidden';
     }
   },
 

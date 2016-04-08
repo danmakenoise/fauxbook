@@ -26,6 +26,7 @@ class Api::CommentsController < ApplicationController
         .includes( :likes )
         .includes( :likers )
         .where( "commentable_id IN (?) AND commentable_type = 'Post'", post_ids )
+        .order( created_at: :desc )
 
       sub_comments = Comment
         .includes( author: :profile )
@@ -33,6 +34,7 @@ class Api::CommentsController < ApplicationController
         .includes( :likers )
         .includes( :commentable )
         .where( "commentable_id IN (?) AND commentable_type = 'Comment'", comments.pluck(:id) )
+        .order( created_at: :desc )
 
       @comments = comments + sub_comments
     end
