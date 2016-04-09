@@ -22,6 +22,7 @@
  * Receive Notifications From Your Posts
  * Customize Your Profile
  * Search For Users
+
 ---
 ## Todo
  - [ ] Use Pusher for Notifications
