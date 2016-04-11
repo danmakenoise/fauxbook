@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
     day = params[:profile][:birthday_day].to_i
     year = params[:profile][:birthday_year].to_i
 
-    Date.new(year, day, month)
+    Date.new(year, month, day)
   end
 
   def logged_in?
