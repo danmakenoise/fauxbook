@@ -1,26 +1,10 @@
-seed_users = []
+jack = User.find_by( email: 'jack@fauxbook.com' )
+diane = User.find_by( email: 'diane@fauxbook.com' )
 
-100.times do
-  user = User.new email: Faker::Internet.email, password: 'password'
-  seed_users << user
-end
-
-seed_users.each do |user|
-  first_name, last_name = Faker::Name.name.split
-
-  user.profile = Profile.new(
-    gender: ['M', 'F'].sample,
-    birthday: (13..100).to_a.sample.years.ago,
-    first_name: first_name,
-    last_name: last_name,
-    location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}"
-  )
-  user.save
-  user.profile.user_id = user.id
-  user.profile.save
-end
-
+jack.destroy if jack
 jack = User.new email: 'jack@fauxbook.com', password: 'password'
+
+diane.destroy if diane
 diane = User.new email: 'diane@fauxbook.com', password: 'password'
 
 jack.profile = Profile.new(
@@ -45,3 +29,35 @@ jack.save
 diane.save
 jack.profile.save
 diane.profile.save
+
+Friendship.create!(
+  user_id: jack.id,
+  friend_id: diane.id,
+  accepted: true
+)
+
+post = Post.create!(
+  author_id: jack.id,
+  profile_id: jack.profile.id,
+  body: 'Welcome to Fauxbook! There are so many things to do!'
+)
+
+comment = Comment.create!(
+  body: 'You can switch between Jack and mine\'s accounts on the main page!',
+  commentable_id: post.id,
+  commentable_type: 'Post',
+  author_id: diane.id
+)
+
+comment_two = Comment.create!(
+  body: 'Have us comment and like on posts! Add and remove us as friends. Give me a profile picture! Have fun!',
+  commentable_id: comment.id,
+  commentable_type: 'Comment',
+  author_id: jack.id
+)
+
+like = Like.create!(
+  user_id: diane.id,
+  likeable_id: comment_two.id,
+  likeable_type: 'Comment'
+)

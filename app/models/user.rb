@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, with: /.+@.+\.+/
   validates_uniqueness_of :email, :session_token
   validates_associated :profile
-  
+
   after_initialize :ensure_session_token
 
   attr_reader :password
@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
 
   has_many :comments, foreign_key: :author_id, dependent: :destroy
 
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
 
   def friends
     created_friends + requested_friends
