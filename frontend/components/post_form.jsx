@@ -94,8 +94,7 @@ var PostForm = React.createClass({
   _updatePhoto: function ( files ) {
     var file = files[0];
     var reader = new FileReader();
-
-    if ( file.type.match(/\Aimage\/.*\Z/) ) {
+    if ( file.type.match(/\image/) ) {
       reader.addEventListener( 'load', function () {
         this.setState( { photo: reader.result, file: file } );
       }.bind( this ));
