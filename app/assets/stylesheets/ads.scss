@@ -1,9 +1,10 @@
 .ad-bar-nav {
+  top: 0;
   float: right;
-  position: fixed;
-  top: 78px;
+  position: absolute;
   margin-left: 820px;
   width: 160px;
+  height: auto;
 }
 
 .ad-bar__ad {
