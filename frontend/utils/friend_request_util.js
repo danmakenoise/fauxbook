@@ -36,7 +36,7 @@ var FriendRequestUtil = {
   },
 
   subscribe: function (userId) {
-    url = 'http://' + window.location.hostname + ':9292/faye';
+    url = 'http://' + window.location.host + '/faye';
     var pushClient = new Faye.Client(url);
     var subscription = pushClient.subscribe('/' + userId, function(data) {
       if (data.text === 'NEW_FRIEND_REQUEST') {

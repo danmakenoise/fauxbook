@@ -92,7 +92,7 @@ class ApplicationController < ActionController::Base
 
   def send_push_notification user_id, message
     EM.run {
-      client = Faye::Client.new("http://#{request.host}:9292/faye")
+      client = Faye::Client.new("http://#{request.host_with_port}/faye")
 
       client.subscribe("/#{user_id}") do |message|
         puts message.inspect
