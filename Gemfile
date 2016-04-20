@@ -30,6 +30,8 @@ gem 'aws-sdk', '>= 2.0'
 gem 'faye'
 # use thin for server
 gem 'thin'
+# use eventmachine for push
+gem 'eventmachine'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
