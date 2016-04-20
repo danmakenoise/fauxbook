@@ -1,4 +1,5 @@
 NotificationActions = require( '../actions/notification_actions' );
+var Faye = require ('faye/browser/faye-browser.js');
 
 var NotificationUtil = {
   fetchNotifications: function () {
@@ -21,6 +22,15 @@ var NotificationUtil = {
       }
     });
   },
+
+  subscribe: function (userId) {
+    var pushClient = new Faye.Client('http://localhost:9292/faye');
+    var subscription = pushClient.subscribe('/' + userId, function(data) {
+      if (data.text === 'NEW_NOTIFICATION') {
+        NotificationUtil.fetchNotifications();
+      }
+    });
+  }
 };
 
 module.exports = NotificationUtil;

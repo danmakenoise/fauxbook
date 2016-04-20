@@ -6,15 +6,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
   def alert_user_of_new_friendship user_id
-    EM.run {
-      client = Faye::Client.new('http://localhost:9292/faye')
+    send_push_notification user_id, 'NEW_FRIEND_REQUEST'
+  end
 
-      client.subscribe("/#{user_id}") do |message|
-        puts message.inspect
-      end
-
-      client.publish("/#{user_id}", text: 'NEW_FRIEND_REQUEST')
-    }
+  def alert_user_of_new_notification user_id
+    send_push_notification user_id, 'NEW_NOTIFICATION'
   end
 
   def current_user
@@ -65,6 +61,7 @@ class ApplicationController < ActionController::Base
         post_id: post.id,
         body: body,
       })
+      alert_user_of_new_notification user.id
     end
   end
 
@@ -89,5 +86,19 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
+  end
+
+  private
+
+  def send_push_notification user_id, message
+    EM.run {
+      client = Faye::Client.new('http://localhost:9292/faye')
+
+      client.subscribe("/#{user_id}") do |message|
+        puts message.inspect
+      end
+
+      client.publish("/#{user_id}", text: message)
+    }
   end
 end

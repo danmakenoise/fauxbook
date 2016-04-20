@@ -38,7 +38,9 @@ var FriendRequestUtil = {
   subscribe: function (userId) {
     var pushClient = new Faye.Client('http://localhost:9292/faye');
     var subscription = pushClient.subscribe('/' + userId, function(data) {
-      FriendRequestUtil.fetchRequests();
+      if (data.text === 'NEW_FRIEND_REQUEST') {
+        FriendRequestUtil.fetchRequests();
+      }
     });
   }
 };

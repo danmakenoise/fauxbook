@@ -1,5 +1,6 @@
 var AppDispatcher = require( '../dispatcher/app_dispatcher' );
 var FriendRequestUtil = require( '../utils/friend_request_util' );
+var NotificationUtil = require( '../utils/notification_util' );
 var SessionConstants = require( '../constants/session_constants' );
 var Store = require( 'flux/utils' ).Store;
 var ProfileConstants = require( '../constants/profile_constants' );
@@ -62,6 +63,7 @@ var _receiveCurrentUser = function ( currentUser ) {
   _currentUserFetched = true;
   _currentUser = currentUser;
   FriendRequestUtil.subscribe(currentUser.id);
+  NotificationUtil.subscribe(currentUser.id);
 };
 
 module.exports = SessionStore;
