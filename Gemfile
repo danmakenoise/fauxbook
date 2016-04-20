@@ -26,6 +26,10 @@ gem 'paperclip', '5.0.0.beta1'
 gem 'figaro'
 # use amazon sw3 for image storage
 gem 'aws-sdk', '>= 2.0'
+# use faye for websockets
+gem 'faye'
+# use thin for server
+gem 'thin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
