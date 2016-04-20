@@ -1,2 +1,2 @@
 web: bundle exec thin start -p $PORT
-faye: rackup faye.ru -s thin -E production
+web: rackup faye.ru -s thin -E production
