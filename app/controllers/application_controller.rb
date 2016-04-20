@@ -5,6 +5,17 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
+  def alert_user_of_new_friendship user_id
+    EM.run {
+      client = Faye::Client.new('http://localhost:9292/faye')
+
+      client.subscribe("/#{user_id}") do |message|
+        puts message.inspect
+      end
+
+      client.publish("/#{user_id}", text: 'NEW_FRIEND_REQUEST')
+    }
+  end
 
   def current_user
     @current_user ||= User.find_by session_token: session[:session_token]

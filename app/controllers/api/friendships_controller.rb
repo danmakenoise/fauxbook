@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
   def create
     friendship = Friendship.create( current_user.id, params[:friend_id] )
-
+    alert_user_of_new_friendship params[:friend_id]
     render json: friendship
   end
 

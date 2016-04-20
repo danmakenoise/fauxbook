@@ -1,4 +1,5 @@
 var FriendRequestActions = require( '../actions/friend_request_actions' );
+var Faye = require ('faye/browser/faye-browser.js');
 
 var FriendRequestUtil = {
   approveRequest: function ( user_id, callback ) {
@@ -31,6 +32,13 @@ var FriendRequestUtil = {
       success: function ( requests ) {
         FriendRequestActions.receiveRequests( requests );
       }
+    });
+  },
+
+  subscribe: function (userId) {
+    var pushClient = new Faye.Client('http://localhost:9292/faye');
+    var subscription = pushClient.subscribe('/' + userId, function(data) {
+      FriendRequestUtil.fetchRequests();
     });
   }
 };
