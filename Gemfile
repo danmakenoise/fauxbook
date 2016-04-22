@@ -39,7 +39,7 @@ group :development, :test do
   # Use capybars for integration testing
   gem 'capybara'
   # Use rspec for testing
-  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
