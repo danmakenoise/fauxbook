@@ -36,6 +36,8 @@ gem 'eventmachine'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # Use capybars for integration testing
+  gem 'capybara'
 end
 
 group :development do
