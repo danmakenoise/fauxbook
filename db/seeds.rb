@@ -1,7 +1,9 @@
-User.find_by(email: 'jack@fauxbook.com').destroy
-User.find_by(email: 'diane@fauxbook.com').destroy
-User.find_by(email: 'ted@fauxbook.com').destroy
-User.find_by(email: 'mike@fauxbook.com').destroy
+[User.find_by(email: 'jack@fauxbook.com'),
+User.find_by(email: 'diane@fauxbook.com'),
+User.find_by(email: 'ted@fauxbook.com'),
+User.find_by(email: 'mike@fauxbook.com')].each do |user|
+  user.destroy if user
+end
 
 jack = User.new email: 'jack@fauxbook.com', password: 'password'
 diane = User.new email: 'diane@fauxbook.com', password: 'password'
