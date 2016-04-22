@@ -38,6 +38,8 @@ group :development, :test do
   gem 'byebug'
   # Use capybars for integration testing
   gem 'capybara'
+  # Use rspec for testing
+  gem 'rspec'
 end
 
 group :development do
