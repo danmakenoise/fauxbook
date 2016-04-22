@@ -1,15 +1,9 @@
-jack = User.find_by( email: 'jack@fauxbook.com' )
-diane = User.find_by( email: 'diane@fauxbook.com' )
-ted = User.find_by( email: 'ted@fauxbook.com' )
+User.destroy_all
 
-jack.destroy if jack
 jack = User.new email: 'jack@fauxbook.com', password: 'password'
-
-diane.destroy if diane
 diane = User.new email: 'diane@fauxbook.com', password: 'password'
-
-ted.destroy if ted
 ted = User.new email: 'ted@fauxbook.com', password: 'password'
+mike = User.new email: 'mike@fauxbook.com', password: 'password'
 
 jack.profile = Profile.new(
   gender: 'M',
@@ -17,7 +11,8 @@ jack.profile = Profile.new(
   first_name: 'Jack',
   last_name: 'Sampleton',
   location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
-  user_id: jack.id
+  user_id: jack.id,
+  profile_picture: File.new('public/images/jack.jpg')
 )
 
 diane.profile = Profile.new(
@@ -26,7 +21,8 @@ diane.profile = Profile.new(
   first_name: 'Diane',
   last_name: 'LeExample',
   location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
-  user_id: diane.id
+  user_id: diane.id,
+  profile_picture: File.new('public/images/diane.jpg')
 )
 
 ted.profile = Profile.new(
@@ -35,15 +31,29 @@ ted.profile = Profile.new(
   first_name: 'Ted',
   last_name: 'Template',
   location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
-  user_id: ted.id
+  user_id: ted.id,
+  profile_picture: File.new('public/images/ted.jpg')
+)
+
+mike.profile = Profile.new(
+  gender: 'M',
+  birthday: (13..100).to_a.sample.years.ago,
+  first_name: 'Mike',
+  last_name: 'Seed',
+  location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
+  user_id: mike.id,
+  profile_picture: File.new('public/images/mike.jpg')
 )
 
 jack.save
 diane.save
 ted.save
+mike.save
+
 jack.profile.save
 diane.profile.save
 ted.profile.save
+mike.profile.save
 
 Friendship.create!(
   user_id: jack.id,
@@ -62,6 +72,59 @@ Friendship.create!(
   friend_id: ted.id,
   accepted: true
 )
+
+Friendship.create!(
+  user_id: mike.id,
+  friend_id: jack.id,
+)
+
+Friendship.create!(
+  user_id: mike.id,
+  friend_id: diane.id
+)
+
+50.times do
+  post = Post.create!(
+    author_id: [jack.id, ted.id, diane.id].sample,
+    profile_id: [jack.id, ted.id, diane.id].sample,
+    body: Faker::Hipster.sentences.join,
+  )
+
+  # UNHOLY
+  if [false, false, true].sample
+    post.photo = 'http://lorempixel.com/g/400/400/'
+    post.save
+  end
+end
+
+50.times do
+  begin
+    Like.create!(
+      user_id: [jack.id, ted.id, diane.id].sample,
+      likeable_id: Post.all.sample.id,
+      likeable_type: 'Post'
+    )
+  rescue
+  end
+end
+
+50.times do
+  Comment.create!(
+    body: Faker::Hipster.sentence,
+    commentable_id: Post.all.sample.id,
+    commentable_type: 'Post',
+    author_id: [jack.id, ted.id, diane.id].sample
+  )
+end
+
+50.times do
+  Comment.create!(
+    body: Faker::Hipster.sentence,
+    commentable_id: Comment.where(commentable_type: 'Post').sample.id,
+    commentable_type: 'Comment',
+    author_id: [jack.id, ted.id, diane.id].sample
+  )
+end
 
 post = Post.create!(
   author_id: ted.id,
