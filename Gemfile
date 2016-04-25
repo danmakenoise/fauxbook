@@ -40,6 +40,12 @@ group :development, :test do
   gem 'capybara'
   # Use rspec for testing
   gem 'rspec-rails'
+  # Use launchy for observing integration tests
+  gem 'launchy'
+  # Use selenium-webdriver for js
+  gem 'selenium-webdriver'
+  # Use database cleaner to wipe db between tests
+  gem 'database_cleaner'
 end
 
 group :development do
