@@ -22,9 +22,7 @@ describe 'the sign up/sign in process', js: true do
 
   it 'lets me log out' do
     user = sign_in
-    click_on 'Log Out'
-    page.reset!
-    visit '/'
+    log_out
     expect(page).not_to have_content(user.profile.first_name)
   end
 end

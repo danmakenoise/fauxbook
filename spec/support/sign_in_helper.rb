@@ -9,3 +9,9 @@ def sign_in(user = nil)
 
   user
 end
+
+def log_out
+  click_on 'Log Out'
+  page.reset!
+  visit '/'
+end

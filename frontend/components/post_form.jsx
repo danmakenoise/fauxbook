@@ -24,7 +24,15 @@ var PostForm = React.createClass({
         <div className='group'>
           { this._displayPhoto() }
           <ProfilePicture image={ SessionStore.userPicture() } targetUser={ SessionStore.currentUserId() }/>
-          <textarea ref='body' value={ this.state.body } className='post-form-input' onChange={ this._handleChange } placeholder={ this._placeHolder() } rows={ this.state.rows } cols='71' />
+          <textarea
+            ref='body'
+            name='post[body]'
+            value={ this.state.body }
+            className='post-form-input'
+            onChange={ this._handleChange }
+            placeholder={ this._placeHolder() }
+            rows={ this.state.rows } cols='71'
+          />
         </div>
         <div className='post-form-submit-container group'>
           <button onClick={ this._handleSubmit } className='post-form-submit-button'>{ this._submitMessage() }</button>
