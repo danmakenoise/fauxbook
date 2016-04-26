@@ -1,16 +1,14 @@
 describe 'the sign up/sign in process', js: true do
-  before :each do
-    test_user = User.new email: 'test@fauxbook.com', password: 'password'
-    test_user.profile = Profile.new(
-      gender: 'M',
-      birthday: (13..100).to_a.sample.years.ago,
-      first_name: 'Tester',
-      last_name: 'Testerson',
-      location: "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
-      user_id: test_user.id,
-    )
-    test_user.save
-    test_user.profile.save
+  def sign_in(user = nil)
+    user ||= FactoryGirl.create(:user)
+    visit '/'
+    within '.sign-in' do
+      fill_in 'user[email]', with: user.email
+      fill_in 'user[password]', with: 'password'
+    end
+    click_on 'Log In'
+    
+    user
   end
 
   it 'creates an account for me' do
@@ -30,25 +28,15 @@ describe 'the sign up/sign in process', js: true do
   end
 
   it 'lets me sign back in' do
-    visit '/'
-    within '.sign-in' do
-      fill_in 'user[email]', with: 'test@fauxbook.com'
-      fill_in 'user[password]', with: 'password'
-    end
-    click_on 'Log In'
-    expect(page).to have_content('Tester', count: 2)
+    user = sign_in
+    expect(page).to have_content(user.profile.first_name, count: 2)
   end
 
   it 'lets me log out' do
-    visit '/'
-    within '.sign-in' do
-      fill_in 'user[email]', with: 'test@fauxbook.com'
-      fill_in 'user[password]', with: 'password'
-    end
-    click_on 'Log In'
+    user = sign_in
     click_on 'Log Out'
     page.reset!
     visit '/'
-    expect(page).not_to have_content('Tester')
+    expect(page).not_to have_content(user.profile.first_name)
   end
 end
