@@ -46,6 +46,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Use database cleaner to wipe db between tests
   gem 'database_cleaner'
+  # Use facotry girl for users
+  gem 'factory_girl_rails'
 end
 
 group :development do
