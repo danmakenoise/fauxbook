@@ -1,16 +1,4 @@
 describe 'the sign up/sign in process', js: true do
-  def sign_in(user = nil)
-    user ||= FactoryGirl.create(:user)
-    visit '/'
-    within '.sign-in' do
-      fill_in 'user[email]', with: user.email
-      fill_in 'user[password]', with: 'password'
-    end
-    click_on 'Log In'
-    
-    user
-  end
-
   it 'creates an account for me' do
     visit '/'
     fill_in 'profile[first_name]', with: 'Marty'
