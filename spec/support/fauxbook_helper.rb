@@ -15,3 +15,9 @@ def log_out
   page.reset!
   visit '/'
 end
+
+def visit_user(user)
+  full_name = "#{user.profile.first_name} #{user.profile.last_name}"
+  fill_in 'search-bar', with: full_name
+  click_link full_name
+end

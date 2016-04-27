@@ -22,7 +22,14 @@ var Search = React.createClass({
   render: function () {
     return (
       <div className='search-container'>
-        <input ref='searchBar' type='text' value={ this.state.search } onChange={ this._handleChange } className='search-bar' placeholder='search fauxbook'/>
+        <input
+          ref='searchBar'
+          name='search-bar'
+          type='text' value={ this.state.search }
+          onChange={ this._handleChange }
+          className='search-bar'
+          placeholder='search fauxbook'
+        />
         { this._searchResults() }
       </div>
     );
