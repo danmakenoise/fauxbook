@@ -42,8 +42,8 @@ group :development, :test do
   gem 'rspec-rails'
   # Use launchy for observing integration tests
   gem 'launchy'
-  # Use selenium-webdriver for js
-  gem 'selenium-webdriver'
+  # Use webkit for testing
+  gem 'capybara-webkit'
   # Use database cleaner to wipe db between tests
   gem 'database_cleaner'
   # Use facotry girl for users

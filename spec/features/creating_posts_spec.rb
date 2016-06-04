@@ -23,6 +23,7 @@ describe 'posts', js: true do
     click_on 'Approve Request'
     visit_user(other_user)
     post = create_post
+    visit_user(other_user)
     expect(page).to have_content(other_user.profile.first_name)
     expect(page).to have_content(post)
   end

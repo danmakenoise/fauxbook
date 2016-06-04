@@ -1,6 +1,7 @@
 describe 'the sign up/sign in process', js: true do
   it 'creates an account for me' do
     visit '/'
+    puts page.body
     fill_in 'profile[first_name]', with: 'Marty'
     fill_in 'profile[last_name]', with: 'McFly'
     within '.sign-up' do

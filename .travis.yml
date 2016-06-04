@@ -4,8 +4,10 @@ rvm:
 services:
   - postgresql
 before_script:
+  - npm install
+  - webpack
   - psql -c 'create database fauxbook_test;' -U postgres
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+  - xvfb-run bundle exec rspec -l chrome
