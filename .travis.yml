@@ -1,0 +1,11 @@
+language: ruby
+rvm:
+  - "2.2.0"
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database fauxbook_test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
