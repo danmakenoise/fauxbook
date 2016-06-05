@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
 
   has_many :notifications, dependent: :destroy
 
+  has_many :likes, dependent: :destroy
+
   def friends
     created_friends + requested_friends
   end
