@@ -1,4 +1,4 @@
-# Fauxbook
+# Fauxbook [![Build Status](https://travis-ci.org/danmakenoise/fauxbook.svg?branch=master)](https://travis-ci.org/danmakenoise/fauxbook)
 
 > **Fauxbook** is a single-page web-application, based on **Facebook**, for connecting with friends and family. Fauxbook was built on **Ruby on Rails** on the back-end, and uses **React.js** with **Flux** for the front-end.
 
